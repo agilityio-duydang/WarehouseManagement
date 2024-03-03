@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Interface", "WarehouseManagement\Company.Interface.csproj", "{5B78DB04-8579-4ED1-8A7A-905B663731D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.WM.BLL", "Company.WM.BLL\Company.WM.BLL.csproj", "{A68A9999-A80C-408F-BF70-8C2F75EBE24D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B78DB04-8579-4ED1-8A7A-905B663731D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B78DB04-8579-4ED1-8A7A-905B663731D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B78DB04-8579-4ED1-8A7A-905B663731D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B78DB04-8579-4ED1-8A7A-905B663731D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68A9999-A80C-408F-BF70-8C2F75EBE24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68A9999-A80C-408F-BF70-8C2F75EBE24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68A9999-A80C-408F-BF70-8C2F75EBE24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68A9999-A80C-408F-BF70-8C2F75EBE24D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

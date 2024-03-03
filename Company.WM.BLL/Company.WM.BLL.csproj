@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A68A9999-A80C-408F-BF70-8C2F75EBE24D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Company.WM.BLL</RootNamespace>
+    <AssemblyName>Company.WM.BLL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\ECSPrincipal.cs" />
+    <Compile Include="Administration\GROUPS.cs" />
+    <Compile Include="Administration\GROUPSBase.cs" />
+    <Compile Include="Administration\GROUPSCollection.cs" />
+    <Compile Include="Administration\GROUP_ROLE.cs" />
+    <Compile Include="Administration\GROUP_ROLEBase.cs" />
+    <Compile Include="Administration\GROUP_ROLECollection.cs" />
+    <Compile Include="Administration\Role.cs" />
+    <Compile Include="Administration\ROLEBase.cs" />
+    <Compile Include="Administration\ROLECollection.cs" />
+    <Compile Include="Administration\SiteIdentity.cs" />
+    <Compile Include="Administration\User.cs" />
+    <Compile Include="Administration\User.generated.cs" />
+    <Compile Include="Administration\UserCollection.cs" />
+    <Compile Include="Administration\USER_GROUPBase.cs" />
+    <Compile Include="Administration\USER_GROUPCollection.cs" />
+    <Compile Include="BanHang.generated.cs" />
+    <Compile Include="BanHang_HangHoa.generated.cs" />
+    <Compile Include="CongNoKhachHang.generated.cs" />
+    <Compile Include="CongNoNhaCungCap.generated.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="HangHoa.generated.cs" />
+    <Compile Include="HoaDon.generated.cs" />
+    <Compile Include="HoaDon_HangHoa.generated.cs" />
+    <Compile Include="KhachHang.generated.cs" />
+    <Compile Include="Kho.generated.cs" />
+    <Compile Include="LoaiThu.generated.cs" />
+    <Compile Include="NhaCungCap.generated.cs" />
+    <Compile Include="NhomHangHoa.generated.cs" />
+    <Compile Include="Payment.generated.cs" />
+    <Compile Include="PaymentType.generated.cs" />
+    <Compile Include="PhieuNhapKho.generated.cs" />
+    <Compile Include="PhieuNhapKho_HangHoa.generated.cs" />
+    <Compile Include="PhieuThu.generated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XuatNhapTon.generated.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
