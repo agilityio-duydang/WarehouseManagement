@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDebtPaymentForm));
             Janus.Windows.GridEX.GridEXLayout dgList_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.uiGroupBox2 = new Janus.Windows.EditControls.UIGroupBox();
+            this.cbbLoaiThu = new Janus.Windows.EditControls.UIComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtNoHienTai = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtThuTuKhach = new Janus.Windows.GridEX.EditControls.NumericEditBox();
@@ -47,8 +49,7 @@
             this.btnCancel = new Janus.Windows.EditControls.UIButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgList = new Janus.Windows.GridEX.GridEX();
-            this.cbbLoaiThu = new Janus.Windows.EditControls.UIComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
@@ -79,6 +80,25 @@
             this.uiGroupBox2.Size = new System.Drawing.Size(857, 354);
             this.uiGroupBox2.TabIndex = 8;
             this.uiGroupBox2.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // cbbLoaiThu
+            // 
+            this.cbbLoaiThu.Location = new System.Drawing.Point(165, 55);
+            this.cbbLoaiThu.Margin = new System.Windows.Forms.Padding(6);
+            this.cbbLoaiThu.Name = "cbbLoaiThu";
+            this.cbbLoaiThu.Size = new System.Drawing.Size(198, 27);
+            this.cbbLoaiThu.TabIndex = 23;
+            this.cbbLoaiThu.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 59);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 19);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Loại thu :";
             // 
             // txtNoHienTai
             // 
@@ -217,6 +237,7 @@
             // uiGroupBox1
             // 
             this.uiGroupBox1.AutoScroll = true;
+            this.uiGroupBox1.Controls.Add(this.label5);
             this.uiGroupBox1.Controls.Add(this.btnSave);
             this.uiGroupBox1.Controls.Add(this.btnCancel);
             this.uiGroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -282,24 +303,17 @@
             this.dgList.RowDoubleClick += new Janus.Windows.GridEX.RowActionEventHandler(this.dgList_RowDoubleClick);
             this.dgList.LoadingRow += new Janus.Windows.GridEX.RowLoadEventHandler(this.dgList_LoadingRow);
             // 
-            // cbbLoaiThu
+            // label5
             // 
-            this.cbbLoaiThu.Location = new System.Drawing.Point(165, 55);
-            this.cbbLoaiThu.Margin = new System.Windows.Forms.Padding(6);
-            this.cbbLoaiThu.Name = "cbbLoaiThu";
-            this.cbbLoaiThu.Size = new System.Drawing.Size(198, 27);
-            this.cbbLoaiThu.TabIndex = 23;
-            this.cbbLoaiThu.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 59);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 19);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Loại thu :";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(12, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(264, 19);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // CustomerDebtPaymentForm
             // 
@@ -319,6 +333,7 @@
             this.uiGroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).EndInit();
             this.uiGroupBox1.ResumeLayout(false);
+            this.uiGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).EndInit();
             this.ResumeLayout(false);
@@ -345,5 +360,6 @@
         private Janus.Windows.GridEX.GridEX dgList;
         private Janus.Windows.EditControls.UIComboBox cbbLoaiThu;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }

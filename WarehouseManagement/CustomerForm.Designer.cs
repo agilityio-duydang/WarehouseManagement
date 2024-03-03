@@ -55,18 +55,24 @@
             this.tabHistory = new Janus.Windows.UI.Tab.UITabPage();
             this.dgList = new Janus.Windows.GridEX.GridEX();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblToTal = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabDebt = new Janus.Windows.UI.Tab.UITabPage();
             this.dgListDebt = new Janus.Windows.GridEX.GridEX();
             this.uiGroupBox4 = new Janus.Windows.EditControls.UIGroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtTongConNo = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabReceipts = new Janus.Windows.UI.Tab.UITabPage();
+            this.dgListReceipts = new Janus.Windows.GridEX.GridEX();
             this.uiGroupBox5 = new Janus.Windows.EditControls.UIGroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtTongThu = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dgListReceipts = new Janus.Windows.GridEX.GridEX();
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
+            this.btnExportDept = new Janus.Windows.EditControls.UIButton();
+            this.btnExportReceipts = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
@@ -84,9 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox4)).BeginInit();
             this.uiGroupBox4.SuspendLayout();
             this.tabReceipts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListReceipts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox5)).BeginInit();
             this.uiGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgListReceipts)).BeginInit();
             this.SuspendLayout();
             // 
             // uiGroupBox2
@@ -352,6 +358,8 @@
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
+            this.uiGroupBox3.Controls.Add(this.btnExport);
+            this.uiGroupBox3.Controls.Add(this.label8);
             this.uiGroupBox3.Controls.Add(this.lblToTal);
             this.uiGroupBox3.Controls.Add(this.label6);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -361,6 +369,18 @@
             this.uiGroupBox3.Size = new System.Drawing.Size(1045, 60);
             this.uiGroupBox3.TabIndex = 10;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Blue;
+            this.label8.Location = new System.Drawing.Point(133, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(264, 19);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // lblToTal
             // 
@@ -421,6 +441,8 @@
             // uiGroupBox4
             // 
             this.uiGroupBox4.AutoScroll = true;
+            this.uiGroupBox4.Controls.Add(this.btnExportDept);
+            this.uiGroupBox4.Controls.Add(this.label10);
             this.uiGroupBox4.Controls.Add(this.txtTongConNo);
             this.uiGroupBox4.Controls.Add(this.label9);
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -430,6 +452,18 @@
             this.uiGroupBox4.Size = new System.Drawing.Size(1045, 60);
             this.uiGroupBox4.TabIndex = 11;
             this.uiGroupBox4.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Blue;
+            this.label10.Location = new System.Drawing.Point(133, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(264, 19);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // txtTongConNo
             // 
@@ -469,9 +503,29 @@
             this.tabReceipts.TabStop = true;
             this.tabReceipts.Text = "Lịch sử thu từ khách";
             // 
+            // dgListReceipts
+            // 
+            this.dgListReceipts.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.False;
+            this.dgListReceipts.ColumnAutoResize = true;
+            dgListReceipts_DesignTimeLayout.LayoutString = resources.GetString("dgListReceipts_DesignTimeLayout.LayoutString");
+            this.dgListReceipts.DesignTimeLayout = dgListReceipts_DesignTimeLayout;
+            this.dgListReceipts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgListReceipts.GroupByBoxVisible = false;
+            this.dgListReceipts.Location = new System.Drawing.Point(0, 0);
+            this.dgListReceipts.Name = "dgListReceipts";
+            this.dgListReceipts.RecordNavigator = true;
+            this.dgListReceipts.Size = new System.Drawing.Size(1045, 424);
+            this.dgListReceipts.TabIndex = 17;
+            this.dgListReceipts.TotalRow = Janus.Windows.GridEX.InheritableBoolean.True;
+            this.dgListReceipts.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
+            this.dgListReceipts.RowDoubleClick += new Janus.Windows.GridEX.RowActionEventHandler(this.dgListReceipts_RowDoubleClick);
+            this.dgListReceipts.LoadingRow += new Janus.Windows.GridEX.RowLoadEventHandler(this.dgListReceipts_LoadingRow);
+            // 
             // uiGroupBox5
             // 
             this.uiGroupBox5.AutoScroll = true;
+            this.uiGroupBox5.Controls.Add(this.btnExportReceipts);
+            this.uiGroupBox5.Controls.Add(this.label11);
             this.uiGroupBox5.Controls.Add(this.txtTongThu);
             this.uiGroupBox5.Controls.Add(this.label7);
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -481,6 +535,18 @@
             this.uiGroupBox5.Size = new System.Drawing.Size(1045, 60);
             this.uiGroupBox5.TabIndex = 12;
             this.uiGroupBox5.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Blue;
+            this.label11.Location = new System.Drawing.Point(133, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(264, 19);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // txtTongThu
             // 
@@ -510,23 +576,44 @@
             this.label7.TabIndex = 58;
             this.label7.Text = "Tổng đã thu :";
             // 
-            // dgListReceipts
+            // btnExport
             // 
-            this.dgListReceipts.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.False;
-            this.dgListReceipts.ColumnAutoResize = true;
-            dgListReceipts_DesignTimeLayout.LayoutString = resources.GetString("dgListReceipts_DesignTimeLayout.LayoutString");
-            this.dgListReceipts.DesignTimeLayout = dgListReceipts_DesignTimeLayout;
-            this.dgListReceipts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgListReceipts.GroupByBoxVisible = false;
-            this.dgListReceipts.Location = new System.Drawing.Point(0, 0);
-            this.dgListReceipts.Name = "dgListReceipts";
-            this.dgListReceipts.RecordNavigator = true;
-            this.dgListReceipts.Size = new System.Drawing.Size(1045, 424);
-            this.dgListReceipts.TabIndex = 17;
-            this.dgListReceipts.TotalRow = Janus.Windows.GridEX.InheritableBoolean.True;
-            this.dgListReceipts.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
-            this.dgListReceipts.RowDoubleClick += new Janus.Windows.GridEX.RowActionEventHandler(this.dgListReceipts_RowDoubleClick);
-            this.dgListReceipts.LoadingRow += new Janus.Windows.GridEX.RowLoadEventHandler(this.dgListReceipts_LoadingRow);
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(12, 17);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 55;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnExportDept
+            // 
+            this.btnExportDept.Image = ((System.Drawing.Image)(resources.GetObject("btnExportDept.Image")));
+            this.btnExportDept.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExportDept.Location = new System.Drawing.Point(12, 17);
+            this.btnExportDept.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExportDept.Name = "btnExportDept";
+            this.btnExportDept.Size = new System.Drawing.Size(113, 31);
+            this.btnExportDept.TabIndex = 61;
+            this.btnExportDept.Text = "Xuất Excel";
+            this.btnExportDept.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExportDept.Click += new System.EventHandler(this.btnExportDept_Click);
+            // 
+            // btnExportReceipts
+            // 
+            this.btnExportReceipts.Image = ((System.Drawing.Image)(resources.GetObject("btnExportReceipts.Image")));
+            this.btnExportReceipts.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExportReceipts.Location = new System.Drawing.Point(12, 17);
+            this.btnExportReceipts.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExportReceipts.Name = "btnExportReceipts";
+            this.btnExportReceipts.Size = new System.Drawing.Size(113, 31);
+            this.btnExportReceipts.TabIndex = 62;
+            this.btnExportReceipts.Text = "Xuất Excel";
+            this.btnExportReceipts.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExportReceipts.Click += new System.EventHandler(this.btnExportReceipts_Click);
             // 
             // CustomerForm
             // 
@@ -559,10 +646,10 @@
             this.uiGroupBox4.ResumeLayout(false);
             this.uiGroupBox4.PerformLayout();
             this.tabReceipts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgListReceipts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox5)).EndInit();
             this.uiGroupBox5.ResumeLayout(false);
             this.uiGroupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgListReceipts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,6 +690,12 @@
         private Janus.Windows.GridEX.EditControls.NumericEditBox txtTongThu;
         private System.Windows.Forms.Label label7;
         private Janus.Windows.GridEX.GridEX dgListReceipts;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private Janus.Windows.EditControls.UIButton btnExport;
+        private Janus.Windows.EditControls.UIButton btnExportDept;
+        private Janus.Windows.EditControls.UIButton btnExportReceipts;
 
     }
 }

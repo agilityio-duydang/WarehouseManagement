@@ -53,6 +53,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
@@ -204,6 +206,8 @@
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
+            this.uiGroupBox3.Controls.Add(this.label10);
+            this.uiGroupBox3.Controls.Add(this.btnExport);
             this.uiGroupBox3.Controls.Add(this.txtTongGiamGia);
             this.uiGroupBox3.Controls.Add(this.label9);
             this.uiGroupBox3.Controls.Add(this.txtTongChiPhiNhap);
@@ -357,7 +361,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnClose.Location = new System.Drawing.Point(1226, 124);
+            this.btnClose.Location = new System.Drawing.Point(1226, 127);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(113, 31);
@@ -365,6 +369,32 @@
             this.btnClose.Text = "Đóng";
             this.btnClose.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(1104, 127);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 81;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Blue;
+            this.label10.Location = new System.Drawing.Point(413, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(264, 19);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // PurchaseManagementForm
             // 
@@ -414,5 +444,7 @@
         private System.Windows.Forms.Label label8;
         private Janus.Windows.EditControls.UIComboBox cbbMaKho;
         private System.Windows.Forms.Label label6;
+        private Janus.Windows.EditControls.UIButton btnExport;
+        private System.Windows.Forms.Label label10;
     }
 }
