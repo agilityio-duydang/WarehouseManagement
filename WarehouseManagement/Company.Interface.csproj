@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B78DB04-8579-4ED1-8A7A-905B663731D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WarehouseManagement</RootNamespace>
+    <AssemblyName>WarehouseManagement</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.BonusSkins.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.Charts.v10.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.Data.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.OfficeSkins.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.OfficeSkins.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v10.2.Core, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.PivotGrid.v10.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.RichEdit.v10.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraBars.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.2.Design, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraBars.v10.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraCharts.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2.Design, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraCharts.v10.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2.UI, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraCharts.v10.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraEditors.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraGrid.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraLayout.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraPivotGrid.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraPrinting.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraReports.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.2.Design, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraReports.v10.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.2.Extensions, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraReports.v10.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraRichEdit.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2.Design, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraRichEdit.v10.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2.Extensions, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraRichEdit.v10.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2.Printing, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraRichEdit.v10.2.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraTreeList.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.2.Design, Version=10.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ECS\ecs\SourceCode\06.Implement\SOFTECH.ECS.TQDT.LIBRARY\DevExpress.XtraTreeList.v10.2.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SQLDMO, Version=8.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RestaurantManager\RestaurantManager\bin\Debug\Interop.SQLDMO.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.ButtonBar.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.CalendarCombo.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.ExplorerBar.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.FilterEditor.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Schedule.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.TimeLine.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Logger, Version=1.0.1.371, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RestaurantManager\RestaurantManager\bin\Debug\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="SQLFolderBrowser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\RestaurantManager\RestaurantManager\bin\Debug\SQLFolderBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\ManagementUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ManagementUserForm.designer.cs">
+      <DependentUpon>ManagementUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ManagementUserGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ManagementUserGroupForm.Designer.cs">
+      <DependentUpon>ManagementUserGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\ManagementUserRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\ManagementUserRoleForm.Designer.cs">
+      <DependentUpon>ManagementUserRoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\UserForm.designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UserGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\UserGroupForm.Designer.cs">
+      <DependentUpon>UserGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackupAndRestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupAndRestoreForm.designer.cs">
+      <DependentUpon>BackupAndRestoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashFlowManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashFlowManagementForm.designer.cs">
+      <DependentUpon>CashFlowManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashierForm.designer.cs">
+      <DependentUpon>CashierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryForm.designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryManagementForm.designer.cs">
+      <DependentUpon>CategoryManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonApplicationData.cs" />
+    <Compile Include="ConfigConecionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigConecionForm.designer.cs">
+      <DependentUpon>ConfigConecionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigSystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigSystemForm.designer.cs">
+      <DependentUpon>ConfigSystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmPayment.Designer.cs">
+      <DependentUpon>ConfirmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDebtPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerDebtPaymentForm.Designer.cs">
+      <DependentUpon>CustomerDebtPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerManagementForm.Designer.cs">
+      <DependentUpon>CustomerManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebtManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebtManagementForm.Designer.cs">
+      <DependentUpon>DebtManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebtPaymentSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebtPaymentSupplierForm.Designer.cs">
+      <DependentUpon>DebtPaymentSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="FrmFolderBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFolderBrowse.designer.cs">
+      <DependentUpon>FrmFolderBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSettings.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="InventoryManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryManagementForm.Designer.cs">
+      <DependentUpon>InventoryManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoicesForm.designer.cs">
+      <DependentUpon>InvoicesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="K80PrintTemplates.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="K80PrintTemplates.designer.cs">
+      <DependentUpon>K80PrintTemplates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginRoleForm.designer.cs">
+      <DependentUpon>LoginRoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxControl.designer.cs">
+      <DependentUpon>MessageBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentForm.designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentManagementForm.designer.cs">
+      <DependentUpon>PaymentManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentTypeForm.designer.cs">
+      <DependentUpon>PaymentTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs" />
+    <Compile Include="ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductForm.designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManagementForm.designer.cs">
+      <DependentUpon>ProductManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administration\ManagementUserForm.resx">
+      <DependentUpon>ManagementUserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ManagementUserGroupForm.resx">
+      <DependentUpon>ManagementUserGroupForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\ManagementUserRoleForm.resx">
+      <DependentUpon>ManagementUserRoleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\UserGroupForm.resx">
+      <DependentUpon>UserGroupForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackupAndRestoreForm.resx">
+      <DependentUpon>BackupAndRestoreForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashFlowManagementForm.resx">
+      <DependentUpon>CashFlowManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashierForm.resx">
+      <DependentUpon>CashierForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryManagementForm.resx">
+      <DependentUpon>CategoryManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigConecionForm.resx">
+      <DependentUpon>ConfigConecionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigSystemForm.resx">
+      <DependentUpon>ConfigSystemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmPayment.resx">
+      <DependentUpon>ConfirmPayment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDebtPaymentForm.resx">
+      <DependentUpon>CustomerDebtPaymentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManagementForm.resx">
+      <DependentUpon>CustomerManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebtManagementForm.resx">
+      <DependentUpon>DebtManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebtPaymentSupplierForm.resx">
+      <DependentUpon>DebtPaymentSupplierForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFolderBrowse.resx">
+      <DependentUpon>FrmFolderBrowse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryManagementForm.resx">
+      <DependentUpon>InventoryManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoicesForm.resx">
+      <DependentUpon>InvoicesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="K80PrintTemplates.resx">
+      <DependentUpon>K80PrintTemplates.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginRoleForm.resx">
+      <DependentUpon>LoginRoleForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxControl.resx">
+      <DependentUpon>MessageBoxControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentManagementForm.resx">
+      <DependentUpon>PaymentManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentTypeForm.resx">
+      <DependentUpon>PaymentTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManagementForm.resx">
+      <DependentUpon>ProductManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseForm.resx">
+      <DependentUpon>PurchaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseManagementForm.resx">
+      <DependentUpon>PurchaseManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptsForm.resx">
+      <DependentUpon>ReceiptsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptsManagementForm.resx">
+      <DependentUpon>ReceiptsManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptsTypeForm.resx">
+      <DependentUpon>ReceiptsTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLQueryForm.resx">
+      <DependentUpon>SQLQueryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierManagementForm.resx">
+      <DependentUpon>SupplierManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WareHouse\WareHouseForm.resx">
+      <DependentUpon>WareHouseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WareHouse\WareHouseManagementForm.resx">
+      <DependentUpon>WareHouseManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PurchaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseForm.Designer.cs">
+      <DependentUpon>PurchaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseManagementForm.Designer.cs">
+      <DependentUpon>PurchaseManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptsForm.Designer.cs">
+      <DependentUpon>ReceiptsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptsManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptsManagementForm.Designer.cs">
+      <DependentUpon>ReceiptsManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptsTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptsTypeForm.Designer.cs">
+      <DependentUpon>ReceiptsTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQL.cs" />
+    <Compile Include="SQLQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLQueryForm.designer.cs">
+      <DependentUpon>SQLQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierManagementForm.Designer.cs">
+      <DependentUpon>SupplierManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateControl.cs" />
+    <Compile Include="WareHouse\WareHouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareHouse\WareHouseForm.Designer.cs">
+      <DependentUpon>WareHouseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WareHouse\WareHouseManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareHouse\WareHouseManagementForm.Designer.cs">
+      <DependentUpon>WareHouseManagementForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Company.WM.BLL\Company.WM.BLL.csproj">
+      <Project>{A68A9999-A80C-408F-BF70-8C2F75EBE24D}</Project>
+      <Name>Company.WM.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
