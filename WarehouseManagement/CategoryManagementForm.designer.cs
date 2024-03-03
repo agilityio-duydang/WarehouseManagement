@@ -50,7 +50,6 @@
             // uiGroupBox1
             // 
             this.uiGroupBox1.AutoScroll = true;
-            this.uiGroupBox1.Controls.Add(this.btnExport);
             this.uiGroupBox1.Controls.Add(this.txtTenNhom);
             this.uiGroupBox1.Controls.Add(this.btnSearch);
             this.uiGroupBox1.Controls.Add(this.label1);
@@ -67,7 +66,7 @@
             // 
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
             this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(816, 28);
+            this.btnExport.Location = new System.Drawing.Point(14, 16);
             this.btnExport.Margin = new System.Windows.Forms.Padding(5);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(113, 31);
@@ -111,6 +110,7 @@
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
+            this.uiGroupBox3.Controls.Add(this.btnExport);
             this.uiGroupBox3.Controls.Add(this.label5);
             this.uiGroupBox3.Controls.Add(this.btnClose);
             this.uiGroupBox3.Controls.Add(this.btnDelete);
@@ -128,7 +128,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(12, 21);
+            this.label5.Location = new System.Drawing.Point(135, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(264, 19);
             this.label5.TabIndex = 15;

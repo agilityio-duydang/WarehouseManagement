@@ -180,5 +180,42 @@ namespace WarehouseManagement
             }
             return null;
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog sfNPL = new SaveFileDialog();
+                sfNPL.FileName = "Danh sách xuất nhập tồn hàng hoá_" + DateTime.Today.ToString("dd/MM/yyyy").Replace("/", "_") + ".xls";
+                sfNPL.Filter = "Excel files| *.xls";
+                if (ShowMessage("Bạn có muốn xuất thông tin này ra File Excel không? ", true, false) == "Yes")
+                {
+                    if (sfNPL.ShowDialog(this) == DialogResult.OK && sfNPL.FileName != "")
+                    {
+
+                        Janus.Windows.GridEX.Export.GridEXExporter gridEXExporter1 = new Janus.Windows.GridEX.Export.GridEXExporter();
+                        gridEXExporter1.GridEX = dgList;
+                        try
+                        {
+                            System.IO.Stream str = sfNPL.OpenFile();
+                            gridEXExporter1.Export(str);
+                            str.Close();
+                            if (ShowMessage("Bạn có muốn mở File này không?", true, false) == "Yes")
+                            {
+                                System.Diagnostics.Process.Start(sfNPL.FileName);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Logger.LocalLogger.Instance().WriteMessage(ex);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
     }
 }

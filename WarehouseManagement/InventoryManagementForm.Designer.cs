@@ -54,6 +54,7 @@
             this.txtMaHangHoa = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
@@ -94,6 +95,7 @@
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
+            this.uiGroupBox3.Controls.Add(this.btnExport);
             this.uiGroupBox3.Controls.Add(this.txtThanhTienTon);
             this.uiGroupBox3.Controls.Add(this.txtThanhTienBan);
             this.uiGroupBox3.Controls.Add(this.txtThanhTienNhap);
@@ -382,6 +384,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hàng hoá :";
             // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(1100, 100);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 76;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // InventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -433,5 +449,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
+        private Janus.Windows.EditControls.UIButton btnExport;
     }
 }
