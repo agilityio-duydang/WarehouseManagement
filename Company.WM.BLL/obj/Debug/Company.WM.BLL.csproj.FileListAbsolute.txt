@@ -1,0 +1,17 @@
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Company.WM.BLL.dll
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Company.WM.BLL.pdb
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.Unity.dll
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+D:\WarehouseManagement\Company.WM.BLL\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\WarehouseManagement\Company.WM.BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\WarehouseManagement\Company.WM.BLL\obj\Debug\Company.WM.BLL.dll
+D:\WarehouseManagement\Company.WM.BLL\obj\Debug\Company.WM.BLL.pdb
