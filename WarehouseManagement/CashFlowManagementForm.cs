@@ -110,18 +110,6 @@ namespace WarehouseManagement
                     tongThu += item.TongTien;
                 }
 
-                DataTable DataTableReceipts = PhieuThu.SelectDynamic(GetSearchWherePayment(), null).Tables[0];
-                List<PhieuThu> PhieuThuCollection = new List<PhieuThu>();
-                PhieuThuCollection = ConvertDataTable<PhieuThu>(DataTableReceipts);
-
-                decimal tongPhieuThu = 0;
-                foreach (var item in PhieuThuCollection)
-                {
-                    tongPhieuThu += item.GiaTri;
-                }
-
-                tongThu += tongPhieuThu;
-
                 DataTable DataTablePayment = Payment.SelectDynamic(GetSearchWherePayment(), null).Tables[0];
                 List<Payment> PaymentCollection = new List<Payment>();
                 PaymentCollection = ConvertDataTable<Payment>(DataTablePayment);

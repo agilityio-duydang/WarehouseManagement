@@ -153,19 +153,6 @@
   <data name="dgList_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Id"&gt;&lt;Caption&gt;Id&lt;/Caption&gt;&lt;DataMember&gt;Id&lt;/DataMember&gt;&lt;Key&gt;Id&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="MaHangHoa"&gt;&lt;Caption&gt;Mã hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;MaHangHoa&lt;/DataMember&gt;&lt;Key&gt;MaHangHoa&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;129&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="TenHangHoa"&gt;&lt;Caption&gt;Tên hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;TenHangHoa&lt;/DataMember&gt;&lt;Key&gt;TenHangHoa&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;172&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="DonViTinh"&gt;&lt;Caption&gt;ĐVT&lt;/Caption&gt;&lt;DataMember&gt;DonViTinh&lt;/DataMember&gt;&lt;Key&gt;DonViTinh&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;90&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="SoLuong"&gt;&lt;Caption&gt;Số lượng&lt;/Caption&gt;&lt;DataMember&gt;SoLuong&lt;/DataMember&gt;&lt;Key&gt;SoLuong&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;RightToLeft&gt;Yes&lt;/RightToLeft&gt;&lt;Width&gt;107&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="DonGia"&gt;&lt;Caption&gt;Đơn giá&lt;/Caption&gt;&lt;DataMember&gt;DonGia&lt;/DataMember&gt;&lt;Key&gt;DonGia&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;RightToLeft&gt;Yes&lt;/RightToLeft&gt;&lt;Width&gt;93&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="ThanhTien"&gt;&lt;Caption&gt;Thành tiền&lt;/Caption&gt;&lt;DataMember&gt;ThanhTien&lt;/DataMember&gt;&lt;Key&gt;ThanhTien&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;RightToLeft&gt;Yes&lt;/RightToLeft&gt;&lt;Width&gt;93&lt;/Width&gt;&lt;/Column6&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;1&lt;/ColIndex&gt;&lt;SortOrder&gt;Descending&lt;/SortOrder&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowIndex&lt;/RowHeaderContent&gt;&lt;TotalRow&gt;True&lt;/TotalRow&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
-  <data name="btnExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAb5JREFUaEPt
-        ma1OQ1EQhGt4HQQ1Fag2obwUFhxoICXtS2AwSDDlFVCXH48uPc2cZLMZKHfYs+pO8omamW9zj+toyJDG
-        GV+PD6ar04vZav46W843UdysF/eYaJudPBH4L0/d82bxsnzATLtsxzo/HkE5oHC7vnvEVJuw8QjqAc2/
-        BBuPwB5QaPYl2HgE/oBmR7DxCNgBhfAj2HgETL4SegQbj4CJW8KOYOMRMGlPyBFsPILJ5fHm8OxoL9DQ
-        w8ajmFztPwIaethwJPuOgIYeNhrNb0dAQw8bbMFPR0BDDxtrBTsCGnrYUEv8EdDQw0ZaY4+Ahh42kEE9
-        Ahp6WHkW5Qho6GHFlfevjx3+d19spwcaelhpxQtYqT7YTg809LDSTKChh5VmAg09rDQTaOhhpRX/hu27
-        7oPt9EBDDyuteAEr1Qfb6YGGHlaaCTT0sNJMoKGHlWYCDT2stOLfsH3XfbCdHmjoYaUVL2Cl+mA7PdDQ
-        w0ozgYYeVpoJNPSw0kygoYeVZgINPaw0E2joYaWZQEMPK80EGnq2JW++NJEOGnpa/c36N07OoaGn/tE9
-        Xc4/+Ug8Zatslm1oDBnSJqPRN/dQu/pNMaV9AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAulJREFUaEPt

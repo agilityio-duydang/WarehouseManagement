@@ -36,17 +36,15 @@
             this.txtMa = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label35 = new System.Windows.Forms.Label();
             this.uiGroupBox1 = new Janus.Windows.EditControls.UIGroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDiaChi = new Janus.Windows.GridEX.EditControls.EditBox();
             this.txtSoDienThoai = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDiaChi = new Janus.Windows.GridEX.EditControls.EditBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
             this.btnDelete = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox2 = new Janus.Windows.EditControls.UIGroupBox();
             this.dgList = new Janus.Windows.GridEX.GridEX();
-            this.btnExportReceipts = new Janus.Windows.EditControls.UIButton();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox3)).BeginInit();
@@ -129,6 +127,26 @@
             this.uiGroupBox1.Text = "Tìm kiếm khách hàng";
             this.uiGroupBox1.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã khách hàng :";
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(641, 29);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(6);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(248, 27);
+            this.txtDiaChi.TabIndex = 10;
+            this.txtDiaChi.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.btnSearch_Click);
+            // 
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.Location = new System.Drawing.Point(641, 73);
@@ -149,31 +167,9 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Số điện thoại : ";
             // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(641, 29);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(6);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(248, 27);
-            this.txtDiaChi.TabIndex = 10;
-            this.txtDiaChi.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
-            this.txtDiaChi.TextChanged += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã khách hàng :";
-            // 
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
-            this.uiGroupBox3.Controls.Add(this.btnExportReceipts);
-            this.uiGroupBox3.Controls.Add(this.label11);
             this.uiGroupBox3.Controls.Add(this.btnClose);
             this.uiGroupBox3.Controls.Add(this.btnDelete);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -240,31 +236,6 @@
             this.dgList.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.dgList.RowDoubleClick += new Janus.Windows.GridEX.RowActionEventHandler(this.dgList_RowDoubleClick);
             // 
-            // btnExportReceipts
-            // 
-            this.btnExportReceipts.Image = ((System.Drawing.Image)(resources.GetObject("btnExportReceipts.Image")));
-            this.btnExportReceipts.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExportReceipts.Location = new System.Drawing.Point(15, 18);
-            this.btnExportReceipts.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExportReceipts.Name = "btnExportReceipts";
-            this.btnExportReceipts.Size = new System.Drawing.Size(113, 31);
-            this.btnExportReceipts.TabIndex = 66;
-            this.btnExportReceipts.Text = "Xuất Excel";
-            this.btnExportReceipts.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExportReceipts.Click += new System.EventHandler(this.btnExportReceipts_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Blue;
-            this.label11.Location = new System.Drawing.Point(136, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(264, 19);
-            this.label11.TabIndex = 65;
-            this.label11.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
-            // 
             // CustomerManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -282,7 +253,6 @@
             this.uiGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox3)).EndInit();
             this.uiGroupBox3.ResumeLayout(false);
-            this.uiGroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).EndInit();
             this.uiGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).EndInit();
@@ -307,7 +277,5 @@
         private Janus.Windows.EditControls.UIButton btnDelete;
         private Janus.Windows.EditControls.UIGroupBox uiGroupBox2;
         private Janus.Windows.GridEX.GridEX dgList;
-        private Janus.Windows.EditControls.UIButton btnExportReceipts;
-        private System.Windows.Forms.Label label11;
     }
 }

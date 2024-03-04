@@ -43,11 +43,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSearch = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnExport = new Janus.Windows.EditControls.UIButton();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
             this.btnSendEmailReport = new Janus.Windows.EditControls.UIButton();
             this.btnDelete = new Janus.Windows.EditControls.UIButton();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
@@ -220,23 +220,12 @@
             this.uiGroupBox3.TabIndex = 10;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(384, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 19);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
-            // 
             // btnExport
             // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
             this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(263, 18);
+            this.btnExport.Location = new System.Drawing.Point(263, 16);
             this.btnExport.Margin = new System.Windows.Forms.Padding(5);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(113, 31);
@@ -250,7 +239,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnClose.Location = new System.Drawing.Point(860, 18);
+            this.btnClose.Location = new System.Drawing.Point(860, 17);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(113, 31);
@@ -262,7 +251,7 @@
             // btnSendEmailReport
             // 
             this.btnSendEmailReport.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmailReport.Image")));
-            this.btnSendEmailReport.Location = new System.Drawing.Point(8, 18);
+            this.btnSendEmailReport.Location = new System.Drawing.Point(8, 16);
             this.btnSendEmailReport.Name = "btnSendEmailReport";
             this.btnSendEmailReport.Size = new System.Drawing.Size(247, 31);
             this.btnSendEmailReport.TabIndex = 11;
@@ -275,13 +264,26 @@
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(740, 18);
+            this.btnDelete.Location = new System.Drawing.Point(740, 17);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(113, 31);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(384, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(264, 19);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // PaymentManagementForm
             // 

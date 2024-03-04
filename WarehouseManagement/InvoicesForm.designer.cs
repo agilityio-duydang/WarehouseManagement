@@ -52,7 +52,6 @@
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
             this.btnPrint = new Janus.Windows.EditControls.UIButton();
-            this.btnExport = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox5)).BeginInit();
             this.uiGroupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
@@ -322,7 +321,6 @@
             // 
             // uiGroupBox3
             // 
-            this.uiGroupBox3.Controls.Add(this.btnExport);
             this.uiGroupBox3.Controls.Add(this.btnClose);
             this.uiGroupBox3.Controls.Add(this.uiGroupBox5);
             this.uiGroupBox3.Controls.Add(this.btnPrint);
@@ -362,19 +360,6 @@
             this.btnPrint.Text = "In hoá đơn";
             this.btnPrint.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(15, 188);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(113, 31);
-            this.btnExport.TabIndex = 30;
-            this.btnExport.Text = "Xuất Excel";
-            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // InvoicesForm
             // 
@@ -427,6 +412,5 @@
         private Janus.Windows.GridEX.EditControls.NumericEditBox lblGiamGia;
         private Janus.Windows.GridEX.EditControls.NumericEditBox lblToTalTax;
         private Janus.Windows.GridEX.EditControls.NumericEditBox lblTax;
-        private Janus.Windows.EditControls.UIButton btnExport;
     }
 }

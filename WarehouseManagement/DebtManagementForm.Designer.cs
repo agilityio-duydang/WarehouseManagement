@@ -47,8 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
             this.dgList = new Janus.Windows.GridEX.GridEX();
-            this.btnExport = new Janus.Windows.EditControls.UIButton();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox3)).BeginInit();
@@ -158,8 +156,6 @@
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
-            this.uiGroupBox3.Controls.Add(this.btnExport);
-            this.uiGroupBox3.Controls.Add(this.label8);
             this.uiGroupBox3.Controls.Add(this.txtTongConNo);
             this.uiGroupBox3.Controls.Add(this.txtTongThanhToan);
             this.uiGroupBox3.Controls.Add(this.txtTongTien);
@@ -284,32 +280,6 @@
             this.dgList.RowDoubleClick += new Janus.Windows.GridEX.RowActionEventHandler(this.dgList_RowDoubleClick);
             this.dgList.LoadingRow += new Janus.Windows.GridEX.RowLoadEventHandler(this.dgList_LoadingRow);
             // 
-            // btnExport
-            // 
-            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(738, 75);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(113, 31);
-            this.btnExport.TabIndex = 74;
-            this.btnExport.Text = "Xuất Excel";
-            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Blue;
-            this.label8.Location = new System.Drawing.Point(412, 81);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(264, 19);
-            this.label8.TabIndex = 73;
-            this.label8.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
-            // 
             // DebtManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -352,7 +322,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private Janus.Windows.GridEX.GridEX dgList;
-        private Janus.Windows.EditControls.UIButton btnExport;
-        private System.Windows.Forms.Label label8;
     }
 }

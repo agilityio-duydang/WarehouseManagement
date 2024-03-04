@@ -67,12 +67,6 @@
             this.uiGroupBox5 = new Janus.Windows.EditControls.UIGroupBox();
             this.txtTongChi = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnExport = new Janus.Windows.EditControls.UIButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnExportDept = new Janus.Windows.EditControls.UIButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnExportReceipts = new Janus.Windows.EditControls.UIButton();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
@@ -360,8 +354,6 @@
             // uiGroupBox4
             // 
             this.uiGroupBox4.AutoScroll = true;
-            this.uiGroupBox4.Controls.Add(this.btnExport);
-            this.uiGroupBox4.Controls.Add(this.label8);
             this.uiGroupBox4.Controls.Add(this.txtTongTien);
             this.uiGroupBox4.Controls.Add(this.label12);
             this.uiGroupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -432,8 +424,6 @@
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
-            this.uiGroupBox3.Controls.Add(this.btnExportDept);
-            this.uiGroupBox3.Controls.Add(this.label10);
             this.uiGroupBox3.Controls.Add(this.txtTongConNo);
             this.uiGroupBox3.Controls.Add(this.label6);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -503,8 +493,6 @@
             // uiGroupBox5
             // 
             this.uiGroupBox5.AutoScroll = true;
-            this.uiGroupBox5.Controls.Add(this.btnExportReceipts);
-            this.uiGroupBox5.Controls.Add(this.label11);
             this.uiGroupBox5.Controls.Add(this.txtTongChi);
             this.uiGroupBox5.Controls.Add(this.label7);
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -542,81 +530,6 @@
             this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 58;
             this.label7.Text = "Tổng chi :";
-            // 
-            // btnExport
-            // 
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(16, 18);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(113, 31);
-            this.btnExport.TabIndex = 86;
-            this.btnExport.Text = "Xuất Excel";
-            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Blue;
-            this.label8.Location = new System.Drawing.Point(137, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(264, 19);
-            this.label8.TabIndex = 85;
-            this.label8.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
-            // 
-            // btnExportDept
-            // 
-            this.btnExportDept.Image = ((System.Drawing.Image)(resources.GetObject("btnExportDept.Image")));
-            this.btnExportDept.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExportDept.Location = new System.Drawing.Point(16, 18);
-            this.btnExportDept.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExportDept.Name = "btnExportDept";
-            this.btnExportDept.Size = new System.Drawing.Size(113, 31);
-            this.btnExportDept.TabIndex = 89;
-            this.btnExportDept.Text = "Xuất Excel";
-            this.btnExportDept.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExportDept.Click += new System.EventHandler(this.btnExportDept_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Blue;
-            this.label10.Location = new System.Drawing.Point(137, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(264, 19);
-            this.label10.TabIndex = 88;
-            this.label10.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
-            // 
-            // btnExportReceipts
-            // 
-            this.btnExportReceipts.Image = ((System.Drawing.Image)(resources.GetObject("btnExportReceipts.Image")));
-            this.btnExportReceipts.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExportReceipts.Location = new System.Drawing.Point(16, 18);
-            this.btnExportReceipts.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExportReceipts.Name = "btnExportReceipts";
-            this.btnExportReceipts.Size = new System.Drawing.Size(113, 31);
-            this.btnExportReceipts.TabIndex = 89;
-            this.btnExportReceipts.Text = "Xuất Excel";
-            this.btnExportReceipts.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExportReceipts.Click += new System.EventHandler(this.btnExportReceipts_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Blue;
-            this.label11.Location = new System.Drawing.Point(137, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(264, 19);
-            this.label11.TabIndex = 88;
-            this.label11.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // SupplierForm
             // 
@@ -693,12 +606,6 @@
         private Janus.Windows.GridEX.EditControls.NumericEditBox txtTongChi;
         private System.Windows.Forms.Label label7;
         private Janus.Windows.GridEX.GridEX dgListPayment;
-        private Janus.Windows.EditControls.UIButton btnExport;
-        private System.Windows.Forms.Label label8;
-        private Janus.Windows.EditControls.UIButton btnExportDept;
-        private System.Windows.Forms.Label label10;
-        private Janus.Windows.EditControls.UIButton btnExportReceipts;
-        private System.Windows.Forms.Label label11;
 
     }
 }

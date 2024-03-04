@@ -236,22 +236,5 @@ namespace WarehouseManagement
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
         }
-
-        private void btnSendEmailReport_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ShowMessage("Bạn có chắc chắn muốn gửi Email báo cáo này không?", true, false) == "Yes")
-                {
-                    Helpers help = new Helpers();
-                    help.SendEmmailReceiptsTotal(dateTuNgay.Value, dateDenNgay.Value);
-                    ShowMessage("Gửi báo cáo thành công. ", false, false);
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.LocalLogger.Instance().WriteMessage(ex);
-            }
-        }
     }
 }

@@ -45,7 +45,6 @@
             this.txtMaHangHoa = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnImportExcel = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
@@ -115,7 +114,7 @@
             // 
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
             this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(14, 19);
+            this.btnExport.Location = new System.Drawing.Point(14, 17);
             this.btnExport.Margin = new System.Windows.Forms.Padding(5);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(113, 31);
@@ -155,7 +154,6 @@
             // uiGroupBox1
             // 
             this.uiGroupBox1.AutoScroll = true;
-            this.uiGroupBox1.Controls.Add(this.btnImportExcel);
             this.uiGroupBox1.Controls.Add(this.cbbCategory);
             this.uiGroupBox1.Controls.Add(this.label2);
             this.uiGroupBox1.Controls.Add(this.btnSearch);
@@ -244,18 +242,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hàng hoá :";
             // 
-            // btnImportExcel
-            // 
-            this.btnImportExcel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnImportExcel.Image")));
-            this.btnImportExcel.Location = new System.Drawing.Point(659, 75);
-            this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(240, 27);
-            this.btnImportExcel.TabIndex = 15;
-            this.btnImportExcel.Text = "Nhập hàng hóa từ Excel";
-            this.btnImportExcel.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
-            // 
             // ProductManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -298,6 +284,5 @@
         private Janus.Windows.EditControls.UIButton btnClose;
         private Janus.Windows.EditControls.UIButton btnExport;
         private System.Windows.Forms.Label label5;
-        private Janus.Windows.EditControls.UIButton btnImportExcel;
     }
 }
