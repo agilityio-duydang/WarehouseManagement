@@ -267,6 +267,7 @@
             this.btnSendEmailReport.TabIndex = 11;
             this.btnSendEmailReport.Text = "Gửi Email báo cáo";
             this.btnSendEmailReport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnSendEmailReport.Click += new System.EventHandler(this.btnSendEmailReport_Click_1);
             // 
             // btnDelete
             // 
