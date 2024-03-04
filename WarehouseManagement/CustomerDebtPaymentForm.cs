@@ -100,6 +100,8 @@ namespace WarehouseManagement
                 PhieuThu.GhiChu = txtGhiChu.Text;
                 PhieuThu.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
+                Helpers Helpers = new Helpers();
+                Helpers.SendEmmailReceipts(PhieuThu);
                 btnSave.Enabled = false;
             }
             catch (Exception ex)

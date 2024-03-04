@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem1 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem2 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem3 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem4 = new Janus.Windows.EditControls.UIComboBoxItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseForm));
             Janus.Windows.GridEX.GridEXLayout dgList_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
@@ -86,6 +86,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox3)).BeginInit();
             this.uiGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
@@ -339,17 +340,17 @@
             // 
             // cbbGiamGia
             // 
-            uiComboBoxItem1.FormatStyle.Alpha = 0;
-            uiComboBoxItem1.IsSeparator = false;
-            uiComboBoxItem1.Text = "Phần trăm";
-            uiComboBoxItem1.Value = "0";
-            uiComboBoxItem2.FormatStyle.Alpha = 0;
-            uiComboBoxItem2.IsSeparator = false;
-            uiComboBoxItem2.Text = "Số tiền";
-            uiComboBoxItem2.Value = "1";
+            uiComboBoxItem3.FormatStyle.Alpha = 0;
+            uiComboBoxItem3.IsSeparator = false;
+            uiComboBoxItem3.Text = "Phần trăm";
+            uiComboBoxItem3.Value = "0";
+            uiComboBoxItem4.FormatStyle.Alpha = 0;
+            uiComboBoxItem4.IsSeparator = false;
+            uiComboBoxItem4.Text = "Số tiền";
+            uiComboBoxItem4.Value = "1";
             this.cbbGiamGia.Items.AddRange(new Janus.Windows.EditControls.UIComboBoxItem[] {
-            uiComboBoxItem1,
-            uiComboBoxItem2});
+            uiComboBoxItem3,
+            uiComboBoxItem4});
             this.cbbGiamGia.Location = new System.Drawing.Point(188, 293);
             this.cbbGiamGia.Margin = new System.Windows.Forms.Padding(5);
             this.cbbGiamGia.Name = "cbbGiamGia";
@@ -560,6 +561,7 @@
             // uiGroupBox5
             // 
             this.uiGroupBox5.AutoScroll = true;
+            this.uiGroupBox5.Controls.Add(this.btnExport);
             this.uiGroupBox5.Controls.Add(this.btnDelete);
             this.uiGroupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiGroupBox5.Location = new System.Drawing.Point(3, 572);
@@ -778,6 +780,19 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // btnExport
+            // 
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(11, 17);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 19;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -864,5 +879,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label label15;
         private Janus.Windows.GridEX.EditControls.EditBox txtGhiChu;
+        private Janus.Windows.EditControls.UIButton btnExport;
     }
 }

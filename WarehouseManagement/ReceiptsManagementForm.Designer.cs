@@ -222,11 +222,10 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(384, 24);
+            this.label1.Location = new System.Drawing.Point(384, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 19);
             this.label1.TabIndex = 19;
@@ -236,7 +235,7 @@
             // 
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
             this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(263, 17);
+            this.btnExport.Location = new System.Drawing.Point(263, 18);
             this.btnExport.Margin = new System.Windows.Forms.Padding(5);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(113, 31);
@@ -250,7 +249,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnClose.Location = new System.Drawing.Point(860, 17);
+            this.btnClose.Location = new System.Drawing.Point(860, 18);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(113, 31);
@@ -262,19 +261,20 @@
             // btnSendEmailReport
             // 
             this.btnSendEmailReport.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmailReport.Image")));
-            this.btnSendEmailReport.Location = new System.Drawing.Point(8, 16);
+            this.btnSendEmailReport.Location = new System.Drawing.Point(8, 18);
             this.btnSendEmailReport.Name = "btnSendEmailReport";
             this.btnSendEmailReport.Size = new System.Drawing.Size(247, 31);
             this.btnSendEmailReport.TabIndex = 11;
             this.btnSendEmailReport.Text = "Gửi Email báo cáo";
             this.btnSendEmailReport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnSendEmailReport.Click += new System.EventHandler(this.btnSendEmailReport_Click_1);
             // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(740, 17);
+            this.btnDelete.Location = new System.Drawing.Point(740, 18);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(113, 31);
             this.btnDelete.TabIndex = 5;
@@ -304,7 +304,6 @@
             this.uiGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox3)).EndInit();
             this.uiGroupBox3.ResumeLayout(false);
-            this.uiGroupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

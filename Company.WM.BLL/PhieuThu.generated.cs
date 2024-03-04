@@ -344,7 +344,19 @@ namespace Company.WM.BLL
             return db.ExecuteReader(dbCommand);
 		}		
 		//---------------------------------------------------------------------------------------------
-		
+
+        public static DataSet SelectReportReceiptsTotal(string fromDate, string toDate)
+        {
+            const string spName = "[dbo].[ReportReceiptsTotal]";
+            SqlDatabase db = (SqlDatabase)DatabaseFactory.CreateDatabase();
+            SqlCommand dbCommand = (SqlCommand)db.GetStoredProcCommand(spName);
+
+            db.AddInParameter(dbCommand, "@FromDate", SqlDbType.NVarChar, fromDate);
+            db.AddInParameter(dbCommand, "@ToDate", SqlDbType.NVarChar, toDate);
+
+            return db.ExecuteDataSet(dbCommand);
+        }
+
 		#endregion
 		
 		//---------------------------------------------------------------------------------------------

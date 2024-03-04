@@ -156,8 +156,8 @@ namespace WarehouseManagement
                 GetData();
                 PhieuThu.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
-                //Helpers Helpers = new Helpers();
-                //Helpers.SendEmmailPhieuThu(PhieuThu);
+                Helpers Helpers = new Helpers();
+                Helpers.SendEmmailReceipts(PhieuThu);
                 this.Close();
             }
             catch (Exception ex)
@@ -180,8 +180,8 @@ namespace WarehouseManagement
                 txtNguoiThu.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
                 txtGiaTri.Text = String.Empty;
-                //Helpers Helpers = new Helpers();
-                //Helpers.SendEmmailPhieuThu(PhieuThu);
+                Helpers Helpers = new Helpers();
+                Helpers.SendEmmailReceipts(PhieuThu);
             }
             catch (Exception ex)
             {

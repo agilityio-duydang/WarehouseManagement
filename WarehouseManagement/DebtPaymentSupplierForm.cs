@@ -152,6 +152,8 @@ namespace WarehouseManagement
                 Payment.GhiChu = txtGhiChu.Text;
                 Payment.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
+                Helpers Helpers = new Helpers();
+                Helpers.SendEmmailPayment(Payment);
                 btnSave.Enabled = false;
             }
             catch (Exception ex)
