@@ -140,9 +140,10 @@ namespace WarehouseManagement
                 var fromAddress = new MailAddress("dangphuocduy@gmail.com", GlobalSettings.COMPANYNAME);
                 var toAddress = new MailAddress(GlobalSettings.EMAIL.Trim(), "To Name");
                 const string fromPassword = "smthalnacttksxvz";
-                string subject = "" + GlobalSettings.TENNHANVIEN + " vừa chi một phiếu chi trị giá " + payment.GiaTri.ToString("N0");
+                string subject = "" + User.Load(payment.NhanVienId).FullName + " vừa chi một phiếu chi trị giá " + payment.GiaTri.ToString("N0");
                 string body = "";
 
+                body += "Mã phiếu : " + payment.MaPhieu.ToString() + "<br>";
                 body += "Ngày : " + payment.ThoiGian.ToString("dd/MM/yyyy") + "<br>";
                 body += "Loại chi : " + PaymentType.Load(payment.PaymentTypeId).Ten.ToString() + "<br>";
                 body += "Giá trị  : " + payment.GiaTri.ToString("N0") + "<br><br>";
@@ -221,6 +222,99 @@ namespace WarehouseManagement
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
         }
+
+        public void SendEmmailReceipts(PhieuThu phieuThu)
+        {
+            try
+            {
+                GlobalSettings.RefreshKey();
+                var fromAddress = new MailAddress("dangphuocduy@gmail.com", GlobalSettings.COMPANYNAME);
+                var toAddress = new MailAddress(GlobalSettings.EMAIL.Trim(), "To Name");
+                const string fromPassword = "smthalnacttksxvz";
+                string subject = "" + User.Load(phieuThu.NhanVienId).FullName + " vừa thu một phiếu thu trị giá " + phieuThu.GiaTri.ToString("N0");
+                string body = "";
+
+                body += "Mã phiếu : " + phieuThu.MaPhieu.ToString() + "<br>";
+                body += "Ngày : " + phieuThu.ThoiGian.ToString("dd/MM/yyyy") + "<br>";
+                body += "Loại thu : " + LoaiThu.Load(phieuThu.LoaiThuId).Ten.ToString() + "<br>";
+                body += "Giá trị  : " + phieuThu.GiaTri.ToString("N0") + "<br><br>";
+
+                string tr = "";
+
+                var bodyTotal = GenrateReportReceipts(DateTime.Now, DateTime.Now);
+                if (bodyTotal != null)
+                {
+                    body += bodyTotal;
+                }
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    IsBodyHtml = true,
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
+
+        public void SendEmmailReceiptsTotal(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                GlobalSettings.RefreshKey();
+                var fromAddress = new MailAddress("dangphuocduy@gmail.com", GlobalSettings.COMPANYNAME);
+                var toAddress = new MailAddress(GlobalSettings.EMAIL.Trim(), "To Name");
+                const string fromPassword = "smthalnacttksxvz";
+                string subject = "Báo cáo thu từ ngày " + fromDate.ToString("dd-MM-yyyy") + " đến ngày " + toDate.ToString("dd-MM-yyyy") + "";
+                string body = "";
+                string tr = "";
+
+                var bodyTotal = GenrateReportReceipts(fromDate, toDate);
+                if (bodyTotal != null)
+                {
+                    body += bodyTotal;
+                }
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    IsBodyHtml = true,
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
+
         public string ToTrimmedString(decimal num)
         {
             try
@@ -312,15 +406,28 @@ namespace WarehouseManagement
                     tongChi += item.GiaTri;
                 }
 
+                DataTable DataTableReceipts = PhieuThu.SelectDynamic("ThoiGian BETWEEN '" + fromDate.ToString("yyyy-MM-dd 00:00:00") + "' AND '" + toDate.ToString("yyyy-MM-dd 23:59:59") + "'", null).Tables[0];
+                List<PhieuThu> PhieuThuCollection = new List<PhieuThu>();
+                PhieuThuCollection = ConvertDataTable<PhieuThu>(DataTableReceipts);
+
+                decimal tongPhieuThu = 0;
+                foreach (var item in PhieuThuCollection)
+                {
+                    tongPhieuThu += item.GiaTri;
+                }
+
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
                 string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
 
                 string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,###", cultureInfo.NumberFormat);
 
-                string TonQuy = decimal.Parse((tongThu - tongChi).ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TonQuy = decimal.Parse((tongThu + tongPhieuThu - tongChi).ToString()).ToString("#,###", cultureInfo.NumberFormat);
 
-                body += "TỔNG THU : " + TongThu + "<br>";
-                body += "TỔNG CHI : " + TongChi + "<br>";
+                string TongPhieuThu = decimal.Parse(tongPhieuThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+
+                body += "TỔNG THU HOÁ ĐƠN : " + TongThu + "<br>";
+                body += "TỔNG PHIẾU THU : " + TongPhieuThu + "<br>";
+                body += "TỔNG PHIẾU CHI : " + TongChi + "<br>";
                 body += "TỒN QUỸ  : " + TonQuy + "<br>";
                 body += "TỔNG HOÁ ĐƠN ĐÃ THANH TOÁN  : " + HoaDonCollection.Count.ToString() + "<br>";
 
@@ -400,6 +507,62 @@ namespace WarehouseManagement
                      + "<tr>"
                         + "<th>STT</th>"
                         + "<th>Loại chi</th>"
+                        + "<th>Số lần</th>"
+                        + "<th>Giá trị</th>"
+                     + "</tr>"
+                     + "</thead>"
+                     + "<tbody>" + trReportTotal
+                     + "</tbody>"
+                     + "</table>";
+
+                return body;
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+                return null;
+            }
+        }
+
+        public string GenrateReportReceipts(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                string body = "";
+                DataTable DataTableReceipts = PhieuThu.SelectDynamic("ThoiGian BETWEEN '" + fromDate.ToString("yyyy-MM-dd 00:00:00") + "' AND '" + toDate.ToString("yyyy-MM-dd 23:59:59") + "'", null).Tables[0];
+                List<PhieuThu> PhieuThuCollection = new List<PhieuThu>();
+                PhieuThuCollection = ConvertDataTable<PhieuThu>(DataTableReceipts);
+
+                decimal tongThu = 0;
+                foreach (var item in PhieuThuCollection)
+                {
+                    tongThu += item.GiaTri;
+                }
+
+                CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
+
+                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+
+                body += "TỔNG THU : " + TongThu + "<br>";
+
+                body += "<br>THỐNG KÊ CHI TIẾT DANH SÁCH THU<br>";
+                string trReportTotal = "";
+                DataTable DataTableReport = PhieuThu.SelectReportReceiptsTotal(fromDate.ToString("yyyy-MM-dd 00:00:00"), toDate.ToString("yyyy-MM-dd 23:59:59")).Tables[0];
+                foreach (DataRow item in DataTableReport.Rows)
+                {
+                    trReportTotal += "<tr>";
+                    trReportTotal += "<td>" + item["STT"].ToString() + "</td>";
+                    trReportTotal += "<td>" + item["LoaiThu"] + "</td>";
+                    trReportTotal += "<td>" + item["SoLan"] + "</td>";
+                    trReportTotal += "<td>" + Convert.ToDecimal(item["GiaTri"]).ToString("#,##0") + "</td>";
+                    trReportTotal += "</tr>";
+                }
+
+                body += "<table>"
+                     + "<thead>"
+                     + "<tr>"
+                        + "<th>STT</th>"
+                        + "<th>Loại thu</th>"
                         + "<th>Số lần</th>"
                         + "<th>Giá trị</th>"
                      + "</tr>"

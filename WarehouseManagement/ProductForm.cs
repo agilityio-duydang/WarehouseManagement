@@ -207,5 +207,12 @@ namespace WarehouseManagement
                 return null;
             }
         }
+
+        private void btnAddMore_Click(object sender, EventArgs e)
+        {
+            CategoryForm f = new CategoryForm();
+            f.ShowDialog(this);
+            LoadCategoty();
+        }
     }
 }

@@ -599,5 +599,19 @@ namespace WarehouseManagement
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
         }
+
+        private void btnAddMore_Click(object sender, EventArgs e)
+        {
+            CustomerForm f = new CustomerForm();
+            f.ShowDialog(this);
+            LoadCustomer();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ProductForm f = new ProductForm();
+            f.ShowDialog(this);
+            LoadProducts();
+        }
     }
 }
