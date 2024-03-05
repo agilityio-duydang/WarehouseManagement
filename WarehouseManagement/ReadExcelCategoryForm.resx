@@ -117,21 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnReadFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAT5JREFUWEft
-        kjFLw2AQhvNrBAeXYsBZ/AeOnZzc3UWngr/A0lnp4FB1q9LiYDtVRHAQ2+LSgpPFpiqkw8mFOzDNd21z
-        XMBCHniW8L33vpR6OTmzbJa7gK4f12NeNlupLF13ojt+ufvhV/o+nV+MZsDBUQl29/Yj+RsPICeF0942
-        VcxHMwCL1wpbkfxtZgD65Vded6hGhgMZDEADqpHhxxkNAKqR4Yf/YMBNbECteR8r/avzT3j1kChHqUaG
-        H26ctGMDDqt3UGsky11eNNpQPHtOlKNUI+MKWUo1Mq6QpVQj4wpZSjUyrpClVCPDD4fjEKwYfIbpB1ij
-        HjAaB/D40lOJWUY9IJxOo0MaMcus7gA85Pp5lxGzjHqAFeoBk+8feBu+q8Qss7oDrEg94PxpBLf9wES8
-        lXpAVlJNTg7heb/s9QL2t3YZAgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="dgList_DesignTimeLayout.LayoutString" xml:space="preserve">
-    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="MaHangHoa"&gt;&lt;Caption&gt;Mã hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;MaHangHoa&lt;/DataMember&gt;&lt;Key&gt;MaHangHoa&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;116&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="TenHangHoa"&gt;&lt;Caption&gt;Tên hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;TenHangHoa&lt;/DataMember&gt;&lt;Key&gt;TenHangHoa&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;145&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="NhomHangHoaId"&gt;&lt;Caption&gt;Nhóm hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;NhomHangHoaId&lt;/DataMember&gt;&lt;Key&gt;NhomHangHoaId&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;146&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="DonGiaNhap"&gt;&lt;Caption&gt;Đơn giá nhập&lt;/Caption&gt;&lt;DataMember&gt;DonGiaNhap&lt;/DataMember&gt;&lt;Key&gt;DonGiaNhap&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;119&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="DonGiaBan"&gt;&lt;Caption&gt;Đơn giá bán&lt;/Caption&gt;&lt;DataMember&gt;DonGiaBan&lt;/DataMember&gt;&lt;Key&gt;DonGiaBan&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;99&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="DonViTinh"&gt;&lt;Caption&gt;Đơn vị tính&lt;/Caption&gt;&lt;DataMember&gt;DonViTinh&lt;/DataMember&gt;&lt;Key&gt;DonViTinh&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;99&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="GhiChu"&gt;&lt;Caption&gt;Ghi chú&lt;/Caption&gt;&lt;DataMember&gt;GhiChu&lt;/DataMember&gt;&lt;Key&gt;GhiChu&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;347&lt;/Width&gt;&lt;WordWrap&gt;True&lt;/WordWrap&gt;&lt;/Column6&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowIndex&lt;/RowHeaderContent&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="TenNhom"&gt;&lt;Caption&gt;Tên nhóm&lt;/Caption&gt;&lt;DataMember&gt;TenNhom&lt;/DataMember&gt;&lt;Key&gt;TenNhom&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;1071&lt;/Width&gt;&lt;/Column0&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowIndex&lt;/RowHeaderContent&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="uiTabPage2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -189,7 +178,7 @@
 </value>
   </data>
   <data name="dgListInValid_DesignTimeLayout.LayoutString" xml:space="preserve">
-    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="MaHangHoa"&gt;&lt;Caption&gt;Mã hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;MaHangHoa&lt;/DataMember&gt;&lt;Key&gt;MaHangHoa&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;137&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="TenHangHoa"&gt;&lt;Caption&gt;Tên hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;TenHangHoa&lt;/DataMember&gt;&lt;Key&gt;TenHangHoa&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;155&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="NhomHangHoaId"&gt;&lt;Caption&gt;Nhóm hàng hoá&lt;/Caption&gt;&lt;DataMember&gt;NhomHangHoaId&lt;/DataMember&gt;&lt;Key&gt;NhomHangHoaId&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;162&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="DonGiaNhap"&gt;&lt;Caption&gt;Đơn giá nhập&lt;/Caption&gt;&lt;DataMember&gt;DonGiaNhap&lt;/DataMember&gt;&lt;Key&gt;DonGiaNhap&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;137&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="DonGiaBan"&gt;&lt;Caption&gt;Đơn giá bán&lt;/Caption&gt;&lt;DataMember&gt;DonGiaBan&lt;/DataMember&gt;&lt;Key&gt;DonGiaBan&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;159&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="DonViTinh"&gt;&lt;Caption&gt;Đơn vị tính&lt;/Caption&gt;&lt;DataMember&gt;DonViTinh&lt;/DataMember&gt;&lt;Key&gt;DonViTinh&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;169&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="GhiChu"&gt;&lt;Caption&gt;Ghi chú&lt;/Caption&gt;&lt;DataMember&gt;GhiChu&lt;/DataMember&gt;&lt;Key&gt;GhiChu&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;152&lt;/Width&gt;&lt;WordWrap&gt;True&lt;/WordWrap&gt;&lt;CellStyle&gt;&lt;BackColor&gt;White&lt;/BackColor&gt;&lt;ForeColor&gt;Red&lt;/ForeColor&gt;&lt;/CellStyle&gt;&lt;/Column6&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowIndex&lt;/RowHeaderContent&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="TenNhom"&gt;&lt;Caption&gt;Tên nhóm&lt;/Caption&gt;&lt;DataMember&gt;TenNhom&lt;/DataMember&gt;&lt;Key&gt;TenNhom&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;714&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="GhiChu"&gt;&lt;Caption&gt;Ghi chú&lt;/Caption&gt;&lt;DataMember&gt;GhiChu&lt;/DataMember&gt;&lt;Key&gt;GhiChu&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;357&lt;/Width&gt;&lt;CellStyle&gt;&lt;ForeColor&gt;Red&lt;/ForeColor&gt;&lt;/CellStyle&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;1&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;True&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowIndex&lt;/RowHeaderContent&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
   <data name="btnExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -255,6 +244,17 @@
         vr/BEJ29fw4evx+FR6lhKL8WNuZ5UIJPbI3rBtzC898a4AI7mEYeUXEniGQimEYeUXEniGRWHB1ISjW1
         hRwyb5NjWYoU3rKKZJDjVpUdx56dDDGN8wSigT14AiZEiWiMsG4Wc9j2fxNrU+RXy7ClYopxGZ9vB/Dl
         oju0vmEhAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnReadFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAT5JREFUWEft
+        kjFLw2AQhvNrBAeXYsBZ/AeOnZzc3UWngr/A0lnp4FB1q9LiYDtVRHAQ2+LSgpPFpiqkw8mFOzDNd21z
+        XMBCHniW8L33vpR6OTmzbJa7gK4f12NeNlupLF13ojt+ufvhV/o+nV+MZsDBUQl29/Yj+RsPICeF0942
+        VcxHMwCL1wpbkfxtZgD65Vded6hGhgMZDEADqpHhxxkNAKqR4Yf/YMBNbECteR8r/avzT3j1kChHqUaG
+        H26ctGMDDqt3UGsky11eNNpQPHtOlKNUI+MKWUo1Mq6QpVQj4wpZSjUyrpClVCPDD4fjEKwYfIbpB1ij
+        HjAaB/D40lOJWUY9IJxOo0MaMcus7gA85Pp5lxGzjHqAFeoBk+8feBu+q8Qss7oDrEg94PxpBLf9wES8
+        lXpAVlJNTg7heb/s9QL2t3YZAgAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

@@ -31,6 +31,12 @@ namespace WarehouseManagement
             {
                 if (!ValidateForm(false))
                     return;
+                List<NhomHangHoa> NhomHangHoaCollection = NhomHangHoa.SelectCollectionAll();
+                if (NhomHangHoaCollection.Any(x=>x.TenNhom.ToLower().Trim()== txtTenNhom.Text.ToLower().Trim()))
+                {
+                    errorProvider.SetError(txtTenNhom, "Tên nhóm hàng hoá đã tồn tại");
+                    return;
+                }
                 nhomHangHoa.TenNhom = txtTenNhom.Text.Trim().ToUpper();
                 nhomHangHoa.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);

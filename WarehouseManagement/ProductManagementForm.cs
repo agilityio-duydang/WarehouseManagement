@@ -209,6 +209,7 @@ namespace WarehouseManagement
         {
             ReadExcelForm f = new ReadExcelForm();
             f.ShowDialog(this);
+            btnSearch_Click(null, null);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WarehouseManagement
 {
-    partial class ReadExcelForm
+    partial class ReadExcelCategoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadExcelForm));
             Janus.Windows.GridEX.GridEXLayout dgList_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadExcelCategoryForm));
             Janus.Windows.GridEX.GridEXLayout dgListInValid_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
-            this.btnReadFile = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
             this.uiGroupBox4 = new Janus.Windows.EditControls.UIGroupBox();
             this.uiTab1 = new Janus.Windows.UI.Tab.UITab();
@@ -46,6 +45,7 @@
             this.linkFileExcel = new System.Windows.Forms.LinkLabel();
             this.uiGroupBox1 = new Janus.Windows.EditControls.UIGroupBox();
             this.btnSelectFile = new Janus.Windows.EditControls.UIButton();
+            this.btnReadFile = new Janus.Windows.EditControls.UIButton();
             this.txtFilePath = new Janus.Windows.GridEX.EditControls.EditBox();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox3)).BeginInit();
             this.uiGroupBox3.SuspendLayout();
@@ -63,20 +63,6 @@
             this.uiGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnReadFile
-            // 
-            this.btnReadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReadFile.Image = ((System.Drawing.Image)(resources.GetObject("btnReadFile.Image")));
-            this.btnReadFile.ImageIndex = 4;
-            this.btnReadFile.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnReadFile.Location = new System.Drawing.Point(735, 24);
-            this.btnReadFile.Name = "btnReadFile";
-            this.btnReadFile.Size = new System.Drawing.Size(113, 31);
-            this.btnReadFile.TabIndex = 18;
-            this.btnReadFile.Text = "Đọc File";
-            this.btnReadFile.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnReadFile.Click += new System.EventHandler(this.btnReadFile_Click);
-            // 
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
@@ -87,7 +73,7 @@
             this.uiGroupBox3.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox3.Name = "uiGroupBox3";
             this.uiGroupBox3.Size = new System.Drawing.Size(1137, 602);
-            this.uiGroupBox3.TabIndex = 317;
+            this.uiGroupBox3.TabIndex = 318;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
             // uiGroupBox4
@@ -125,7 +111,7 @@
             this.uiTabPage2.Name = "uiTabPage2";
             this.uiTabPage2.Size = new System.Drawing.Size(1123, 431);
             this.uiTabPage2.TabStop = true;
-            this.uiTabPage2.Text = "Danh sách hàng hoá hợp lệ";
+            this.uiTabPage2.Text = "Danh sách nhóm hàng hoá hợp lệ";
             // 
             // dgList
             // 
@@ -136,13 +122,12 @@
             this.dgList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgList.GroupByBoxVisible = false;
             this.dgList.Location = new System.Drawing.Point(0, 0);
-            this.dgList.Margin = new System.Windows.Forms.Padding(6);
+            this.dgList.Margin = new System.Windows.Forms.Padding(5);
             this.dgList.Name = "dgList";
             this.dgList.RecordNavigator = true;
             this.dgList.Size = new System.Drawing.Size(1123, 431);
-            this.dgList.TabIndex = 321;
+            this.dgList.TabIndex = 7;
             this.dgList.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
-            this.dgList.LoadingRow += new Janus.Windows.GridEX.RowLoadEventHandler(this.dgList_LoadingRow);
             // 
             // uiTabPage1
             // 
@@ -151,7 +136,7 @@
             this.uiTabPage1.Name = "uiTabPage1";
             this.uiTabPage1.Size = new System.Drawing.Size(1123, 431);
             this.uiTabPage1.TabStop = true;
-            this.uiTabPage1.Text = "Danh sách hàng hoá không hợp lệ";
+            this.uiTabPage1.Text = "Danh sách nhóm hàng hoá không hợp lệ";
             // 
             // dgListInValid
             // 
@@ -162,13 +147,12 @@
             this.dgListInValid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgListInValid.GroupByBoxVisible = false;
             this.dgListInValid.Location = new System.Drawing.Point(0, 0);
-            this.dgListInValid.Margin = new System.Windows.Forms.Padding(6);
+            this.dgListInValid.Margin = new System.Windows.Forms.Padding(5);
             this.dgListInValid.Name = "dgListInValid";
             this.dgListInValid.RecordNavigator = true;
             this.dgListInValid.Size = new System.Drawing.Size(1123, 431);
-            this.dgListInValid.TabIndex = 322;
+            this.dgListInValid.TabIndex = 7;
             this.dgListInValid.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
-            this.dgListInValid.LoadingRow += new Janus.Windows.GridEX.RowLoadEventHandler(this.dgListInValid_LoadingRow);
             // 
             // uiGroupBox2
             // 
@@ -227,7 +211,7 @@
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Đóng";
             this.btnClose.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // linkFileExcel
             // 
@@ -240,6 +224,7 @@
             this.linkFileExcel.TabIndex = 17;
             this.linkFileExcel.TabStop = true;
             this.linkFileExcel.Text = "File Excel mẫu";
+            this.linkFileExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkFileExcel_LinkClicked);
             // 
             // uiGroupBox1
             // 
@@ -270,6 +255,20 @@
             this.btnSelectFile.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
+            // btnReadFile
+            // 
+            this.btnReadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReadFile.Image = ((System.Drawing.Image)(resources.GetObject("btnReadFile.Image")));
+            this.btnReadFile.ImageIndex = 4;
+            this.btnReadFile.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnReadFile.Location = new System.Drawing.Point(735, 24);
+            this.btnReadFile.Name = "btnReadFile";
+            this.btnReadFile.Size = new System.Drawing.Size(113, 31);
+            this.btnReadFile.TabIndex = 18;
+            this.btnReadFile.Text = "Đọc File";
+            this.btnReadFile.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnReadFile.Click += new System.EventHandler(this.btnReadFile_Click);
+            // 
             // txtFilePath
             // 
             this.txtFilePath.Location = new System.Drawing.Point(10, 26);
@@ -278,16 +277,18 @@
             this.txtFilePath.Size = new System.Drawing.Size(596, 27);
             this.txtFilePath.TabIndex = 15;
             // 
-            // ReadExcelForm
+            // ReadExcelCategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1137, 602);
             this.Controls.Add(this.uiGroupBox3);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "ReadExcelForm";
+            this.Margin = new System.Windows.Forms.Padding(11);
+            this.Name = "ReadExcelCategoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Đọc hàng hoá từ File Excel";
+            this.Load += new System.EventHandler(this.ReadExcelCategoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox3)).EndInit();
             this.uiGroupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox4)).EndInit();
@@ -310,21 +311,22 @@
 
         #endregion
 
-        private Janus.Windows.EditControls.UIButton btnReadFile;
         private Janus.Windows.EditControls.UIGroupBox uiGroupBox3;
-        private Janus.Windows.GridEX.EditControls.EditBox txtFilePath;
-        private Janus.Windows.EditControls.UIButton btnSelectFile;
-        private Janus.Windows.EditControls.UIGroupBox uiGroupBox1;
         private Janus.Windows.EditControls.UIGroupBox uiGroupBox4;
-        private Janus.Windows.EditControls.UIGroupBox uiGroupBox2;
-        private Janus.Windows.EditControls.UIButton btnClose;
-        private System.Windows.Forms.LinkLabel linkFileExcel;
-        private Janus.Windows.EditControls.UIButton btnConfirm;
         private Janus.Windows.UI.Tab.UITab uiTab1;
         private Janus.Windows.UI.Tab.UITabPage uiTabPage2;
-        private Janus.Windows.GridEX.GridEX dgList;
         private Janus.Windows.UI.Tab.UITabPage uiTabPage1;
-        private Janus.Windows.GridEX.GridEX dgListInValid;
+        private Janus.Windows.EditControls.UIGroupBox uiGroupBox2;
         private Janus.Windows.EditControls.UIButton btnExport;
+        private Janus.Windows.EditControls.UIButton btnConfirm;
+        private Janus.Windows.EditControls.UIButton btnClose;
+        private System.Windows.Forms.LinkLabel linkFileExcel;
+        private Janus.Windows.EditControls.UIGroupBox uiGroupBox1;
+        private Janus.Windows.EditControls.UIButton btnSelectFile;
+        private Janus.Windows.EditControls.UIButton btnReadFile;
+        private Janus.Windows.GridEX.EditControls.EditBox txtFilePath;
+        private Janus.Windows.GridEX.GridEX dgList;
+        private Janus.Windows.GridEX.GridEX dgListInValid;
+
     }
 }

@@ -141,5 +141,12 @@ namespace WarehouseManagement
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
         }
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            ReadExcelCategoryForm f = new ReadExcelCategoryForm();
+            f.ShowDialog(this);
+            btnSearch_Click(null, null);
+        }
     }
 }
