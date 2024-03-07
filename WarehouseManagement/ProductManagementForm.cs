@@ -22,6 +22,14 @@ namespace WarehouseManagement
 
         private void ProductManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Products.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Products.AddNew)))
+            {
+                btnImportExcel.Enabled = false;
+            }
             LoadCategoty();
             btnSearch_Click(null, null);
         }
@@ -100,6 +108,7 @@ namespace WarehouseManagement
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
+                ShowMessage("Xóa không thành công. Một hoặc nhiều hoá đơn đã chứa hàng hoá này !", false, false);
             }
         }
 

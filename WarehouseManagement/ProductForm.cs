@@ -36,6 +36,10 @@ namespace WarehouseManagement
         {
             try
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.AddNew)))
+                {
+                    btnAddMore.Enabled = false;
+                }
                 LoadCategoty();
                 if (hanghoa == null)
                 {
@@ -44,6 +48,11 @@ namespace WarehouseManagement
                 }
                 else
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Products.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                        btnSaveAndNew.Enabled = false;
+                    }
                     SetData();
                 }
             }
@@ -105,6 +114,12 @@ namespace WarehouseManagement
                 if (!ValidateForm(false))
                     return;
                 GetData();
+                List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
+                if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                {
+                    errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
+                    return;
+                }
                 hanghoa.InsertUpdate();
                 XuatNhapTon XuatNhapTon = new XuatNhapTon();
                 XuatNhapTon.MaHangHoa = hanghoa.MaHangHoa;
@@ -136,6 +151,12 @@ namespace WarehouseManagement
                 if (!ValidateForm(false))
                     return;
                 GetData();
+                List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
+                if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                {
+                    errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
+                    return;
+                }
                 hanghoa.InsertUpdate();
                 XuatNhapTon XuatNhapTon = new XuatNhapTon();
                 XuatNhapTon.MaHangHoa = hanghoa.MaHangHoa;

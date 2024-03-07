@@ -44,14 +44,14 @@ namespace WarehouseManagement.Administration
                 {
                     if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.UpdateGroup)))
                     {
-                        btnUpdate.Visible = false;
+                        btnUpdate.Enabled = false;
                     }
                 }
                 else
                 {
                     if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.CreateGroup)))
                     {
-                        btnUpdate.Visible = false;
+                        btnUpdate.Enabled = false;
                     }
                 }
             }

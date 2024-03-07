@@ -30,6 +30,10 @@ namespace WarehouseManagement
             {
                 if (NhaCungCap != null)
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Suppliers.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                    }
                     SetSupplier();
                     PhieuNhapKhoCollection = PhieuNhapKho.SelectCollectionBy_NhaCungCapId(NhaCungCap.Id);
                     CongNoNhaCungCapCollection = CongNoNhaCungCap.SelectCollectionBy_NhaCungCapId(NhaCungCap.Id);

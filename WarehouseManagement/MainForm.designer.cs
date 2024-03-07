@@ -217,6 +217,7 @@
             this.grPnSystem.Size = new System.Drawing.Size(252, 479);
             this.grPnSystem.TabIndex = 4;
             this.grPnSystem.Text = "Bán hàng";
+            this.grPnSystem.SelectedPanelChanged += new Janus.Windows.UI.Dock.PanelActionEventHandler(this.grPnSystem_SelectedPanelChanged);
             // 
             // pnCashier
             // 

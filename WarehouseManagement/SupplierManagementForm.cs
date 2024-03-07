@@ -23,6 +23,10 @@ namespace WarehouseManagement
         {
             try
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Suppliers.Delete)))
+                {
+                    btnDelete.Enabled = false;
+                }
                 btnSearch_Click(null, null);
             }
             catch (Exception ex)
@@ -96,6 +100,7 @@ namespace WarehouseManagement
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
+                ShowMessage("Xóa không thành công. Một hoặc nhiều phiếu nhập kho hoặc phiếu chi hoặc công nợ đã chứa nhà cung cấp này!", false, false);
             }
         }
 

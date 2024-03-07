@@ -157,7 +157,8 @@ namespace WarehouseManagement
             login.ShowDialog(this);
             if (isLoginSuccess)
             {
-                user = User.Load(((SiteIdentity)MainForm.QuanTri.Identity).user.ID);
+                user = User.Load(((SiteIdentity)MainForm.EcsQuanTri.Identity).user.ID);
+                CheckShowPanelPermission();
                 this.Show();
             }
             else
@@ -350,7 +351,7 @@ namespace WarehouseManagement
             Form[] forms = this.MdiChildren;
             for (int i = 0; i < forms.Length; i++)
             {
-                if (forms[i].Name.ToString().Equals("WarehouseManagement"))
+                if (forms[i].Name.ToString().Equals("WareHouseManagementForm"))
                 {
                     forms[i].Activate();
                     return;
@@ -518,7 +519,8 @@ namespace WarehouseManagement
             login.ShowDialog(this);
             if (isLoginSuccess)
             {
-                user = User.Load(((SiteIdentity)MainForm.QuanTri.Identity).user.ID);
+                user = User.Load(((SiteIdentity)MainForm.EcsQuanTri.Identity).user.ID);
+                CheckShowPanelPermission();
                 this.Show();
                 GlobalSettings.Refreskey();
 
@@ -545,6 +547,223 @@ namespace WarehouseManagement
             {
                 MainForm.isLoginSuccess = false;
             }
+        }
+        public void CheckShowPanelPermission()
+        {
+            #region Quản trị
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.Management)))
+            {
+                this.cmdUser.Enabled = cmdUser1.Enabled = Janus.Windows.UI.InheritableBoolean.False;
+                this.cmdManagementUserGroup.Enabled = cmdManagementUserGroup1.Enabled = Janus.Windows.UI.InheritableBoolean.False;
+            }
+            else
+            {
+                this.cmdUser.Enabled = cmdUser1.Enabled = Janus.Windows.UI.InheritableBoolean.True;
+                this.cmdManagementUserGroup.Enabled = cmdManagementUserGroup1.Enabled = Janus.Windows.UI.InheritableBoolean.True;
+            }
+            #endregion
+            #region Bán hàng
+            // Thu ngân
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Sales.Cashier)))
+            {
+                this.explorerBarCashier.Groups[0].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashier.Groups[0].Items[0].Enabled = true; 
+            }
+            // Khách hàng
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Customers.AddNew)))
+            {
+                this.explorerBarCashier.Groups[1].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashier.Groups[1].Items[0].Enabled = true;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Customers.Management)))
+            {
+                this.explorerBarCashier.Groups[1].Items[1].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashier.Groups[1].Items[1].Enabled = true;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Customers.DebtManagement)))
+            {
+                this.explorerBarCashier.Groups[1].Items[2].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashier.Groups[1].Items[2].Enabled = true;
+            }
+            #endregion
+            #region Hàng hoá
+            // Nhóm hàng hoá
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.AddNew)))
+            {
+                this.explorerBarProducts.Groups[0].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarProducts.Groups[0].Items[0].Enabled = true;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.Management)))
+            {
+                this.explorerBarProducts.Groups[0].Items[1].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarProducts.Groups[0].Items[1].Enabled = true;
+            }
+            // Hàng hoá
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Products.AddNew)))
+            {
+                this.explorerBarProducts.Groups[1].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarProducts.Groups[1].Items[0].Enabled = true;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Products.Management)))
+            {
+                this.explorerBarProducts.Groups[1].Items[1].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarProducts.Groups[1].Items[1].Enabled = true;
+            }
+            #endregion
+            #region Xuất nhập tồn
+            // Xuất nhập tồn
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Inventories.Management)))
+            {
+                this.explorerBarCashFlow.Groups[0].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashFlow.Groups[0].Items[0].Enabled = true;
+            }
+            // Nhập kho
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PurchaseOrders.AddNew)))
+            {
+                this.explorerBarCashFlow.Groups[1].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashFlow.Groups[1].Items[0].Enabled = true;
+            }
+            // Theo dõi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PurchaseOrders.Management)))
+            {
+                this.explorerBarCashFlow.Groups[1].Items[1].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashFlow.Groups[1].Items[1].Enabled = true;
+            }
+            // Nhà cung cấp
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Suppliers.AddNew)))
+            {
+                this.explorerBarCashFlow.Groups[2].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashFlow.Groups[2].Items[0].Enabled = true;
+            }
+            // Theo dõi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Suppliers.Management)))
+            {
+                this.explorerBarCashFlow.Groups[2].Items[1].Enabled = false;
+            }
+            else 
+            {
+                this.explorerBarCashFlow.Groups[2].Items[1].Enabled = true;
+            }
+            // Kho
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(WareHouses.AddNew)))
+            {
+                this.explorerBarCashFlow.Groups[3].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCashFlow.Groups[3].Items[0].Enabled = true; 
+            }
+            // Theo dõi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(WareHouses.Management)))
+            {
+                this.explorerBarCashFlow.Groups[3].Items[1].Enabled = false;
+            }
+            else 
+            {
+                this.explorerBarCashFlow.Groups[3].Items[1].Enabled = true;
+            }
+            #endregion
+            #region Sổ quỹ
+            // Theo dõi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(CashFlows.Management)))
+            {
+                this.explorerBarCash.Groups[0].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[0].Items[0].Enabled = true;
+            }
+            // Thêm mới phiếu chi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Payments.AddNew)))
+            {
+                this.explorerBarCash.Groups[1].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[1].Items[0].Enabled = true;
+            }
+            // Thêm mới loại chi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PaymentTypes.AddNew)))
+            {
+                this.explorerBarCash.Groups[1].Items[1].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[1].Items[1].Enabled = true;
+            }
+            // Theo dõi phiếu chi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Payments.Management)))
+            {
+                this.explorerBarCash.Groups[1].Items[2].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[1].Items[2].Enabled = true;
+            }
+            // Thêm mới phiếu thu
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Receiptes.AddNew)))
+            {
+                this.explorerBarCash.Groups[2].Items[0].Enabled = false;
+            }
+            else 
+            {
+                this.explorerBarCash.Groups[2].Items[0].Enabled = true;
+            }
+            // Thêm mới loại thu
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(ReceiptsTypes.AddNew)))
+            {
+                this.explorerBarCash.Groups[2].Items[1].Enabled = false;
+            }
+            else 
+            {
+                this.explorerBarCash.Groups[2].Items[1].Enabled = true;
+            }
+            // Theo dõi phiếu thu
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Receiptes.Management)))
+            {
+                this.explorerBarCash.Groups[2].Items[2].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[2].Items[2].Enabled = true;
+            }
+            #endregion
         }
 
         private void pnMain_MdiTabMouseDown(object sender, Janus.Windows.UI.Dock.MdiTabMouseEventArgs e)
@@ -621,6 +840,11 @@ namespace WarehouseManagement
             ReceiptsForm f = new ReceiptsForm();
             f.User = user;
             f.ShowDialog(this);
+        }
+
+        private void grPnSystem_SelectedPanelChanged(object sender, Janus.Windows.UI.Dock.PanelActionEventArgs e)
+        {
+
         }
 
     }

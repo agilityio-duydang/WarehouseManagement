@@ -29,6 +29,10 @@ namespace WarehouseManagement
             {
                 if (user != null)
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.UpdateUser)))
+                    {
+                        btnUpdate.Enabled = false;
+                    }
                     txtUserName.Text = user.UserName;
                     txtFullName.Text = user.FullName;
                     txtDiaChi.Text = user.DiaChi;
@@ -38,7 +42,7 @@ namespace WarehouseManagement
                     {
                         chkIsAdmin.CheckState = CheckState.Checked;
                     }
-                    grbAdd.Enabled = false;
+                    grbAdd.Enabled = true;
 
                     user.LoadRoleList();
                     GROUPS g = new GROUPS();
@@ -59,14 +63,14 @@ namespace WarehouseManagement
                     {
                         if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.UpdateUser)))
                         {
-                            btnUpdate.Visible = false;
+                            btnUpdate.Enabled = false;
                         }
                     }
                     else
                     {
                         if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.CreateUser)))
                         {
-                            btnUpdate.Visible = false;
+                            btnUpdate.Enabled = false;
                         }
                     }
                     if (user.isAdmin)
@@ -99,22 +103,9 @@ namespace WarehouseManagement
                 user.Email = txtEmail.Text;
                 if (user.ID == 0)
                 {
-                    //if (txtUserName.Text.Length == 0)
-                    //{
-                    //    ShowMessage("Nhập tên đăng nhập", false, false);
-                    //    //MessageBox.Show("Nhập tên đăng nhập ", "Thông báo hệ thống", MessageBoxButtons.OK);
-                    //    return;
-                    //}
-                    //if (txtPasswordNew.Text.Length == 0)
-                    //{
-                    //    ShowMessage("Nhập mật khẩu mới ", false, false);
-                    //    //MessageBox.Show("Nhập mật khẩu mới ", "Thông báo hệ thống", MessageBoxButtons.OK);
-                    //    return;
-                    //}
                     if (user.CheckUserName(txtUserName.Text.Trim()))
                     {
                         ShowMessage("Tên người dùng đã có .Bạn hãy nhập tên khác ", false, false);
-                        //MessageBox.Show("Tên người dùng đã có .Bạn hãy nhập tên khác ", "Thông báo hệ thống", MessageBoxButtons.OK);
                         return;
                     }
                     if (txtPasswordNew.Text.Trim().Length > 0)
@@ -122,22 +113,22 @@ namespace WarehouseManagement
                         if (txtPasswordNew.Text.Trim().ToUpper() != txtRePassword.Text.Trim().ToUpper())
                         {
                             ShowMessage("Nhập mật khẩu không giống nhau", false, false);
-                            //MessageBox.Show("Nhập mật khẩu không giống nhau ", "Thông báo hệ thống", MessageBoxButtons.OK);
                             return;
                         }
                     }
                     user.Password = EncryptPassword(txtPasswordNew.Text.Trim());
-                    //user.Insert();
-                    //ShowMessage("Tạo mới người dùng thành công", false, false);
-                    //MessageBox.Show("Tạo mới người dùng thành công ", "Thông báo hệ thống", MessageBoxButtons.OK);
-                    //this.Close();
                 }
                 else
                 {
-                    //user.Update();
-
-                    //MessageBox.Show("Cập nhật thông tin thành công ", "Thông báo hệ thống", MessageBoxButtons.OK);
-                    //this.Close();
+                    if (txtPasswordNew.Text.Trim().Length > 0)
+                    {
+                        if (txtPasswordNew.Text.Trim().ToUpper() != txtRePassword.Text.Trim().ToUpper())
+                        {
+                            ShowMessage("Nhập mật khẩu không giống nhau", false, false);
+                            return;
+                        }
+                    }
+                    user.Password = EncryptPassword(txtPasswordNew.Text.Trim());
                 }
                 user.RoleList.Clear();
                 if (!user.isAdmin)
@@ -153,7 +144,6 @@ namespace WarehouseManagement
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Lỗi\n " + ex.Message, "Thông báo hệ thống", MessageBoxButtons.OK);
                 Logger.LocalLogger.Instance().WriteMessage(ex);
                 //ShowMessage("Có lỗi trong quá trình xử lý thông tin \r\n" + ex.Message, false, true);
             }

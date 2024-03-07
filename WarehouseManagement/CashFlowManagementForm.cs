@@ -24,6 +24,11 @@ namespace WarehouseManagement
 
         private void CashFlowManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(CashFlows.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
+
             btnSearch_Click(null, null);
             LoadCustomer();
             LoadNhanVien();

@@ -21,6 +21,18 @@ namespace WarehouseManagement.Administration
         private void ManagementUserForm_Load(object sender, EventArgs e)
         {
 
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.CreateUser)))
+            {
+                cmdAdd.Enabled = cmdAdd1.Enabled = Janus.Windows.UI.InheritableBoolean.False;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.Permission)))
+            {
+                cmdRole.Enabled = cmdRole1.Enabled = Janus.Windows.UI.InheritableBoolean.False;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.DeleteUser)))
+            {
+                btnDelete.Enabled = false;
+            }
             //if ((((SiteIdentity)MainForm.QuanTri.Identity).user.Role).ToString() == "True")
             //{
                 this.Show();

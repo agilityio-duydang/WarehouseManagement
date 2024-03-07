@@ -33,15 +33,15 @@ namespace WarehouseManagement
             {
                 if (!ValidateForm(false))
                     return;
-                MainForm.QuanTri = Principal.ValidateLogin(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-                if (MainForm.QuanTri != null)
+                MainForm.EcsQuanTri = ECSPrincipal.ValidateLogin(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                if (MainForm.EcsQuanTri != null)
                 {
                     //
-                    User user = User.Load(((SiteIdentity)MainForm.QuanTri.Identity).user.ID);
+                    User user = User.Load(((SiteIdentity)MainForm.EcsQuanTri.Identity).user.ID);
                     user.DataBase = GlobalSettings.DATABASE_NAME;
                     user.Update();
 
-                    user = User.Load(((SiteIdentity)MainForm.QuanTri.Identity).user.ID);
+                    user = User.Load(((SiteIdentity)MainForm.EcsQuanTri.Identity).user.ID);
                     user.HostName = System.Environment.MachineName;
                     user.IP = GlobalSettings.GetLocalIPAddress();
                     user.DataBase = GlobalSettings.DATABASE_NAME;

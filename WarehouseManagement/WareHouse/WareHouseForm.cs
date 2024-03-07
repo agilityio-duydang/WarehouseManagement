@@ -26,6 +26,10 @@ namespace WarehouseManagement.WareHouse
             {
                 if (Kho != null)
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(WareHouses.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                    }
                     SetWareHouse();
                     PhieuNhapKhoCollection = PhieuNhapKho.SelectCollectionDynamic("MaKho = N'" + Kho.TenKho + "'","");
                     CaculatorData();

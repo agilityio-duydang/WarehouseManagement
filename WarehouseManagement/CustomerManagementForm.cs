@@ -23,6 +23,10 @@ namespace WarehouseManagement
         {
             try
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Customers.Delete)))
+                {
+                    btnDelete.Enabled = false;
+                }
                 btnSearch_Click(null, null);
             }
             catch (Exception ex)

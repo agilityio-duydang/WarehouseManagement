@@ -28,11 +28,16 @@ namespace WarehouseManagement.Administration
                 dgList.DataSource = collection;
                 if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.CreateGroup)))
                 {
-                    cmdAdd.Enabled = Janus.Windows.UI.InheritableBoolean.False;
+                    cmdAdd.Enabled = cmdAdd1.Enabled = Janus.Windows.UI.InheritableBoolean.False;
+                }
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.Permission)))
+                {
+                    cmdRole.Enabled = cmdRole1.Enabled = Janus.Windows.UI.InheritableBoolean.False;
                 }
                 if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(RoleSystem.DeleteGroup)))
                 {
                     dgList.AllowDelete = Janus.Windows.GridEX.InheritableBoolean.False;
+                    btnDelete.Enabled = false;
                 }
             }
             catch (Exception ex)

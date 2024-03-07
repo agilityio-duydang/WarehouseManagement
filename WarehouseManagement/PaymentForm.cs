@@ -23,9 +23,17 @@ namespace WarehouseManagement
 
         private void PaymentForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PaymentTypes.AddNew)))
+            {
+                btnAddMore.Enabled = false;
+            }
             LoadCategoty();
             if (Payment != null)
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Payments.Edit)))
+                {
+                    btnSave.Enabled = false;
+                }
                 txtThoiGian.Value = Payment.ThoiGian;
                 txtMaPhieu.Text = Payment.MaPhieu;
                 txtNguoiNhan.Text = Payment.NguoiNhan;
@@ -192,6 +200,13 @@ namespace WarehouseManagement
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAddMore_Click(object sender, EventArgs e)
+        {
+            PaymentTypeForm f = new PaymentTypeForm();
+            f.ShowDialog(this);
+            LoadCategoty();
         }
     }
 }
