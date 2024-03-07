@@ -48,6 +48,7 @@
             this.btnCancel = new Janus.Windows.EditControls.UIButton();
             this.btnSaveAndNew = new Janus.Windows.EditControls.UIButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAddMore = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
@@ -58,6 +59,7 @@
             // uiGroupBox2
             // 
             this.uiGroupBox2.AutoScroll = true;
+            this.uiGroupBox2.Controls.Add(this.btnAddMore);
             this.uiGroupBox2.Controls.Add(this.txtMaPhieu);
             this.uiGroupBox2.Controls.Add(this.label1);
             this.uiGroupBox2.Controls.Add(this.txtThoiGian);
@@ -286,6 +288,20 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // btnAddMore
+            // 
+            this.btnAddMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMore.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMore.Image")));
+            this.btnAddMore.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddMore.Location = new System.Drawing.Point(447, 100);
+            this.btnAddMore.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddMore.Name = "btnAddMore";
+            this.btnAddMore.Size = new System.Drawing.Size(198, 27);
+            this.btnAddMore.TabIndex = 23;
+            this.btnAddMore.Text = "Thêm mới loại chi";
+            this.btnAddMore.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnAddMore.Click += new System.EventHandler(this.btnAddMore_Click);
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -328,6 +344,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private Janus.Windows.GridEX.EditControls.EditBox txtMaPhieu;
         private System.Windows.Forms.Label label1;
+        private Janus.Windows.EditControls.UIButton btnAddMore;
 
     }
 }

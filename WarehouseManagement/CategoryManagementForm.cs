@@ -21,6 +21,14 @@ namespace WarehouseManagement
 
         private void CategoryManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.AddNew)))
+            {
+                btnImportExcel.Enabled = false;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
             btnSearch_Click(null,null);
         }
 
@@ -70,13 +78,14 @@ namespace WarehouseManagement
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else
-                        ShowMessage("Xóa không thành công. ", false, false);
+                        ShowMessage("Xóa không thành công. Một hoặc nhiều hàng hoá đã được lưu với nhóm hàng hoá này !", false, false);
                 }
                 btnSearch_Click(null, null);
             }
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
+                ShowMessage("Xóa không thành công. Một hoặc nhiều hàng hoá đã được lưu với nhóm hàng hoá này !", false, false);
             }
         }
 

@@ -23,6 +23,10 @@ namespace WarehouseManagement
 
         private void PaymentManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Payments.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
             LoadCategoty();
             btnSearch_Click(null,null);
         }

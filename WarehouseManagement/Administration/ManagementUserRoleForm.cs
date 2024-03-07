@@ -119,6 +119,20 @@ namespace WarehouseManagement.Administration
                         e.Row.Cells["ID_MODULE"].Text = "Nhập kho";
                     else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "6")
                         e.Row.Cells["ID_MODULE"].Text = "Quản trị hệ thống";
+                    else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "7")
+                        e.Row.Cells["ID_MODULE"].Text = "Khách hàng";
+                    else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "8")
+                        e.Row.Cells["ID_MODULE"].Text = "Nhà cung cấp";
+                    else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "9")
+                        e.Row.Cells["ID_MODULE"].Text = "Kho";
+                    else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "10")
+                        e.Row.Cells["ID_MODULE"].Text = "Phiếu chi";
+                    else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "11")
+                        e.Row.Cells["ID_MODULE"].Text = "Loại chi";
+                    else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "12")
+                        e.Row.Cells["ID_MODULE"].Text = "Phiếu thu";
+                    else if (e.Row.Cells["ID_MODULE"].Value.ToString() == "13")
+                        e.Row.Cells["ID_MODULE"].Text = "Loại thu";
                     if (e.Row.Cells["Check"].Value.ToString() == "True")
                     {
                         e.Row.CheckState = RowCheckState.Checked;

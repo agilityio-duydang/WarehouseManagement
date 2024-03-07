@@ -59,6 +59,10 @@ namespace WarehouseManagement
             {
                 if (nhomHangHoa != null)
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                    }
                     txtTenNhom.Text = nhomHangHoa.TenNhom;
                 }
                 else

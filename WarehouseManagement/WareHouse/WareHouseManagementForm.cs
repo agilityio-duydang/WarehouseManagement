@@ -23,6 +23,10 @@ namespace WarehouseManagement.WareHouse
         {
             try
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(WareHouses.Delete)))
+                {
+                    btnDelete.Enabled = false;
+                }
                 btnSearch_Click(null, null);
             }
             catch (Exception ex)
@@ -95,6 +99,7 @@ namespace WarehouseManagement.WareHouse
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
+                ShowMessage("Xóa không thành công. Một hoặc nhiều phiếu nhập kho đã chứa thông tin của kho này!", false, false);
             }
         }
 
