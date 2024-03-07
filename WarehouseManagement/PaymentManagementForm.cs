@@ -73,6 +73,8 @@ namespace WarehouseManagement
                     {
                         Payment Payment = Payment.Load(id);
                         Payment.Delete();
+                        Helpers Helpers = new Helpers();
+                        Helpers.SendEmmailDeletePayment(Payment);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else

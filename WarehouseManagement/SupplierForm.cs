@@ -250,6 +250,17 @@ namespace WarehouseManagement
             {
                 if (!ValidateForm(false))
                     return;
+                if (NhaCungCap.Id == 0)
+                {
+                    List<NhaCungCap> NhaCungCapCollection = NhaCungCap.SelectCollectionAll();
+                    if (NhaCungCapCollection.Any(x => x.TenNhaCungCap.ToLower().Trim() == txtTen.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTen, "Tên nhà cung cấp đã tồn tại");
+                        txtTen.Focus();
+                        txtTen.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                }
                 GetSupplier();
                 NhaCungCap.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);

@@ -32,6 +32,17 @@ namespace WarehouseManagement
             {
                 if (!ValidateForm(false))
                     return;
+                if (paymentType.Id == 0)
+                {
+                    List<PaymentType> PaymentTypeCollection = PaymentType.SelectCollectionAll();
+                    if (PaymentTypeCollection.Any(x => x.Ten.ToLower().Trim() == txtLoaiChi.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtLoaiChi, "Tên loại chi đã tồn tại");
+                        txtLoaiChi.Focus();
+                        txtLoaiChi.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 paymentType.Ten = textInfo.ToTitleCase(txtLoaiChi.Text.Trim().ToLower());
                 paymentType.MoTa = textInfo.ToTitleCase(txtMoTa.Text.Trim().ToLower());

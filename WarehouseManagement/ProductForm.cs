@@ -114,21 +114,33 @@ namespace WarehouseManagement
                 if (!ValidateForm(false))
                     return;
                 GetData();
-                List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
-                if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                if (hanghoa.Id == 0)
                 {
-                    errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
-                    return;
+                    List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
+                    if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
+                        txtTenHangHoa.Focus();
+                        txtTenHangHoa.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
                 }
                 hanghoa.InsertUpdate();
-                XuatNhapTon XuatNhapTon = new XuatNhapTon();
+                XuatNhapTon XuatNhapTon = XuatNhapTon.SelectCollectionDynamic("MaHangHoa =N'" + hanghoa.MaHangHoa + "'","").FirstOrDefault();
+                if (XuatNhapTon == null)
+                {
+                    XuatNhapTon = new XuatNhapTon();
+                }
                 XuatNhapTon.MaHangHoa = hanghoa.MaHangHoa;
                 XuatNhapTon.TenHangHoa = hanghoa.TenHangHoa;
                 XuatNhapTon.NhomHangHoaId = hanghoa.NhomHangHoaId;
-                XuatNhapTon.DonGiaBan = hanghoa.DonGiaBan;
-                XuatNhapTon.DonGiaNhap = hanghoa.DonGiaNhap;
                 XuatNhapTon.DonViTinh = hanghoa.DonViTinh;
                 XuatNhapTon.GhiChu = hanghoa.GhiChu;
+                XuatNhapTon.DonGiaBan = hanghoa.DonGiaBan;
+                XuatNhapTon.DonGiaNhap = hanghoa.DonGiaNhap;
+                XuatNhapTon.ThanhTienNhap = XuatNhapTon.LuongNhap * hanghoa.DonGiaNhap;
+                XuatNhapTon.ThanhTienBan = XuatNhapTon.LuongBan * hanghoa.DonGiaBan;
+                XuatNhapTon.ThanhTienTon = XuatNhapTon.LuongTon * hanghoa.DonGiaNhap;
                 XuatNhapTon.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
                 this.Close();
@@ -151,14 +163,23 @@ namespace WarehouseManagement
                 if (!ValidateForm(false))
                     return;
                 GetData();
-                List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
-                if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                if (hanghoa.Id == 0)
                 {
-                    errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
-                    return;
+                    List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
+                    if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
+                        txtTenHangHoa.Focus();
+                        txtTenHangHoa.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
                 }
                 hanghoa.InsertUpdate();
-                XuatNhapTon XuatNhapTon = new XuatNhapTon();
+                XuatNhapTon XuatNhapTon = XuatNhapTon.SelectCollectionDynamic("MaHangHoa =N'" + hanghoa.MaHangHoa + "'", "").FirstOrDefault();
+                if (XuatNhapTon == null)
+                {
+                    XuatNhapTon = new XuatNhapTon();
+                }
                 XuatNhapTon.MaHangHoa = hanghoa.MaHangHoa;
                 XuatNhapTon.TenHangHoa = hanghoa.TenHangHoa;
                 XuatNhapTon.NhomHangHoaId = hanghoa.NhomHangHoaId;
