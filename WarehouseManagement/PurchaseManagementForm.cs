@@ -46,7 +46,7 @@ namespace WarehouseManagement
             try
             {
                 cbbMaKho.DataSource = Kho.SelectAll().Tables[0];
-                cbbMaKho.DisplayMember = "TenKho";
+                cbbMaKho.DisplayMember = "MaKho";
                 cbbMaKho.ValueMember = "Id";
             }
             catch (Exception ex)

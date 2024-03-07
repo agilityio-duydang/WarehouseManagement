@@ -74,6 +74,8 @@ namespace WarehouseManagement
                     {
                         PhieuThu PhieuThu = PhieuThu.Load(id);
                         PhieuThu.Delete();
+                        Helpers Helpers = new Helpers();
+                        Helpers.SendEmmailDeleteReceipts(PhieuThu);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else

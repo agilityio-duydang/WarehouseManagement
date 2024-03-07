@@ -127,12 +127,16 @@ namespace WarehouseManagement
                 if (Convert.ToDecimal(txtTraNCC.Text.Replace(" ₫", "")) < 0)
                 {
                     errorProvider.SetError(txtTraNCC, "Tiền trả NCC phải lớn hơn 0");
+                    txtTraNCC.Focus();
+                    txtTraNCC.BackColor = System.Drawing.SystemColors.Info;
                     return;
                 }
 
                 if (Convert.ToDecimal(txtNoSau.Text.Replace(" ₫", "")) > 0)
                 {
                     errorProvider.SetError(txtNoSau, "Tiền nợ sau phải nhỏ hơn hoặc bằng 0");
+                    txtNoSau.Focus();
+                    txtNoSau.BackColor = System.Drawing.SystemColors.Info;
                     return;
                 }
 

@@ -31,7 +31,7 @@ namespace WarehouseManagement.WareHouse
                         btnSave.Enabled = false;
                     }
                     SetWareHouse();
-                    PhieuNhapKhoCollection = PhieuNhapKho.SelectCollectionDynamic("MaKho = N'" + Kho.TenKho + "'","");
+                    PhieuNhapKhoCollection = PhieuNhapKho.SelectCollectionDynamic("MaKho = N'" + Kho.MaKho + "'","");
                     CaculatorData();
                     LoadHistory();
                 }
@@ -199,6 +199,17 @@ namespace WarehouseManagement.WareHouse
                 if (!ValidateForm(false))
                     return;
                 GetWareHouse();
+                if (Kho.Id == 0)
+                {
+                    List<Kho> KhoCollection = Kho.SelectCollectionAll();
+                    if (KhoCollection.Any(x => x.TenKho.ToLower().Trim() == txtTenKho.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenKho, "Tên kho đã tồn tại");
+                        txtTenKho.Focus();
+                        txtTenKho.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                }
                 Kho.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
                 this.Close();

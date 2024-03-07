@@ -91,6 +91,62 @@ namespace WarehouseManagement
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
         }
+        public void SendDeleteEmmail(HoaDon hoadon)
+        {
+            try
+            {
+                GlobalSettings.RefreshKey();
+                var fromAddress = new MailAddress("dangphuocduy@gmail.com", GlobalSettings.COMPANYNAME);
+                var toAddress = new MailAddress(GlobalSettings.EMAIL.Trim(), "To Name");
+                const string fromPassword = "smthalnacttksxvz";
+                string subject = "" + User.Load(hoadon.NhanVienId).FullName.ToString() + " vừa xoá một hoá đơn trị giá " + hoadon.TongTien.ToString("N0");
+                string tr = "";
+                foreach (var item in hoadon.HangHoaCollection)
+                {
+                    tr += "<tr>";
+                    tr += "<td>" + item.STT.ToString() + "</td>";
+                    tr += "<td>" + item.TenHangHoa.ToString() + "</td>";
+                    tr += "<td>" + item.DonViTinh.ToString() + "</td>";
+                    tr += "<td>" + ToTrimmedString(item.SoLuong) + "</td>";
+                    tr += "<td>" + item.DonGiaBan.ToString("#,##0") + "</td>";
+                    tr += "<td>" + item.ThanhTienBan.ToString("#,##0") + "</td>";
+                    tr += "</tr>";
+                }
+                string body = "Mã hoá đơn   : " + hoadon.MaHoaDon + "<br>";
+                body += "Thời gian vào        : " + hoadon.ThoiGianTao.ToString("dd/MM/yyyy HH:mm:ss") + "<br>";
+                body += "Thời gian thanh toán : " + hoadon.ThoiGianThanhToan.ToString("dd/MM/yyyy HH:mm:ss") + "<br>";
+                body += "Tên nhân viên   : " + User.Load(hoadon.NhanVienId).FullName.ToString() + "<br>";
+                body += "Tên khách hàng  : " + KhachHang.Load(hoadon.KhachHangId).TenKhachHang.ToString() + "<br>";
+                body += "Tổng tiền hàng  : " + hoadon.TongTienHang.ToString("#,##0") + "<br>";
+                body += "Tiền thuế       : " + hoadon.TienThue.ToString("#,##0") + "<br>";
+                body += "Giảm giá (%)    : " + hoadon.GiamGia.ToString("#,##0") + "<br>";
+                body += "Trị giá giảm    : " + hoadon.TriGiaGiam.ToString("#,##0") + "<br>";
+                body += "Tổng thanh toán : " + hoadon.TongTien.ToString("#,##0") + "<br>";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    IsBodyHtml = true,
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
         public void SendEmmailReportTotal(DateTime fromDate, DateTime toDate)
         {
             try
@@ -155,6 +211,46 @@ namespace WarehouseManagement
                 {
                     body += bodyTotal;
                 }
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    IsBodyHtml = true,
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
+        public void SendEmmailDeletePayment(Payment payment)
+        {
+            try
+            {
+                GlobalSettings.RefreshKey();
+                var fromAddress = new MailAddress("dangphuocduy@gmail.com", GlobalSettings.COMPANYNAME);
+                var toAddress = new MailAddress(GlobalSettings.EMAIL.Trim(), "To Name");
+                const string fromPassword = "smthalnacttksxvz";
+                string subject = "" + User.Load(payment.NhanVienId).FullName + " vừa xoá một phiếu chi trị giá " + payment.GiaTri.ToString("N0");
+                string body = "";
+
+                body += "Mã phiếu : " + payment.MaPhieu.ToString() + "<br>";
+                body += "Ngày : " + payment.ThoiGian.ToString("dd/MM/yyyy") + "<br>";
+                body += "Loại chi : " + PaymentType.Load(payment.PaymentTypeId).Ten.ToString() + "<br>";
+                body += "Giá trị  : " + payment.GiaTri.ToString("N0") + "<br><br>";
 
                 var smtp = new SmtpClient
                 {
@@ -272,6 +368,46 @@ namespace WarehouseManagement
             }
         }
 
+        public void SendEmmailDeleteReceipts(PhieuThu phieuThu)
+        {
+            try
+            {
+                GlobalSettings.RefreshKey();
+                var fromAddress = new MailAddress("dangphuocduy@gmail.com", GlobalSettings.COMPANYNAME);
+                var toAddress = new MailAddress(GlobalSettings.EMAIL.Trim(), "To Name");
+                const string fromPassword = "smthalnacttksxvz";
+                string subject = "" + User.Load(phieuThu.NhanVienId).FullName + " vừa xoá một phiếu thu trị giá " + phieuThu.GiaTri.ToString("N0");
+                string body = "";
+
+                body += "Mã phiếu : " + phieuThu.MaPhieu.ToString() + "<br>";
+                body += "Ngày : " + phieuThu.ThoiGian.ToString("dd/MM/yyyy") + "<br>";
+                body += "Loại thu : " + LoaiThu.Load(phieuThu.LoaiThuId).Ten.ToString() + "<br>";
+                body += "Giá trị  : " + phieuThu.GiaTri.ToString("N0") + "<br><br>";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    IsBodyHtml = true,
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
         public void SendEmmailReceiptsTotal(DateTime fromDate, DateTime toDate)
         {
             try
