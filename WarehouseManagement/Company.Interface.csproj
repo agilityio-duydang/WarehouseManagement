@@ -369,6 +369,12 @@
     <Compile Include="PaymentTypeForm.designer.cs">
       <DependentUpon>PaymentTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaymentTypeManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentTypeManagementForm.Designer.cs">
+      <DependentUpon>PaymentTypeManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs" />
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
@@ -508,6 +514,10 @@
       <DependentUpon>PaymentTypeForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaymentTypeManagementForm.resx">
+      <DependentUpon>PaymentTypeManagementForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -548,6 +558,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReceiptsTypeForm.resx">
       <DependentUpon>ReceiptsTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptsTypeManagementForm.resx">
+      <DependentUpon>ReceiptsTypeManagementForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SQLQueryForm.resx">
@@ -625,6 +639,12 @@
     </Compile>
     <Compile Include="ReceiptsTypeForm.Designer.cs">
       <DependentUpon>ReceiptsTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptsTypeManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptsTypeManagementForm.Designer.cs">
+      <DependentUpon>ReceiptsTypeManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="SQLQueryForm.cs">

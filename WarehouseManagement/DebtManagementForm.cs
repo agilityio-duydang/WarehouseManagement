@@ -147,6 +147,9 @@ namespace WarehouseManagement
 
                     long HoaDonId = Convert.ToInt64(e.Row.Cells["HoaDonId"].Value);
                     e.Row.Cells["HoaDonId"].Text = HoaDon.Load(HoaDonId).MaHoaDon;
+
+                    long KhachHangId = Convert.ToInt64(e.Row.Cells["KhachHangId"].Value);
+                    e.Row.Cells["KhachHangId"].Text = KhachHang.Load(KhachHangId).TenKhachHang;
                 }
             }
             catch (Exception ex)

@@ -412,6 +412,22 @@ namespace WarehouseManagement
             f.ShowDialog(this);
         }
 
+        private void PaymentTypeManagement()
+        {
+            Form[] forms = this.MdiChildren;
+            for (int i = 0; i < forms.Length; i++)
+            {
+                if (forms[i].Name.ToString().Equals("PaymentTypeManagementForm"))
+                {
+                    forms[i].Activate();
+                    return;
+                }
+            }
+            PaymentTypeManagementForm f = new PaymentTypeManagementForm();
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void Payment()
         {
             PaymentForm f = new PaymentForm();
@@ -718,23 +734,14 @@ namespace WarehouseManagement
             {
                 this.explorerBarCash.Groups[1].Items[0].Enabled = true;
             }
-            // Thêm mới loại chi
-            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PaymentTypes.AddNew)))
+            // Theo dõi phiếu chi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Payments.Management)))
             {
                 this.explorerBarCash.Groups[1].Items[1].Enabled = false;
             }
             else
             {
                 this.explorerBarCash.Groups[1].Items[1].Enabled = true;
-            }
-            // Theo dõi phiếu chi
-            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Payments.Management)))
-            {
-                this.explorerBarCash.Groups[1].Items[2].Enabled = false;
-            }
-            else
-            {
-                this.explorerBarCash.Groups[1].Items[2].Enabled = true;
             }
             // Thêm mới phiếu thu
             if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Receiptes.AddNew)))
@@ -745,23 +752,50 @@ namespace WarehouseManagement
             {
                 this.explorerBarCash.Groups[2].Items[0].Enabled = true;
             }
-            // Thêm mới loại thu
-            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(ReceiptsTypes.AddNew)))
-            {
-                this.explorerBarCash.Groups[2].Items[1].Enabled = false;
-            }
-            else 
-            {
-                this.explorerBarCash.Groups[2].Items[1].Enabled = true;
-            }
             // Theo dõi phiếu thu
             if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Receiptes.Management)))
             {
-                this.explorerBarCash.Groups[2].Items[2].Enabled = false;
+                this.explorerBarCash.Groups[2].Items[1].Enabled = false;
             }
             else
             {
-                this.explorerBarCash.Groups[2].Items[2].Enabled = true;
+                this.explorerBarCash.Groups[2].Items[1].Enabled = true;
+            }
+            // Thêm mới loại chi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PaymentTypes.AddNew)))
+            {
+                this.explorerBarCash.Groups[3].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[3].Items[0].Enabled = true;
+            }
+            // Theo dõi loại chi
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PaymentTypes.Management)))
+            {
+                this.explorerBarCash.Groups[3].Items[1].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[3].Items[1].Enabled = true;
+            }
+            // Thêm mới loại thu
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(ReceiptsTypes.AddNew)))
+            {
+                this.explorerBarCash.Groups[4].Items[0].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[4].Items[0].Enabled = true;
+            }
+            // Theo dõi loại thu
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(ReceiptsTypes.Management)))
+            {
+                this.explorerBarCash.Groups[4].Items[1].Enabled = false;
+            }
+            else
+            {
+                this.explorerBarCash.Groups[4].Items[1].Enabled = true;
             }
             #endregion
         }
@@ -796,6 +830,9 @@ namespace WarehouseManagement
                 case "cmdPaymentType":
                     this.PaymentType();
                     break;
+                case "cmdPaymentTypeManagement":
+                    this.PaymentTypeManagement();
+                    break;
                 case "cmdPaymentManagement":
                     this.PaymentManagement();
                     break;
@@ -804,6 +841,9 @@ namespace WarehouseManagement
                     break;
                 case "cmdAddReceiptsType":
                     this.ReceiptsType();
+                    break;
+                case "cmdReceiptsTypeManagement":
+                    this.ReceiptsTypeManagement();
                     break;
                 case "cmdReceiptsManagement":
                     this.ReceiptsManagement();
@@ -833,6 +873,22 @@ namespace WarehouseManagement
         {
             ReceiptsTypeForm f = new ReceiptsTypeForm();
             f.ShowDialog(this);
+        }
+
+        private void ReceiptsTypeManagement()
+        {
+            Form[] forms = this.MdiChildren;
+            for (int i = 0; i < forms.Length; i++)
+            {
+                if (forms[i].Name.ToString().Equals("ReceiptsTypeManagementForm"))
+                {
+                    forms[i].Activate();
+                    return;
+                }
+            }
+            ReceiptsTypeManagementForm f = new ReceiptsTypeManagementForm();
+            f.MdiParent = this;
+            f.Show();
         }
 
         private void Receipts()

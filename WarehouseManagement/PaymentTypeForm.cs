@@ -67,6 +67,10 @@ namespace WarehouseManagement
             {
                 if (paymentType != null)
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(PaymentTypes.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                    }
                     txtLoaiChi.Text = paymentType.Ten;
                     txtMoTa.Text = paymentType.MoTa;
                 }

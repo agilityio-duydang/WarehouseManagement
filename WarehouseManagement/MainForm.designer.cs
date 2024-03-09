@@ -31,40 +31,44 @@
             this.components = new System.ComponentModel.Container();
             Janus.Windows.Common.JanusColorScheme janusColorScheme1 = new Janus.Windows.Common.JanusColorScheme();
             Janus.Windows.Common.JanusColorScheme janusColorScheme2 = new Janus.Windows.Common.JanusColorScheme();
-            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup4 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
-            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem8 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup5 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
-            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem9 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem10 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem11 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup6 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem10 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
+            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup7 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem11 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem12 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem13 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup7 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup8 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem14 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem15 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup8 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
-            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem16 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup9 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem16 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem17 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem18 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup10 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem18 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
+            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup11 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem19 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem20 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup11 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup12 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem21 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem22 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
+            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup13 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem23 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem24 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup1 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem1 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup2 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem2 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem3 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
-            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem4 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup3 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem4 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem5 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
+            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup4 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem6 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem7 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
+            Janus.Windows.ExplorerBar.ExplorerBarGroup explorerBarGroup5 = new Janus.Windows.ExplorerBar.ExplorerBarGroup();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem8 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
+            Janus.Windows.ExplorerBar.ExplorerBarItem explorerBarItem9 = new Janus.Windows.ExplorerBar.ExplorerBarItem();
             this.vsMain = new Janus.Windows.Common.VisualStyleManager(this.components);
             this.pnMain = new Janus.Windows.UI.Dock.UIPanelManager(this.components);
             this.grPnSystem = new Janus.Windows.UI.Dock.UIPanelGroup();
@@ -241,31 +245,31 @@
             // 
             this.explorerBarCashier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarCashier.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            explorerBarItem8.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem8.Image")));
-            explorerBarItem8.Key = "cmdCashier";
-            explorerBarItem8.Text = "Màn hình Bán hàng";
-            explorerBarGroup4.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
-            explorerBarItem8});
-            explorerBarGroup4.Key = "Cashier";
-            explorerBarGroup4.Text = "Thu Ngân";
-            explorerBarItem9.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem9.Image")));
-            explorerBarItem9.Key = "cmdCustomer";
-            explorerBarItem9.Text = "Thêm mới";
             explorerBarItem10.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem10.Image")));
-            explorerBarItem10.Key = "cmdCustomerManagement";
-            explorerBarItem10.Text = "Theo dõi";
+            explorerBarItem10.Key = "cmdCashier";
+            explorerBarItem10.Text = "Màn hình Bán hàng";
+            explorerBarGroup6.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarItem10});
+            explorerBarGroup6.Key = "Cashier";
+            explorerBarGroup6.Text = "Thu Ngân";
             explorerBarItem11.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem11.Image")));
-            explorerBarItem11.Key = "cmdDebtManagement";
-            explorerBarItem11.Text = "Công nợ khách hàng";
-            explorerBarGroup5.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
-            explorerBarItem9,
-            explorerBarItem10,
-            explorerBarItem11});
-            explorerBarGroup5.Key = "Customer";
-            explorerBarGroup5.Text = "Khách hàng";
+            explorerBarItem11.Key = "cmdCustomer";
+            explorerBarItem11.Text = "Thêm mới";
+            explorerBarItem12.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem12.Image")));
+            explorerBarItem12.Key = "cmdCustomerManagement";
+            explorerBarItem12.Text = "Theo dõi";
+            explorerBarItem13.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem13.Image")));
+            explorerBarItem13.Key = "cmdDebtManagement";
+            explorerBarItem13.Text = "Công nợ khách hàng";
+            explorerBarGroup7.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarItem11,
+            explorerBarItem12,
+            explorerBarItem13});
+            explorerBarGroup7.Key = "Customer";
+            explorerBarGroup7.Text = "Khách hàng";
             this.explorerBarCashier.Groups.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarGroup[] {
-            explorerBarGroup4,
-            explorerBarGroup5});
+            explorerBarGroup6,
+            explorerBarGroup7});
             this.explorerBarCashier.Location = new System.Drawing.Point(0, 0);
             this.explorerBarCashier.Name = "explorerBarCashier";
             this.explorerBarCashier.Size = new System.Drawing.Size(246, 280);
@@ -295,31 +299,31 @@
             // 
             this.explorerBarProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarProducts.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            explorerBarItem12.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem12.Image")));
-            explorerBarItem12.Key = "cmdAddCategory";
-            explorerBarItem12.Text = "Thêm mới";
-            explorerBarItem13.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem13.Image")));
-            explorerBarItem13.Key = "cmdCategoryManagement";
-            explorerBarItem13.Text = "Theo dõi";
-            explorerBarGroup6.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
-            explorerBarItem12,
-            explorerBarItem13});
-            explorerBarGroup6.Key = "Category";
-            explorerBarGroup6.Text = "Nhóm hàng hoá";
             explorerBarItem14.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem14.Image")));
-            explorerBarItem14.Key = "cmdAddProduct";
-            explorerBarItem14.Text = "Thêm hàng hoá";
+            explorerBarItem14.Key = "cmdAddCategory";
+            explorerBarItem14.Text = "Thêm mới";
             explorerBarItem15.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem15.Image")));
-            explorerBarItem15.Key = "cmdProductManagement";
+            explorerBarItem15.Key = "cmdCategoryManagement";
             explorerBarItem15.Text = "Theo dõi";
-            explorerBarGroup7.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarGroup8.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
             explorerBarItem14,
             explorerBarItem15});
-            explorerBarGroup7.Key = "Products";
-            explorerBarGroup7.Text = "Hàng hoá";
+            explorerBarGroup8.Key = "Category";
+            explorerBarGroup8.Text = "Nhóm hàng hoá";
+            explorerBarItem16.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem16.Image")));
+            explorerBarItem16.Key = "cmdAddProduct";
+            explorerBarItem16.Text = "Thêm hàng hoá";
+            explorerBarItem17.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem17.Image")));
+            explorerBarItem17.Key = "cmdProductManagement";
+            explorerBarItem17.Text = "Theo dõi";
+            explorerBarGroup9.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarItem16,
+            explorerBarItem17});
+            explorerBarGroup9.Key = "Products";
+            explorerBarGroup9.Text = "Hàng hoá";
             this.explorerBarProducts.Groups.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarGroup[] {
-            explorerBarGroup6,
-            explorerBarGroup7});
+            explorerBarGroup8,
+            explorerBarGroup9});
             this.explorerBarProducts.Location = new System.Drawing.Point(0, 0);
             this.explorerBarProducts.Name = "explorerBarProducts";
             this.explorerBarProducts.Size = new System.Drawing.Size(246, 280);
@@ -350,51 +354,51 @@
             // 
             this.explorerBarCashFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.explorerBarCashFlow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            explorerBarItem16.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem16.Image")));
-            explorerBarItem16.Key = "cmdXuatNhapTonManagement";
-            explorerBarItem16.Text = "Theo dõi";
-            explorerBarGroup8.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
-            explorerBarItem16});
-            explorerBarGroup8.Key = "XuatNhapTon";
-            explorerBarGroup8.Text = "Xuất nhập tồn";
-            explorerBarItem17.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem17.Image")));
-            explorerBarItem17.Key = "cmdImport";
-            explorerBarItem17.Text = "Thêm mới";
             explorerBarItem18.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem18.Image")));
-            explorerBarItem18.Key = "cmdImportManagement";
+            explorerBarItem18.Key = "cmdXuatNhapTonManagement";
             explorerBarItem18.Text = "Theo dõi";
-            explorerBarGroup9.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
-            explorerBarItem17,
+            explorerBarGroup10.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
             explorerBarItem18});
-            explorerBarGroup9.Key = "Import";
-            explorerBarGroup9.Text = "Nhập kho";
+            explorerBarGroup10.Key = "XuatNhapTon";
+            explorerBarGroup10.Text = "Xuất nhập tồn";
             explorerBarItem19.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem19.Image")));
-            explorerBarItem19.Key = "cmdSupplier";
+            explorerBarItem19.Key = "cmdImport";
             explorerBarItem19.Text = "Thêm mới";
             explorerBarItem20.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem20.Image")));
-            explorerBarItem20.Key = "cmdSupplierManagement";
+            explorerBarItem20.Key = "cmdImportManagement";
             explorerBarItem20.Text = "Theo dõi";
-            explorerBarGroup10.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarGroup11.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
             explorerBarItem19,
             explorerBarItem20});
-            explorerBarGroup10.Key = "Supplier";
-            explorerBarGroup10.Text = "Nhà cung cấp";
+            explorerBarGroup11.Key = "Import";
+            explorerBarGroup11.Text = "Nhập kho";
             explorerBarItem21.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem21.Image")));
-            explorerBarItem21.Key = "cmdWareHouse";
+            explorerBarItem21.Key = "cmdSupplier";
             explorerBarItem21.Text = "Thêm mới";
             explorerBarItem22.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem22.Image")));
-            explorerBarItem22.Key = "cmdWareHouseManagement";
+            explorerBarItem22.Key = "cmdSupplierManagement";
             explorerBarItem22.Text = "Theo dõi";
-            explorerBarGroup11.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarGroup12.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
             explorerBarItem21,
             explorerBarItem22});
-            explorerBarGroup11.Key = "WareHouse";
-            explorerBarGroup11.Text = "Kho hàng hoá";
+            explorerBarGroup12.Key = "Supplier";
+            explorerBarGroup12.Text = "Nhà cung cấp";
+            explorerBarItem23.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem23.Image")));
+            explorerBarItem23.Key = "cmdWareHouse";
+            explorerBarItem23.Text = "Thêm mới";
+            explorerBarItem24.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem24.Image")));
+            explorerBarItem24.Key = "cmdWareHouseManagement";
+            explorerBarItem24.Text = "Theo dõi";
+            explorerBarGroup13.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarItem23,
+            explorerBarItem24});
+            explorerBarGroup13.Key = "WareHouse";
+            explorerBarGroup13.Text = "Kho hàng hoá";
             this.explorerBarCashFlow.Groups.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarGroup[] {
-            explorerBarGroup8,
-            explorerBarGroup9,
             explorerBarGroup10,
-            explorerBarGroup11});
+            explorerBarGroup11,
+            explorerBarGroup12,
+            explorerBarGroup13});
             this.explorerBarCashFlow.Location = new System.Drawing.Point(0, 0);
             this.explorerBarCashFlow.Name = "explorerBarCashFlow";
             this.explorerBarCashFlow.Size = new System.Drawing.Size(246, 280);
@@ -438,36 +442,52 @@
             explorerBarItem2.Key = "cmdPayment";
             explorerBarItem2.Text = "Thêm mới";
             explorerBarItem3.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem3.Image")));
-            explorerBarItem3.Key = "cmdPaymentType";
-            explorerBarItem3.Text = "Thêm loại chi";
-            explorerBarItem4.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem4.Image")));
-            explorerBarItem4.Key = "cmdPaymentManagement";
-            explorerBarItem4.Text = "Theo dõi";
+            explorerBarItem3.Key = "cmdPaymentManagement";
+            explorerBarItem3.Text = "Theo dõi";
             explorerBarGroup2.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
             explorerBarItem2,
-            explorerBarItem3,
-            explorerBarItem4});
+            explorerBarItem3});
             explorerBarGroup2.Key = "Payment";
             explorerBarGroup2.Text = "Phiếu chi";
+            explorerBarItem4.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem4.Image")));
+            explorerBarItem4.Key = "cmdAddReceipts";
+            explorerBarItem4.Text = "Thêm mới";
             explorerBarItem5.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem5.Image")));
-            explorerBarItem5.Key = "cmdAddReceipts";
-            explorerBarItem5.Text = "Thêm mới";
-            explorerBarItem6.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem6.Image")));
-            explorerBarItem6.Key = "cmdAddReceiptsType";
-            explorerBarItem6.Text = "Thêm loại thu";
-            explorerBarItem7.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem7.Image")));
-            explorerBarItem7.Key = "cmdReceiptsManagement";
-            explorerBarItem7.Text = "Theo dõi";
+            explorerBarItem5.Key = "cmdReceiptsManagement";
+            explorerBarItem5.Text = "Theo dõi";
             explorerBarGroup3.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
-            explorerBarItem5,
-            explorerBarItem6,
-            explorerBarItem7});
+            explorerBarItem4,
+            explorerBarItem5});
             explorerBarGroup3.Key = "Receipts";
             explorerBarGroup3.Text = "Phiếu thu";
+            explorerBarItem6.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem6.Image")));
+            explorerBarItem6.Key = "cmdPaymentType";
+            explorerBarItem6.Text = "Thêm mới";
+            explorerBarItem7.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem7.Image")));
+            explorerBarItem7.Key = "cmdPaymentTypeManagement";
+            explorerBarItem7.Text = "Theo dõi";
+            explorerBarGroup4.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarItem6,
+            explorerBarItem7});
+            explorerBarGroup4.Key = "PaymentType";
+            explorerBarGroup4.Text = "Loại chi";
+            explorerBarItem8.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem8.Image")));
+            explorerBarItem8.Key = "cmdAddReceiptsType";
+            explorerBarItem8.Text = "Thêm mới";
+            explorerBarItem9.Image = ((System.Drawing.Image)(resources.GetObject("explorerBarItem9.Image")));
+            explorerBarItem9.Key = "cmdReceiptsTypeManagement";
+            explorerBarItem9.Text = "Theo dõi";
+            explorerBarGroup5.Items.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarItem[] {
+            explorerBarItem8,
+            explorerBarItem9});
+            explorerBarGroup5.Key = "ReceiptsType";
+            explorerBarGroup5.Text = "Loại thu";
             this.explorerBarCash.Groups.AddRange(new Janus.Windows.ExplorerBar.ExplorerBarGroup[] {
             explorerBarGroup1,
             explorerBarGroup2,
-            explorerBarGroup3});
+            explorerBarGroup3,
+            explorerBarGroup4,
+            explorerBarGroup5});
             this.explorerBarCash.Location = new System.Drawing.Point(0, 0);
             this.explorerBarCash.Name = "explorerBarCash";
             this.explorerBarCash.Size = new System.Drawing.Size(246, 280);

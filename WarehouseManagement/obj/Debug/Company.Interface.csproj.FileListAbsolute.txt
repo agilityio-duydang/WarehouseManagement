@@ -89,3 +89,5 @@ D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.DebtPay
 D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.ReadExcelForm.resources
 D:\WarehouseManagement\WarehouseManagement\bin\Debug\Infragistics2.Excel.v9.1.dll
 D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.ReadExcelCategoryForm.resources
+D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.PaymentTypeManagementForm.resources
+D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.ReceiptsTypeManagementForm.resources
