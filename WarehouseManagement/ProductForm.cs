@@ -36,6 +36,10 @@ namespace WarehouseManagement
         {
             try
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.AddNew)))
+                {
+                    btnAddMore.Enabled = false;
+                }
                 LoadCategoty();
                 if (hanghoa == null)
                 {
@@ -44,6 +48,11 @@ namespace WarehouseManagement
                 }
                 else
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Products.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                        btnSaveAndNew.Enabled = false;
+                    }
                     SetData();
                 }
             }
@@ -105,15 +114,33 @@ namespace WarehouseManagement
                 if (!ValidateForm(false))
                     return;
                 GetData();
+                if (hanghoa.Id == 0)
+                {
+                    List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
+                    if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
+                        txtTenHangHoa.Focus();
+                        txtTenHangHoa.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                }
                 hanghoa.InsertUpdate();
-                XuatNhapTon XuatNhapTon = new XuatNhapTon();
+                XuatNhapTon XuatNhapTon = XuatNhapTon.SelectCollectionDynamic("MaHangHoa =N'" + hanghoa.MaHangHoa + "'","").FirstOrDefault();
+                if (XuatNhapTon == null)
+                {
+                    XuatNhapTon = new XuatNhapTon();
+                }
                 XuatNhapTon.MaHangHoa = hanghoa.MaHangHoa;
                 XuatNhapTon.TenHangHoa = hanghoa.TenHangHoa;
                 XuatNhapTon.NhomHangHoaId = hanghoa.NhomHangHoaId;
-                XuatNhapTon.DonGiaBan = hanghoa.DonGiaBan;
-                XuatNhapTon.DonGiaNhap = hanghoa.DonGiaNhap;
                 XuatNhapTon.DonViTinh = hanghoa.DonViTinh;
                 XuatNhapTon.GhiChu = hanghoa.GhiChu;
+                XuatNhapTon.DonGiaBan = hanghoa.DonGiaBan;
+                XuatNhapTon.DonGiaNhap = hanghoa.DonGiaNhap;
+                XuatNhapTon.ThanhTienNhap = XuatNhapTon.LuongNhap * hanghoa.DonGiaNhap;
+                XuatNhapTon.ThanhTienBan = XuatNhapTon.LuongBan * hanghoa.DonGiaBan;
+                XuatNhapTon.ThanhTienTon = XuatNhapTon.LuongTon * hanghoa.DonGiaNhap;
                 XuatNhapTon.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
                 this.Close();
@@ -136,8 +163,23 @@ namespace WarehouseManagement
                 if (!ValidateForm(false))
                     return;
                 GetData();
+                if (hanghoa.Id == 0)
+                {
+                    List<HangHoa> HangHoaCollection = HangHoa.SelectCollectionAll();
+                    if (HangHoaCollection.Any(x => x.TenHangHoa.ToLower().Trim() == txtTenHangHoa.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
+                        txtTenHangHoa.Focus();
+                        txtTenHangHoa.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                }
                 hanghoa.InsertUpdate();
-                XuatNhapTon XuatNhapTon = new XuatNhapTon();
+                XuatNhapTon XuatNhapTon = XuatNhapTon.SelectCollectionDynamic("MaHangHoa =N'" + hanghoa.MaHangHoa + "'", "").FirstOrDefault();
+                if (XuatNhapTon == null)
+                {
+                    XuatNhapTon = new XuatNhapTon();
+                }
                 XuatNhapTon.MaHangHoa = hanghoa.MaHangHoa;
                 XuatNhapTon.TenHangHoa = hanghoa.TenHangHoa;
                 XuatNhapTon.NhomHangHoaId = hanghoa.NhomHangHoaId;
@@ -206,6 +248,13 @@ namespace WarehouseManagement
                 Logger.LocalLogger.Instance().WriteMessage(ex);
                 return null;
             }
+        }
+
+        private void btnAddMore_Click(object sender, EventArgs e)
+        {
+            CategoryForm f = new CategoryForm();
+            f.ShowDialog(this);
+            LoadCategoty();
         }
     }
 }

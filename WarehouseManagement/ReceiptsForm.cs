@@ -23,9 +23,17 @@ namespace WarehouseManagement
 
         private void ReceiptsForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(ReceiptsTypes.AddNew)))
+            {
+                btnAddMore.Enabled = false;
+            }
             LoadCategoty();
             if (PhieuThu != null)
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Receiptes.Edit)))
+                {
+                    btnSave.Enabled = false;
+                }
                 txtThoiGian.Value = PhieuThu.ThoiGian;
                 txtMaPhieu.Text = PhieuThu.MaPhieu;
                 txtNguoiThu.Text = PhieuThu.NguoiThu;
@@ -192,6 +200,13 @@ namespace WarehouseManagement
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAddMore_Click(object sender, EventArgs e)
+        {
+            ReceiptsTypeForm f = new ReceiptsTypeForm();
+            f.ShowDialog(this);
+            LoadCategoty();
         }
     }
 }

@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryManagementForm));
             Janus.Windows.GridEX.GridEXLayout dgList_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.uiGroupBox1 = new Janus.Windows.EditControls.UIGroupBox();
-            this.btnExport = new Janus.Windows.EditControls.UIButton();
+            this.btnImportExcel = new Janus.Windows.EditControls.UIButton();
             this.txtTenNhom = new Janus.Windows.GridEX.EditControls.EditBox();
             this.btnSearch = new Janus.Windows.EditControls.UIButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
@@ -50,6 +51,7 @@
             // uiGroupBox1
             // 
             this.uiGroupBox1.AutoScroll = true;
+            this.uiGroupBox1.Controls.Add(this.btnImportExcel);
             this.uiGroupBox1.Controls.Add(this.txtTenNhom);
             this.uiGroupBox1.Controls.Add(this.btnSearch);
             this.uiGroupBox1.Controls.Add(this.label1);
@@ -57,23 +59,22 @@
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.uiGroupBox1.Name = "uiGroupBox1";
-            this.uiGroupBox1.Size = new System.Drawing.Size(1013, 79);
+            this.uiGroupBox1.Size = new System.Drawing.Size(1082, 79);
             this.uiGroupBox1.TabIndex = 4;
             this.uiGroupBox1.Text = "Thông tin tìm kiếm";
             this.uiGroupBox1.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
-            // btnExport
+            // btnImportExcel
             // 
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(14, 16);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(113, 31);
-            this.btnExport.TabIndex = 16;
-            this.btnExport.Text = "Xuất Excel";
-            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.btnImportExcel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnImportExcel.Image")));
+            this.btnImportExcel.Location = new System.Drawing.Point(814, 31);
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.Size = new System.Drawing.Size(255, 27);
+            this.btnImportExcel.TabIndex = 16;
+            this.btnImportExcel.Text = "Nhập nhóm hàng hóa từ Excel";
+            this.btnImportExcel.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
             // 
             // txtTenNhom
             // 
@@ -107,6 +108,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên nhóm :";
             // 
+            // btnExport
+            // 
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(14, 16);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 16;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // uiGroupBox3
             // 
             this.uiGroupBox3.AutoScroll = true;
@@ -118,7 +132,7 @@
             this.uiGroupBox3.Location = new System.Drawing.Point(0, 481);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(5);
             this.uiGroupBox3.Name = "uiGroupBox3";
-            this.uiGroupBox3.Size = new System.Drawing.Size(1013, 55);
+            this.uiGroupBox3.Size = new System.Drawing.Size(1082, 55);
             this.uiGroupBox3.TabIndex = 5;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
@@ -139,7 +153,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnClose.Location = new System.Drawing.Point(887, 16);
+            this.btnClose.Location = new System.Drawing.Point(956, 16);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(113, 31);
@@ -153,7 +167,7 @@
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(765, 16);
+            this.btnDelete.Location = new System.Drawing.Point(834, 16);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(113, 31);
@@ -174,7 +188,7 @@
             this.dgList.Margin = new System.Windows.Forms.Padding(5);
             this.dgList.Name = "dgList";
             this.dgList.RecordNavigator = true;
-            this.dgList.Size = new System.Drawing.Size(1013, 402);
+            this.dgList.Size = new System.Drawing.Size(1082, 402);
             this.dgList.TabIndex = 6;
             this.dgList.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.dgList.RowDoubleClick += new Janus.Windows.GridEX.RowActionEventHandler(this.dgList_RowDoubleClick);
@@ -184,7 +198,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1013, 536);
+            this.ClientSize = new System.Drawing.Size(1082, 536);
             this.Controls.Add(this.dgList);
             this.Controls.Add(this.uiGroupBox1);
             this.Controls.Add(this.uiGroupBox3);
@@ -216,5 +230,6 @@
         private Janus.Windows.EditControls.UIButton btnClose;
         private System.Windows.Forms.Label label5;
         private Janus.Windows.EditControls.UIButton btnExport;
+        private Janus.Windows.EditControls.UIButton btnImportExcel;
     }
 }

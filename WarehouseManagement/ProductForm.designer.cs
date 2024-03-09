@@ -35,6 +35,7 @@
             this.btnCancel = new Janus.Windows.EditControls.UIButton();
             this.btnSaveAndNew = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox2 = new Janus.Windows.EditControls.UIGroupBox();
+            this.btnAddMore = new Janus.Windows.EditControls.UIButton();
             this.txtGhiChu = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDonGiaBan = new Janus.Windows.GridEX.EditControls.NumericEditBox();
@@ -122,6 +123,7 @@
             // uiGroupBox2
             // 
             this.uiGroupBox2.AutoScroll = true;
+            this.uiGroupBox2.Controls.Add(this.btnAddMore);
             this.uiGroupBox2.Controls.Add(this.txtGhiChu);
             this.uiGroupBox2.Controls.Add(this.label2);
             this.uiGroupBox2.Controls.Add(this.txtDonGiaBan);
@@ -143,6 +145,20 @@
             this.uiGroupBox2.Size = new System.Drawing.Size(901, 334);
             this.uiGroupBox2.TabIndex = 2;
             this.uiGroupBox2.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // btnAddMore
+            // 
+            this.btnAddMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMore.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMore.Image")));
+            this.btnAddMore.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddMore.Location = new System.Drawing.Point(448, 99);
+            this.btnAddMore.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddMore.Name = "btnAddMore";
+            this.btnAddMore.Size = new System.Drawing.Size(198, 27);
+            this.btnAddMore.TabIndex = 22;
+            this.btnAddMore.Text = "Thêm mới nhóm hàng";
+            this.btnAddMore.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnAddMore.Click += new System.EventHandler(this.btnAddMore_Click);
             // 
             // txtGhiChu
             // 
@@ -360,5 +376,6 @@
         private System.Windows.Forms.Label label1;
         private Janus.Windows.GridEX.EditControls.EditBox txtGhiChu;
         private System.Windows.Forms.Label label2;
+        private Janus.Windows.EditControls.UIButton btnAddMore;
     }
 }

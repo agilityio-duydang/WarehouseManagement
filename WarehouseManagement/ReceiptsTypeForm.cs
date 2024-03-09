@@ -52,6 +52,17 @@ namespace WarehouseManagement
             {
                 if (!ValidateForm(false))
                     return;
+                if (LoaiThu.Id == 0)
+                {
+                    List<LoaiThu> LoaiThuCollection = LoaiThu.SelectCollectionAll();
+                    if (LoaiThuCollection.Any(x => x.Ten.ToLower().Trim() == txtLoaiThu.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtLoaiThu, "Tên loại thu đã tồn tại");
+                        txtLoaiThu.Focus();
+                        txtLoaiThu.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 LoaiThu.Ten = textInfo.ToTitleCase(txtLoaiThu.Text.Trim().ToLower());
                 LoaiThu.MoTa = textInfo.ToTitleCase(txtMoTa.Text.Trim().ToLower());

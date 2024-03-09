@@ -24,6 +24,11 @@ namespace WarehouseManagement
 
         private void CashFlowManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(CashFlows.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
+
             btnSearch_Click(null, null);
             LoadCustomer();
             LoadNhanVien();
@@ -233,6 +238,8 @@ namespace WarehouseManagement
                         HoaDon HoaDon = HoaDon.Load(id);
                         HoaDon.HangHoaCollection = HoaDon_HangHoa.SelectCollectionBy_HoaDonId(HoaDon.Id);
                         HoaDon.DeleteFull();
+                        Helpers Helpers = new Helpers();
+                        Helpers.SendDeleteEmmail(HoaDon);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else
@@ -243,6 +250,7 @@ namespace WarehouseManagement
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
+                ShowMessage("Xóa không thành công. Hoá đơn này có liên quan đến một hoặc nhiều công nợ khách hàng", false, false);
             }
         }
 

@@ -23,6 +23,10 @@ namespace WarehouseManagement.WareHouse
         {
             try
             {
+                if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(WareHouses.Delete)))
+                {
+                    btnDelete.Enabled = false;
+                }
                 btnSearch_Click(null, null);
             }
             catch (Exception ex)
@@ -84,8 +88,16 @@ namespace WarehouseManagement.WareHouse
                     if (ShowMessage("Bạn có chắc chắn muốn xóa kho này không?", true, false) == "Yes")
                     {
                         Kho Kho = Kho.Load(id);
-                        Kho.Delete();
-                        ShowMessage("Xóa thành công. ", false, false);
+                        PhieuNhapKho PhieuNhapKho = PhieuNhapKho.SelectCollectionDynamic("MaKho = N'" + Kho.MaKho + "'", "").FirstOrDefault();
+                        if (PhieuNhapKho == null)
+                        {
+                            Kho.Delete();
+                            ShowMessage("Xóa thành công. ", false, false);
+                        }
+                        else
+                        {
+                            ShowMessage("Xóa không thành công. Một hoặc nhiều phiếu nhập kho đã chứa thông tin của kho này!", false, false);
+                        }
                     }
                     else
                         ShowMessage("Xóa không thành công. ", false, false);
@@ -95,6 +107,7 @@ namespace WarehouseManagement.WareHouse
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
+                ShowMessage("Xóa không thành công. Một hoặc nhiều phiếu nhập kho đã chứa thông tin của kho này!", false, false);
             }
         }
 

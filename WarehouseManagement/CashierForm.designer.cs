@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Janus.Windows.GridEX.GridEXLayout dgListProducts_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
             Janus.Windows.GridEX.GridEXLayout dgList_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
             this.uiGroupBox1 = new Janus.Windows.EditControls.UIGroupBox();
             this.uiTab1 = new Janus.Windows.UI.Tab.UITab();
             this.uiTabPage2 = new Janus.Windows.UI.Tab.UITabPage();
@@ -50,6 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.uiGroupBox7 = new Janus.Windows.EditControls.UIGroupBox();
+            this.btnAddMore = new Janus.Windows.EditControls.UIButton();
             this.txtGhiChu = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbKhachHang = new Janus.Windows.EditControls.UIComboBox();
@@ -68,6 +69,7 @@
             this.btnPrint = new Janus.Windows.EditControls.UIButton();
             this.btnCash = new Janus.Windows.EditControls.UIButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAdd = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiTab1)).BeginInit();
@@ -147,6 +149,7 @@
             // uiGroupBox4
             // 
             this.uiGroupBox4.AutoScroll = true;
+            this.uiGroupBox4.Controls.Add(this.btnAdd);
             this.uiGroupBox4.Controls.Add(this.cbbCategory);
             this.uiGroupBox4.Controls.Add(this.label6);
             this.uiGroupBox4.Controls.Add(this.label7);
@@ -166,7 +169,7 @@
             this.cbbCategory.Location = new System.Drawing.Point(133, 54);
             this.cbbCategory.Margin = new System.Windows.Forms.Padding(5);
             this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.Size = new System.Drawing.Size(295, 27);
+            this.cbbCategory.Size = new System.Drawing.Size(310, 27);
             this.cbbCategory.TabIndex = 2;
             this.cbbCategory.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.cbbCategory.SelectedValueChanged += new System.EventHandler(this.btnSearch_Click);
@@ -195,11 +198,10 @@
             // 
             // txtTenHangHoa
             // 
-            this.txtTenHangHoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenHangHoa.Location = new System.Drawing.Point(133, 19);
             this.txtTenHangHoa.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTenHangHoa.Name = "txtTenHangHoa";
-            this.txtTenHangHoa.Size = new System.Drawing.Size(295, 27);
+            this.txtTenHangHoa.Size = new System.Drawing.Size(185, 27);
             this.txtTenHangHoa.TabIndex = 1;
             this.txtTenHangHoa.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.txtTenHangHoa.TextChanged += new System.EventHandler(this.btnSearch_Click);
@@ -322,6 +324,7 @@
             // uiGroupBox7
             // 
             this.uiGroupBox7.AutoScroll = true;
+            this.uiGroupBox7.Controls.Add(this.btnAddMore);
             this.uiGroupBox7.Controls.Add(this.txtGhiChu);
             this.uiGroupBox7.Controls.Add(this.label4);
             this.uiGroupBox7.Controls.Add(this.cbbKhachHang);
@@ -337,6 +340,20 @@
             this.uiGroupBox7.Size = new System.Drawing.Size(799, 104);
             this.uiGroupBox7.TabIndex = 9;
             this.uiGroupBox7.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // btnAddMore
+            // 
+            this.btnAddMore.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMore.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMore.Image")));
+            this.btnAddMore.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddMore.Location = new System.Drawing.Point(350, 68);
+            this.btnAddMore.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAddMore.Name = "btnAddMore";
+            this.btnAddMore.Size = new System.Drawing.Size(115, 28);
+            this.btnAddMore.TabIndex = 39;
+            this.btnAddMore.Text = "Thêm mới";
+            this.btnAddMore.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnAddMore.Click += new System.EventHandler(this.btnAddMore_Click);
             // 
             // txtGhiChu
             // 
@@ -367,7 +384,7 @@
             this.cbbKhachHang.Location = new System.Drawing.Point(127, 69);
             this.cbbKhachHang.Margin = new System.Windows.Forms.Padding(5);
             this.cbbKhachHang.Name = "cbbKhachHang";
-            this.cbbKhachHang.Size = new System.Drawing.Size(338, 27);
+            this.cbbKhachHang.Size = new System.Drawing.Size(222, 27);
             this.cbbKhachHang.TabIndex = 36;
             this.cbbKhachHang.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.cbbKhachHang.SelectedIndexChanged += new System.EventHandler(this.cbbKhachHang_SelectedIndexChanged);
@@ -548,6 +565,20 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAdd.Location = new System.Drawing.Point(328, 19);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(115, 28);
+            this.btnAdd.TabIndex = 40;
+            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -626,5 +657,7 @@
         private Janus.Windows.EditControls.UIComboBox cbbKhachHang;
         private Janus.Windows.GridEX.EditControls.EditBox txtGhiChu;
         private System.Windows.Forms.Label label4;
+        private Janus.Windows.EditControls.UIButton btnAddMore;
+        private Janus.Windows.EditControls.UIButton btnAdd;
     }
 }

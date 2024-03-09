@@ -37,6 +37,13 @@
             Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem5 = new Janus.Windows.EditControls.UIComboBoxItem();
             Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem6 = new Janus.Windows.EditControls.UIComboBoxItem();
             Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem7 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem8 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem9 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem10 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem11 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem12 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem13 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem14 = new Janus.Windows.EditControls.UIComboBoxItem();
             Janus.Windows.GridEX.GridEXLayout dgListRole_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.uiGroupBox4 = new Janus.Windows.EditControls.UIGroupBox();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
@@ -208,6 +215,34 @@
             uiComboBoxItem7.IsSeparator = false;
             uiComboBoxItem7.Text = "Quản trị hệ thống";
             uiComboBoxItem7.Value = "6";
+            uiComboBoxItem8.FormatStyle.Alpha = 0;
+            uiComboBoxItem8.IsSeparator = false;
+            uiComboBoxItem8.Text = "Khách hàng";
+            uiComboBoxItem8.Value = "7";
+            uiComboBoxItem9.FormatStyle.Alpha = 0;
+            uiComboBoxItem9.IsSeparator = false;
+            uiComboBoxItem9.Text = "Nhà cung cấp";
+            uiComboBoxItem9.Value = "8";
+            uiComboBoxItem10.FormatStyle.Alpha = 0;
+            uiComboBoxItem10.IsSeparator = false;
+            uiComboBoxItem10.Text = "Kho";
+            uiComboBoxItem10.Value = "9";
+            uiComboBoxItem11.FormatStyle.Alpha = 0;
+            uiComboBoxItem11.IsSeparator = false;
+            uiComboBoxItem11.Text = "Phiếu chi";
+            uiComboBoxItem11.Value = "10";
+            uiComboBoxItem12.FormatStyle.Alpha = 0;
+            uiComboBoxItem12.IsSeparator = false;
+            uiComboBoxItem12.Text = "Loại chi";
+            uiComboBoxItem12.Value = "11";
+            uiComboBoxItem13.FormatStyle.Alpha = 0;
+            uiComboBoxItem13.IsSeparator = false;
+            uiComboBoxItem13.Text = "Phiếu thu";
+            uiComboBoxItem13.Value = "12";
+            uiComboBoxItem14.FormatStyle.Alpha = 0;
+            uiComboBoxItem14.IsSeparator = false;
+            uiComboBoxItem14.Text = "Loại thu";
+            uiComboBoxItem14.Value = "13";
             this.cbModule.Items.AddRange(new Janus.Windows.EditControls.UIComboBoxItem[] {
             uiComboBoxItem1,
             uiComboBoxItem2,
@@ -215,7 +250,14 @@
             uiComboBoxItem4,
             uiComboBoxItem5,
             uiComboBoxItem6,
-            uiComboBoxItem7});
+            uiComboBoxItem7,
+            uiComboBoxItem8,
+            uiComboBoxItem9,
+            uiComboBoxItem10,
+            uiComboBoxItem11,
+            uiComboBoxItem12,
+            uiComboBoxItem13,
+            uiComboBoxItem14});
             this.cbModule.Location = new System.Drawing.Point(136, 25);
             this.cbModule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbModule.Name = "cbModule";
@@ -263,8 +305,8 @@
             // 
             // ManagementUserRoleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(909, 484);
             this.Controls.Add(this.uiGroupBox3);
             this.Controls.Add(this.uiGroupBox1);

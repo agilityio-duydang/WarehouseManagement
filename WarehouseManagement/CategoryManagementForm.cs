@@ -21,6 +21,14 @@ namespace WarehouseManagement
 
         private void CategoryManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.AddNew)))
+            {
+                btnImportExcel.Enabled = false;
+            }
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
             btnSearch_Click(null,null);
         }
 
@@ -65,18 +73,28 @@ namespace WarehouseManagement
                     int id = System.Convert.ToInt32(dgList.CurrentRow.Cells["Id"].Value.ToString());
                     if (ShowMessage("Bạn có chắc chắn muốn xóa nhóm hàng hoá này không?", true, false) == "Yes")
                     {
+                        List<HoaDon_HangHoa> HoaDonHangHoaCollection = HoaDon_HangHoa.SelectCollectionAll();
+                        List<PhieuNhapKho_HangHoa> PhieuNhapKhoHangHoaCollection = PhieuNhapKho_HangHoa.SelectCollectionAll();
                         NhomHangHoa NhomHangHoa = NhomHangHoa.Load(id);
-                        NhomHangHoa.Delete();
-                        ShowMessage("Xóa thành công. ", false, false);
+                        if (!HoaDonHangHoaCollection.Any(x => x.NhomHangHoaId == NhomHangHoa.Id) && !PhieuNhapKhoHangHoaCollection.Any(x => x.NhomHangHoaId == NhomHangHoa.Id))
+                        {
+                            NhomHangHoa.Delete();
+                            ShowMessage("Xóa thành công. ", false, false);
+                        }
+                        else
+                        {
+                            ShowMessage("Xóa không thành công. Một hoặc nhiều hàng hoá hoặc hoá đơn hoặc phiếu nhập kho đã chứa nhóm hàng hoá này !", false, false);
+                        }
                     }
                     else
-                        ShowMessage("Xóa không thành công. ", false, false);
+                        ShowMessage("Xóa không thành công. Một hoặc nhiều hàng hoá đã được lưu với nhóm hàng hoá này !", false, false);
                 }
                 btnSearch_Click(null, null);
             }
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
+                ShowMessage("Xóa không thành công. Một hoặc nhiều hàng hoá đã được lưu với nhóm hàng hoá này !", false, false);
             }
         }
 
@@ -140,6 +158,13 @@ namespace WarehouseManagement
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
+        }
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            ReadExcelCategoryForm f = new ReadExcelCategoryForm();
+            f.ShowDialog(this);
+            btnSearch_Click(null, null);
         }
     }
 }

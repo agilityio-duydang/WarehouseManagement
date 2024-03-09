@@ -59,14 +59,14 @@
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.uiGroupBox1.Size = new System.Drawing.Size(482, 66);
+            this.uiGroupBox1.Size = new System.Drawing.Size(482, 91);
             this.uiGroupBox1.TabIndex = 1;
             this.uiGroupBox1.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 20);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 50);
@@ -79,7 +79,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(120, 19);
+            this.label1.Location = new System.Drawing.Point(159, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 21);
@@ -165,10 +165,10 @@
             this.uiGroupBox3.Controls.Add(this.txtMessage);
             this.uiGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiGroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox3.Location = new System.Drawing.Point(7, 73);
+            this.uiGroupBox3.Location = new System.Drawing.Point(7, 98);
             this.uiGroupBox3.Margin = new System.Windows.Forms.Padding(5);
             this.uiGroupBox3.Name = "uiGroupBox3";
-            this.uiGroupBox3.Size = new System.Drawing.Size(482, 230);
+            this.uiGroupBox3.Size = new System.Drawing.Size(482, 205);
             this.uiGroupBox3.TabIndex = 2;
             this.uiGroupBox3.TextAlignment = Janus.Windows.EditControls.TextAlignment.Center;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
@@ -184,7 +184,7 @@
             this.txtMessage.Margin = new System.Windows.Forms.Padding(5);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(476, 219);
+            this.txtMessage.Size = new System.Drawing.Size(476, 194);
             this.txtMessage.TabIndex = 6;
             this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

@@ -31,6 +31,17 @@ namespace WarehouseManagement
             {
                 if (!ValidateForm(false))
                     return;
+                if (nhomHangHoa.Id == 0)
+                {
+                    List<NhomHangHoa> NhomHangHoaCollection = NhomHangHoa.SelectCollectionAll();
+                    if (NhomHangHoaCollection.Any(x => x.TenNhom.ToLower().Trim() == txtTenNhom.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenNhom, "Tên nhóm hàng hoá đã tồn tại");
+                        txtTenNhom.Focus();
+                        txtTenNhom.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                }
                 nhomHangHoa.TenNhom = txtTenNhom.Text.Trim().ToUpper();
                 nhomHangHoa.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
@@ -53,6 +64,10 @@ namespace WarehouseManagement
             {
                 if (nhomHangHoa != null)
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Categories.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                    }
                     txtTenNhom.Text = nhomHangHoa.TenNhom;
                 }
                 else

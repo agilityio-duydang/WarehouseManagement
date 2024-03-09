@@ -30,6 +30,10 @@ namespace WarehouseManagement
             {
                 if (KhachHang != null)
                 {
+                    if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Customers.Edit)))
+                    {
+                        btnSave.Enabled = false;
+                    }
                     CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
                     SetCustomer();
                     HoaDonCollection = HoaDon.SelectCollectionBy_KhachHangId(KhachHang.Id);

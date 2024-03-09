@@ -23,6 +23,10 @@ namespace WarehouseManagement
 
         private void ReceiptsManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Receiptes.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
             LoadCategoty();
             btnSearch_Click(null, null);
         }
@@ -70,6 +74,8 @@ namespace WarehouseManagement
                     {
                         PhieuThu PhieuThu = PhieuThu.Load(id);
                         PhieuThu.Delete();
+                        Helpers Helpers = new Helpers();
+                        Helpers.SendEmmailDeleteReceipts(PhieuThu);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else

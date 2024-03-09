@@ -23,6 +23,10 @@ namespace WarehouseManagement
 
         private void PaymentManagementForm_Load(object sender, EventArgs e)
         {
+            if (!MainForm.EcsQuanTri.HasPermission(Convert.ToInt64(Payments.Delete)))
+            {
+                btnDelete.Enabled = false;
+            }
             LoadCategoty();
             btnSearch_Click(null,null);
         }
@@ -69,6 +73,8 @@ namespace WarehouseManagement
                     {
                         Payment Payment = Payment.Load(id);
                         Payment.Delete();
+                        Helpers Helpers = new Helpers();
+                        Helpers.SendEmmailDeletePayment(Payment);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else

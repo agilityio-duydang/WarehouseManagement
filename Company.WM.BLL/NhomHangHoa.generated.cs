@@ -12,7 +12,8 @@ namespace Company.WM.BLL
 		#region Properties.
 		
 		public long Id { set; get; }
-		public string TenNhom { set; get; }
+        public string TenNhom { set; get; }
+        public string GhiChu { set; get; }
 		
 		#endregion
 		
