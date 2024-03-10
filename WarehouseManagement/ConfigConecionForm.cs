@@ -162,13 +162,6 @@ namespace WarehouseManagement
             try
             {
                 string MSSQLConnectionString = ReadNodeXmlConnectionStrings2();
-
-                //if (cbDatabaseSource.Text == "")
-                //{
-                //    ShowMessage("Cơ sở dữ liệu không được để trống ", false);
-                //    //errorProvider1.SetError(cbDatabaseSource, "\"Cơ sơ dữ liệu\" không được trống");
-                //    return;
-                //}
                 if (!ValidateForm(false))
                     return;
                 //Cấu hình lại connectionString.
@@ -187,7 +180,6 @@ namespace WarehouseManagement
                     ShowMessage("Không kết nối được tới máy chủ này\r\nLý do: " + ex.Message, false);
                 }
 
-                //Hungtq 14/01/2011. Luu cau hinh
                 SaveNodeXmlAppSettings("SERVER_NAME", txtServerName.Text.Trim());
                 SaveNodeXmlAppSettings("USER", txtSa.Text.Trim());
                 SaveNodeXmlAppSettings("PASS", txtPass.Text.Trim());
@@ -231,7 +223,7 @@ namespace WarehouseManagement
             }
             catch (Exception ex) { Logger.LocalLogger.Instance().WriteMessage(key, ex); }
         }
-        //Hungtq 22/12/2010. Luu cau hinh
+
         public static void SaveNodeXmlAppSettings(string key, object value)
         {
             try
@@ -259,7 +251,6 @@ namespace WarehouseManagement
             return ReadNodeXml(config, doc, groupSettingName, key, defaultValue);
         }
 
-        //Hungtq 22/12/2010. Luu cau hinh
         public static void SaveNodeXml(System.Configuration.Configuration config, System.Xml.XmlDocument xmlDocument, string groupSettingName, string key, object value)
         {
             try
@@ -328,7 +319,6 @@ namespace WarehouseManagement
         }
         public static void AddNodeConfig(string key, string ValueDefault)
         {
-            //System.Configuration.Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None);
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.AppSettings.Settings.Add(key, ValueDefault);
             config.Save();
@@ -352,12 +342,6 @@ namespace WarehouseManagement
         {
             try
             {
-                //System.Configuration.Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None);
-                //System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
-                //doc.Load(config.FilePath);
-                //doc.SelectSingleNode("//connectionStrings").ChildNodes[0].Attributes[1].Value = connectionString;
-                //doc.Save(config.FilePath);
-
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 config.ConnectionStrings.ConnectionStrings["MSSQL"].ConnectionString = connectionString;
                 config.Save(ConfigurationSaveMode.Modified);
@@ -399,8 +383,10 @@ namespace WarehouseManagement
 
         private void ConfigConecionForm_Load(object sender, EventArgs e)
         {
-            GetServerInstances();
-            //Thread.Sleep(5000);
+            Invoke(new Action(() =>
+            {
+                GetServerInstances();
+            }));
             txtServerName.Text = GlobalSettings.SERVER_NAME;
             txtSa.Text = GlobalSettings.USER;
             txtPass.Text = GlobalSettings.PASS;
@@ -411,6 +397,23 @@ namespace WarehouseManagement
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRestoreDatabase_Click(object sender, EventArgs e)
+        {
+            AttachAndRestoreDatabaseForm f = new AttachAndRestoreDatabaseForm();
+            f.ShowDialog(this);
+        }
+
+        private void btnSetupSQL_Click(object sender, EventArgs e)
+        {
+            SetupSQLServerForm f = new SetupSQLServerForm();
+            f.ShowDialog();
+        }
+
+        private void btnTaoCSDL_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

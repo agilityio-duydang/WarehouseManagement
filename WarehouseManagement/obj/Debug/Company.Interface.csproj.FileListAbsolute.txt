@@ -91,3 +91,5 @@ D:\WarehouseManagement\WarehouseManagement\bin\Debug\Infragistics2.Excel.v9.1.dl
 D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.ReadExcelCategoryForm.resources
 D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.PaymentTypeManagementForm.resources
 D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.ReceiptsTypeManagementForm.resources
+D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.AttachAndRestoreDatabaseForm.resources
+D:\WarehouseManagement\WarehouseManagement\obj\Debug\WarehouseManagement.SetupSQLServerForm.resources
