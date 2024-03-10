@@ -166,6 +166,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -301,6 +302,12 @@
       <DependentUpon>DebtPaymentSupplierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
+    <Compile Include="AttachAndRestoreDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttachAndRestoreDatabaseForm.Designer.cs">
+      <DependentUpon>AttachAndRestoreDatabaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmFolderBrowse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +477,10 @@
       <DependentUpon>DebtPaymentSupplierForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="AttachAndRestoreDatabaseForm.resx">
+      <DependentUpon>AttachAndRestoreDatabaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmFolderBrowse.resx">
       <DependentUpon>FrmFolderBrowse.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -564,6 +575,10 @@
       <DependentUpon>ReceiptsTypeManagementForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SetupSQLServerForm.resx">
+      <DependentUpon>SetupSQLServerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SQLQueryForm.resx">
       <DependentUpon>SQLQueryForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -645,6 +660,12 @@
     </Compile>
     <Compile Include="ReceiptsTypeManagementForm.Designer.cs">
       <DependentUpon>ReceiptsTypeManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupSQLServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupSQLServerForm.Designer.cs">
+      <DependentUpon>SetupSQLServerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SQL.cs" />
     <Compile Include="SQLQueryForm.cs">

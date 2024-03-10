@@ -42,9 +42,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.uiTab1 = new Janus.Windows.UI.Tab.UITab();
+            this.uiTabPage2 = new Janus.Windows.UI.Tab.UITabPage();
+            this.uiTabPage1 = new Janus.Windows.UI.Tab.UITabPage();
+            this.btnSetupSQL = new Janus.Windows.EditControls.UIButton();
+            this.btnRestoreDatabase = new Janus.Windows.EditControls.UIButton();
+            this.btnTaoCSDL = new Janus.Windows.EditControls.UIButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiTab1)).BeginInit();
+            this.uiTab1.SuspendLayout();
+            this.uiTabPage2.SuspendLayout();
+            this.uiTabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiGroupBox1
@@ -64,7 +77,7 @@
             this.uiGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.uiGroupBox1.Name = "uiGroupBox1";
-            this.uiGroupBox1.Size = new System.Drawing.Size(607, 252);
+            this.uiGroupBox1.Size = new System.Drawing.Size(605, 266);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
@@ -190,19 +203,129 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // uiTab1
+            // 
+            this.uiTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTab1.Location = new System.Drawing.Point(0, 0);
+            this.uiTab1.Margin = new System.Windows.Forms.Padding(5);
+            this.uiTab1.Name = "uiTab1";
+            this.uiTab1.Size = new System.Drawing.Size(607, 294);
+            this.uiTab1.TabIndex = 4;
+            this.uiTab1.TabPages.AddRange(new Janus.Windows.UI.Tab.UITabPage[] {
+            this.uiTabPage2,
+            this.uiTabPage1});
+            this.uiTab1.VisualStyle = Janus.Windows.UI.Tab.TabVisualStyle.Office2003;
+            // 
+            // uiTabPage2
+            // 
+            this.uiTabPage2.Controls.Add(this.uiGroupBox1);
+            this.uiTabPage2.Image = ((System.Drawing.Image)(resources.GetObject("uiTabPage2.Image")));
+            this.uiTabPage2.Location = new System.Drawing.Point(1, 27);
+            this.uiTabPage2.Margin = new System.Windows.Forms.Padding(5);
+            this.uiTabPage2.Name = "uiTabPage2";
+            this.uiTabPage2.Size = new System.Drawing.Size(605, 266);
+            this.uiTabPage2.TabStop = true;
+            this.uiTabPage2.Text = "Cấu hình thông số kết nối";
+            // 
+            // uiTabPage1
+            // 
+            this.uiTabPage1.Controls.Add(this.btnSetupSQL);
+            this.uiTabPage1.Controls.Add(this.btnRestoreDatabase);
+            this.uiTabPage1.Controls.Add(this.btnTaoCSDL);
+            this.uiTabPage1.Controls.Add(this.label10);
+            this.uiTabPage1.Controls.Add(this.label6);
+            this.uiTabPage1.Controls.Add(this.label5);
+            this.uiTabPage1.Location = new System.Drawing.Point(1, 27);
+            this.uiTabPage1.Name = "uiTabPage1";
+            this.uiTabPage1.Size = new System.Drawing.Size(605, 266);
+            this.uiTabPage1.TabStop = true;
+            this.uiTabPage1.Text = "Cài đặt cơ sở dữ liệu";
+            // 
+            // btnSetupSQL
+            // 
+            this.btnSetupSQL.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetupSQL.Image = ((System.Drawing.Image)(resources.GetObject("btnSetupSQL.Image")));
+            this.btnSetupSQL.Location = new System.Drawing.Point(18, 57);
+            this.btnSetupSQL.Name = "btnSetupSQL";
+            this.btnSetupSQL.Size = new System.Drawing.Size(576, 31);
+            this.btnSetupSQL.TabIndex = 5;
+            this.btnSetupSQL.Text = "1 . Cài đặt SQL Server";
+            this.btnSetupSQL.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnSetupSQL.Click += new System.EventHandler(this.btnSetupSQL_Click);
+            // 
+            // btnRestoreDatabase
+            // 
+            this.btnRestoreDatabase.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestoreDatabase.Image = ((System.Drawing.Image)(resources.GetObject("btnRestoreDatabase.Image")));
+            this.btnRestoreDatabase.Location = new System.Drawing.Point(18, 219);
+            this.btnRestoreDatabase.Name = "btnRestoreDatabase";
+            this.btnRestoreDatabase.Size = new System.Drawing.Size(576, 31);
+            this.btnRestoreDatabase.TabIndex = 6;
+            this.btnRestoreDatabase.Text = "Khôi phục cơ sở dữ liệu";
+            this.btnRestoreDatabase.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnRestoreDatabase.Click += new System.EventHandler(this.btnRestoreDatabase_Click);
+            // 
+            // btnTaoCSDL
+            // 
+            this.btnTaoCSDL.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoCSDL.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoCSDL.Image")));
+            this.btnTaoCSDL.Location = new System.Drawing.Point(18, 138);
+            this.btnTaoCSDL.Name = "btnTaoCSDL";
+            this.btnTaoCSDL.Size = new System.Drawing.Size(576, 31);
+            this.btnTaoCSDL.TabIndex = 7;
+            this.btnTaoCSDL.Text = "2 . Tạo cơ sở dữ liệu";
+            this.btnTaoCSDL.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnTaoCSDL.Click += new System.EventHandler(this.btnTaoCSDL_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(18, 175);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(420, 38);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Khôi phục Cơ sở dữ liệu\r\n(Trường hợp đã có Cơ sở dữ liệu thì dùng chức năng này)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(18, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(470, 38);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Bước 2 : Tạo mới cơ sở dữ liệu\r\n(Trường hợp đã có Cơ sở dữ liệu trước đó thì bỏ q" +
+                "ua bước này ) ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(18, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(397, 38);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Bước 1  : Cài đặt Hệ quản trị cơ sở dữ liệu SQL Server \r\n(Nếu máy đã cài đặt thì " +
+                "bỏ qua bước này)";
+            // 
             // ConfigConecionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(607, 252);
-            this.Controls.Add(this.uiGroupBox1);
+            this.ClientSize = new System.Drawing.Size(607, 294);
+            this.Controls.Add(this.uiTab1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MaximumSize = new System.Drawing.Size(613, 281);
-            this.MinimumSize = new System.Drawing.Size(613, 281);
             this.Name = "ConfigConecionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cấu hình thông số kết nối";
@@ -211,6 +334,11 @@
             this.uiGroupBox1.ResumeLayout(false);
             this.uiGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiTab1)).EndInit();
+            this.uiTab1.ResumeLayout(false);
+            this.uiTabPage2.ResumeLayout(false);
+            this.uiTabPage1.ResumeLayout(false);
+            this.uiTabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -229,5 +357,14 @@
         private Janus.Windows.EditControls.UIButton btnClose;
         private Janus.Windows.EditControls.UIButton btnSave;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private Janus.Windows.UI.Tab.UITab uiTab1;
+        private Janus.Windows.UI.Tab.UITabPage uiTabPage2;
+        private Janus.Windows.UI.Tab.UITabPage uiTabPage1;
+        private Janus.Windows.EditControls.UIButton btnSetupSQL;
+        private Janus.Windows.EditControls.UIButton btnRestoreDatabase;
+        private Janus.Windows.EditControls.UIButton btnTaoCSDL;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

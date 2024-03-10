@@ -53,6 +53,7 @@ namespace WarehouseManagement
             }
             return listData;
         }
+
         public static string GetFolderDatabaseRemote(string serverName, string dbName, string dbUser, string dbPassWord)
         {
             if (string.IsNullOrEmpty(serverName) || string.IsNullOrEmpty(dbName) || string.IsNullOrEmpty(dbUser))
@@ -118,77 +119,25 @@ namespace WarehouseManagement
                 return folderRemote;
             }
         }
-        public static void CheckAndCreateProcedureCheckTerminalOnline(string serverName, string dbName, string dbUser, string dbPassWord)
+
+        public static bool TestConnection(string connectionString)
         {
             try
             {
-                using (SqlConnection cnn = new SqlConnection())
-                {
-                    cnn.ConnectionString = string.Format("Server={0};Database={1};Uid={2};Pwd={3}", new object[] { serverName, dbName, dbUser, dbPassWord });
-                    cnn.Open();
+                sqlConnection = new SqlConnection(connectionString);
 
-                    SqlCommand sqlCmd = new SqlCommand();
-                    sqlCmd.CommandType = CommandType.Text;
-                    sqlCmd.Connection = cnn;
+                sqlConnection.Open();
 
-                    string cmdText = "";
+                sqlConnection.Close();
 
-                    #region Bo sung them store Kiem tra trang thai Terminal
-                    cmdText = @"DECLARE @sql NVARCHAR(max)
-                                SET @sql = 
-                                'IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N''[dbo].[CheckAndUpdateTerminalStatus]'') AND type in (N''P'', N''PC''))
-                                DROP PROCEDURE [dbo].[CheckAndUpdateTerminalStatus]
-                                '
-                                EXEC sp_executesql @sql
-
-                                SET @sql = 
-                                '
-                                CREATE PROC [dbo].[CheckAndUpdateTerminalStatus]
-                                AS
-                                	
-                                DECLARE @user VARCHAR(100), @database VARCHAR(200)
-
-                                DECLARE cur CURSOR FAST_FORWARD READ_ONLY FOR
-                                SELECT [UserName], [DataBase] FROM [User]
-
-                                OPEN cur
-
-                                FETCH NEXT FROM cur INTO @user, @database
-
-                                WHILE @@FETCH_STATUS = 0
-                                BEGIN
-
-                                if(SELECT COUNT(*) from sys.dm_exec_connections c INNER JOIN sys.dm_exec_sessions s ON c.session_id = s.session_id
-                                LEFT JOIN sys.sysprocesses pr ON pr.spid = c.session_id
-                                where client_net_address is not null 
-                                and (client_net_address = (select IP from [User] where [UserName]  = @user) OR client_net_address = ''<local machine>'') 
-                                AND ISNULL(DB_NAME(pr.dbid), N'''') = ( SELECT [DataBase] FROM [User] WHERE [DataBase] = @database and [DataBase] is not null and [UserName]  = @user )
-                                and s.program_name = ''.Net SqlClient Data Provider'') > 0
-                                    begin
-                                        update [User] set isOnline = 1 where [UserName]  = @user
-                                    end
-                                else
-                                    begin
-                                        update [User] set isOnline = 0 where [UserName]  = @user
-                                    END
-                                	
-                                FETCH NEXT FROM cur INTO @user, @database
-
-                                END
-
-                                CLOSE cur
-                                DEALLOCATE cur
-                                '
-                                EXEC sp_executesql @sql";
-                    #endregion
-                    sqlCmd.CommandText = cmdText;
-                    sqlCmd.ExecuteNonQuery();
-                }
+                return true;
             }
             catch (Exception ex)
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
+
+            return false;
         }
     }
 }
