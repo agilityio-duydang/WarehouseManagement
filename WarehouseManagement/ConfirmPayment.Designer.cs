@@ -170,12 +170,14 @@
             // 
             // lblTienThua
             // 
+            this.lblTienThua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTienThua.AutoSize = true;
             this.lblTienThua.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTienThua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
-            this.lblTienThua.Location = new System.Drawing.Point(284, 289);
+            this.lblTienThua.Location = new System.Drawing.Point(225, 289);
             this.lblTienThua.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTienThua.Name = "lblTienThua";
+            this.lblTienThua.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTienThua.Size = new System.Drawing.Size(29, 19);
             this.lblTienThua.TabIndex = 46;
             this.lblTienThua.Text = "{}";
@@ -225,15 +227,19 @@
             // 
             // txtKhachThanhToan
             // 
+            this.txtKhachThanhToan.DecimalDigits = 5;
             this.txtKhachThanhToan.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtKhachThanhToan.Location = new System.Drawing.Point(179, 248);
             this.txtKhachThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.txtKhachThanhToan.Name = "txtKhachThanhToan";
             this.txtKhachThanhToan.Size = new System.Drawing.Size(172, 27);
             this.txtKhachThanhToan.TabIndex = 42;
-            this.txtKhachThanhToan.Text = "0 ₫";
-            this.txtKhachThanhToan.Value = 0;
-            this.txtKhachThanhToan.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int32;
+            this.txtKhachThanhToan.Text = "0,00000 ₫";
+            this.txtKhachThanhToan.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            327680});
             this.txtKhachThanhToan.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.txtKhachThanhToan.TextChanged += new System.EventHandler(this.txtKhachThanhToan_TextChanged);
             // 
@@ -242,24 +248,29 @@
             this.txtKhachCanTra.AutoSize = true;
             this.txtKhachCanTra.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKhachCanTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.txtKhachCanTra.Location = new System.Drawing.Point(284, 216);
+            this.txtKhachCanTra.Location = new System.Drawing.Point(225, 216);
             this.txtKhachCanTra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtKhachCanTra.Name = "txtKhachCanTra";
+            this.txtKhachCanTra.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtKhachCanTra.Size = new System.Drawing.Size(29, 19);
             this.txtKhachCanTra.TabIndex = 41;
             this.txtKhachCanTra.Text = "{}";
             // 
             // txtTriGia
             // 
+            this.txtTriGia.DecimalDigits = 5;
             this.txtTriGia.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTriGia.Location = new System.Drawing.Point(149, 140);
             this.txtTriGia.Margin = new System.Windows.Forms.Padding(2);
             this.txtTriGia.Name = "txtTriGia";
             this.txtTriGia.Size = new System.Drawing.Size(202, 27);
             this.txtTriGia.TabIndex = 40;
-            this.txtTriGia.Text = "0 ₫";
-            this.txtTriGia.Value = ((long)(0));
-            this.txtTriGia.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTriGia.Text = "0,00000 ₫";
+            this.txtTriGia.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            327680});
             this.txtTriGia.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.txtTriGia.TextChanged += new System.EventHandler(this.txtTriGia_TextChanged);
             // 
@@ -298,6 +309,7 @@
             // 
             // txtTienThue
             // 
+            this.txtTienThue.DecimalDigits = 5;
             this.txtTienThue.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTienThue.Location = new System.Drawing.Point(149, 177);
             this.txtTienThue.Margin = new System.Windows.Forms.Padding(2);
@@ -305,9 +317,12 @@
             this.txtTienThue.ReadOnly = true;
             this.txtTienThue.Size = new System.Drawing.Size(202, 27);
             this.txtTienThue.TabIndex = 36;
-            this.txtTienThue.Text = "0 ₫";
-            this.txtTienThue.Value = ((long)(0));
-            this.txtTienThue.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTienThue.Text = "0,00000 ₫";
+            this.txtTienThue.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            327680});
             this.txtTienThue.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.txtTienThue.TextChanged += new System.EventHandler(this.txtTienThue_TextChanged);
             // 
@@ -327,9 +342,10 @@
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-            this.lblTongTien.Location = new System.Drawing.Point(284, 69);
+            this.lblTongTien.Location = new System.Drawing.Point(225, 69);
             this.lblTongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblTongTien.Size = new System.Drawing.Size(29, 19);
             this.lblTongTien.TabIndex = 34;
             this.lblTongTien.Text = "{}";

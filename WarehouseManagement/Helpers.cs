@@ -31,8 +31,8 @@ namespace WarehouseManagement
                     tr += "<td>" + item.TenHangHoa.ToString() + "</td>";
                     tr += "<td>" + item.DonViTinh.ToString() + "</td>";
                     tr += "<td>" + ToTrimmedString(item.SoLuong) + "</td>";
-                    tr += "<td>" + item.DonGiaBan.ToString("#,##0") + "</td>";
-                    tr += "<td>" + item.ThanhTienBan.ToString("#,##0") + "</td>";
+                    tr += "<td>" + item.DonGiaBan.ToString("#,#.0000#") + "</td>";
+                    tr += "<td>" + item.ThanhTienBan.ToString("#,#.0000#") + "</td>";
                     tr += "</tr>";
                 }
                 string body = "Mã hoá đơn   : " + hoadon.MaHoaDon + "<br>";
@@ -40,11 +40,11 @@ namespace WarehouseManagement
                 body += "Thời gian thanh toán : " + hoadon.ThoiGianThanhToan.ToString("dd/MM/yyyy HH:mm:ss") + "<br>";
                 body += "Tên nhân viên   : " + User.Load(hoadon.NhanVienId).FullName.ToString() + "<br>";
                 body += "Tên khách hàng  : " + KhachHang.Load(hoadon.KhachHangId).TenKhachHang.ToString() + "<br>";
-                body += "Tổng tiền hàng  : " + hoadon.TongTienHang.ToString("#,##0") + "<br>";
-                body += "Tiền thuế       : " + hoadon.TienThue.ToString("#,##0") + "<br>";
-                body += "Giảm giá (%)    : " + hoadon.GiamGia.ToString("#,##0") + "<br>";
-                body += "Trị giá giảm    : " + hoadon.TriGiaGiam.ToString("#,##0") + "<br>";
-                body += "Tổng thanh toán : " + hoadon.TongTien.ToString("#,##0") + "<br>";
+                body += "Tổng tiền hàng  : " + hoadon.TongTienHang.ToString("#,#.0000#") + "<br>";
+                body += "Tiền thuế       : " + hoadon.TienThue.ToString("#,#.0000#") + "<br>";
+                body += "Giảm giá (%)    : " + hoadon.GiamGia.ToString("#,#.0000#") + "<br>";
+                body += "Trị giá giảm    : " + hoadon.TriGiaGiam.ToString("#,#.0000#") + "<br>";
+                body += "Tổng thanh toán : " + hoadon.TongTien.ToString("#,#.0000#") + "<br>";
 
                 body += "<table>"
                      + "<thead>"
@@ -108,8 +108,8 @@ namespace WarehouseManagement
                     tr += "<td>" + item.TenHangHoa.ToString() + "</td>";
                     tr += "<td>" + item.DonViTinh.ToString() + "</td>";
                     tr += "<td>" + ToTrimmedString(item.SoLuong) + "</td>";
-                    tr += "<td>" + item.DonGiaBan.ToString("#,##0") + "</td>";
-                    tr += "<td>" + item.ThanhTienBan.ToString("#,##0") + "</td>";
+                    tr += "<td>" + item.DonGiaBan.ToString("#,#.0000#") + "</td>";
+                    tr += "<td>" + item.ThanhTienBan.ToString("#,#.0000#") + "</td>";
                     tr += "</tr>";
                 }
                 string body = "Mã hoá đơn   : " + hoadon.MaHoaDon + "<br>";
@@ -117,11 +117,11 @@ namespace WarehouseManagement
                 body += "Thời gian thanh toán : " + hoadon.ThoiGianThanhToan.ToString("dd/MM/yyyy HH:mm:ss") + "<br>";
                 body += "Tên nhân viên   : " + User.Load(hoadon.NhanVienId).FullName.ToString() + "<br>";
                 body += "Tên khách hàng  : " + KhachHang.Load(hoadon.KhachHangId).TenKhachHang.ToString() + "<br>";
-                body += "Tổng tiền hàng  : " + hoadon.TongTienHang.ToString("#,##0") + "<br>";
-                body += "Tiền thuế       : " + hoadon.TienThue.ToString("#,##0") + "<br>";
-                body += "Giảm giá (%)    : " + hoadon.GiamGia.ToString("#,##0") + "<br>";
-                body += "Trị giá giảm    : " + hoadon.TriGiaGiam.ToString("#,##0") + "<br>";
-                body += "Tổng thanh toán : " + hoadon.TongTien.ToString("#,##0") + "<br>";
+                body += "Tổng tiền hàng  : " + hoadon.TongTienHang.ToString("#,#.0000#") + "<br>";
+                body += "Tiền thuế       : " + hoadon.TienThue.ToString("#,#.0000#") + "<br>";
+                body += "Giảm giá (%)    : " + hoadon.GiamGia.ToString("#,#.0000#") + "<br>";
+                body += "Trị giá giảm    : " + hoadon.TriGiaGiam.ToString("#,#.0000#") + "<br>";
+                body += "Tổng thanh toán : " + hoadon.TongTien.ToString("#,#.0000#") + "<br>";
 
                 var smtp = new SmtpClient
                 {
@@ -553,13 +553,13 @@ namespace WarehouseManagement
                 }
 
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
 
-                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
 
-                string TonQuy = decimal.Parse((tongThu + tongPhieuThu - tongChi).ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TonQuy = decimal.Parse((tongThu + tongPhieuThu - tongChi).ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
 
-                string TongPhieuThu = decimal.Parse(tongPhieuThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongPhieuThu = decimal.Parse(tongPhieuThu.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
 
                 body += "TỔNG THU HOÁ ĐƠN : " + TongThu + "<br>";
                 body += "TỔNG PHIẾU THU : " + TongPhieuThu + "<br>";
@@ -577,8 +577,8 @@ namespace WarehouseManagement
                     trReportTotal += "<td>" + item["STT"] + "</td>";
                     trReportTotal += "<td>" + item["TenHangHoa"] + "</td>";
                     trReportTotal += "<td>" + item["DonViTinh"] + "</td>";
-                    trReportTotal += "<td>" + Convert.ToDecimal(item["SoLuong"]).ToString("#,##0") + "</td>";
-                    trReportTotal += "<td>" + Convert.ToDecimal(item["ThanhTien"]).ToString("#,##0") + "</td>";
+                    trReportTotal += "<td>" + Convert.ToDecimal(item["SoLuong"]).ToString("#,#.0000#") + "</td>";
+                    trReportTotal += "<td>" + Convert.ToDecimal(item["ThanhTien"]).ToString("#,#.0000#") + "</td>";
                     trReportTotal += "</tr>";
                 }
 
@@ -621,7 +621,7 @@ namespace WarehouseManagement
 
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
 
-                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
 
                 body += "TỔNG CHI : " + TongChi + "<br>";
 
@@ -634,7 +634,7 @@ namespace WarehouseManagement
                     trReportTotal += "<td>" + item["STT"].ToString() + "</td>";
                     trReportTotal += "<td>" + item["LoaiChi"] + "</td>";
                     trReportTotal += "<td>" + item["SoLan"] + "</td>";
-                    trReportTotal += "<td>" + Convert.ToDecimal(item["GiaTri"]).ToString("#,##0") + "</td>";
+                    trReportTotal += "<td>" + Convert.ToDecimal(item["GiaTri"]).ToString("#,#.0000#") + "</td>";
                     trReportTotal += "</tr>";
                 }
 
@@ -677,7 +677,7 @@ namespace WarehouseManagement
 
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
 
-                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
 
                 body += "TỔNG THU : " + TongThu + "<br>";
 
@@ -690,7 +690,7 @@ namespace WarehouseManagement
                     trReportTotal += "<td>" + item["STT"].ToString() + "</td>";
                     trReportTotal += "<td>" + item["LoaiThu"] + "</td>";
                     trReportTotal += "<td>" + item["SoLan"] + "</td>";
-                    trReportTotal += "<td>" + Convert.ToDecimal(item["GiaTri"]).ToString("#,##0") + "</td>";
+                    trReportTotal += "<td>" + Convert.ToDecimal(item["GiaTri"]).ToString("#,#.0000#") + "</td>";
                     trReportTotal += "</tr>";
                 }
 

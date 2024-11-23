@@ -73,8 +73,8 @@ namespace WarehouseManagement
                     {
                         Payment Payment = Payment.Load(id);
                         Payment.Delete();
-                        Helpers Helpers = new Helpers();
-                        Helpers.SendEmmailDeletePayment(Payment);
+                        //Helpers Helpers = new Helpers();
+                        //Helpers.SendEmmailDeletePayment(Payment);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else
@@ -104,7 +104,9 @@ namespace WarehouseManagement
                 }
 
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                if (TongChi == ",0000")
+                    TongChi = "0,0000";
                 lblTongChi.Text = TongChi;
 
                 dgList.Refetch();
@@ -173,7 +175,7 @@ namespace WarehouseManagement
                 {
                     decimal GiaTri = (decimal)e.Row.Cells["GiaTri"].Value;
                     long PaymentTypeId = (long)e.Row.Cells["PaymentTypeId"].Value;
-                    e.Row.Cells["GiaTri"].Text = GiaTri.ToString("#,##0");
+                    e.Row.Cells["GiaTri"].Text = GiaTri.ToString("#,#.0000#");
                     e.Row.Cells["PaymentTypeId"].Text = PaymentType.Load(PaymentTypeId).Ten;
                 }
             }
@@ -189,9 +191,9 @@ namespace WarehouseManagement
             {
                 if (ShowMessage("Bạn có chắc chắn muốn gửi Email báo cáo này không?", true, false) == "Yes")
                 {
-                    Helpers help = new Helpers();
-                    help.SendEmmailPaymentTotal(dateTuNgay.Value, dateDenNgay.Value);
-                    ShowMessage("Gửi báo cáo thành công. ", false, false);
+                    //Helpers help = new Helpers();
+                    //help.SendEmmailPaymentTotal(dateTuNgay.Value, dateDenNgay.Value);
+                    //ShowMessage("Gửi báo cáo thành công. ", false, false);
                 }
             }
             catch (Exception ex)

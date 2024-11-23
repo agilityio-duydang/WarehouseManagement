@@ -50,9 +50,9 @@
             this.lblTenNhanVien = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
             this.btnPrint = new Janus.Windows.EditControls.UIButton();
-            this.btnExport = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox5)).BeginInit();
             this.uiGroupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
@@ -86,80 +86,100 @@
             // lblTongTien
             // 
             this.lblTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTongTien.DecimalDigits = 4;
             this.lblTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
             this.lblTongTien.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
-            this.lblTongTien.Location = new System.Drawing.Point(624, 135);
+            this.lblTongTien.Location = new System.Drawing.Point(530, 135);
             this.lblTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.ReadOnly = true;
-            this.lblTongTien.Size = new System.Drawing.Size(141, 27);
+            this.lblTongTien.Size = new System.Drawing.Size(235, 27);
             this.lblTongTien.TabIndex = 54;
-            this.lblTongTien.Text = "0 ₫";
-            this.lblTongTien.Value = ((long)(0));
-            this.lblTongTien.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.lblTongTien.Text = "0,0000 ₫";
+            this.lblTongTien.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.lblTongTien.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // lblTriGiaGiam
             // 
             this.lblTriGiaGiam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTriGiaGiam.DecimalDigits = 4;
             this.lblTriGiaGiam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.lblTriGiaGiam.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
-            this.lblTriGiaGiam.Location = new System.Drawing.Point(624, 105);
+            this.lblTriGiaGiam.Location = new System.Drawing.Point(530, 105);
             this.lblTriGiaGiam.Margin = new System.Windows.Forms.Padding(2);
             this.lblTriGiaGiam.Name = "lblTriGiaGiam";
             this.lblTriGiaGiam.ReadOnly = true;
-            this.lblTriGiaGiam.Size = new System.Drawing.Size(141, 27);
+            this.lblTriGiaGiam.Size = new System.Drawing.Size(235, 27);
             this.lblTriGiaGiam.TabIndex = 53;
-            this.lblTriGiaGiam.Text = "0 ₫";
-            this.lblTriGiaGiam.Value = ((long)(0));
-            this.lblTriGiaGiam.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.lblTriGiaGiam.Text = "0,0000 ₫";
+            this.lblTriGiaGiam.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.lblTriGiaGiam.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // lblGiamGia
             // 
             this.lblGiamGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGiamGia.DecimalDigits = 4;
             this.lblGiamGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.lblGiamGia.Location = new System.Drawing.Point(704, 75);
+            this.lblGiamGia.Location = new System.Drawing.Point(610, 75);
             this.lblGiamGia.Margin = new System.Windows.Forms.Padding(2);
             this.lblGiamGia.Name = "lblGiamGia";
             this.lblGiamGia.ReadOnly = true;
-            this.lblGiamGia.Size = new System.Drawing.Size(61, 27);
+            this.lblGiamGia.Size = new System.Drawing.Size(155, 27);
             this.lblGiamGia.TabIndex = 52;
-            this.lblGiamGia.Text = "0";
-            this.lblGiamGia.Value = 0;
-            this.lblGiamGia.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int32;
+            this.lblGiamGia.Text = "0,0000";
+            this.lblGiamGia.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.lblGiamGia.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // lblToTalTax
             // 
             this.lblToTalTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblToTalTax.DecimalDigits = 4;
             this.lblToTalTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.lblToTalTax.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
-            this.lblToTalTax.Location = new System.Drawing.Point(624, 15);
+            this.lblToTalTax.Location = new System.Drawing.Point(530, 15);
             this.lblToTalTax.Margin = new System.Windows.Forms.Padding(2);
             this.lblToTalTax.Name = "lblToTalTax";
             this.lblToTalTax.ReadOnly = true;
-            this.lblToTalTax.Size = new System.Drawing.Size(141, 27);
+            this.lblToTalTax.Size = new System.Drawing.Size(235, 27);
             this.lblToTalTax.TabIndex = 51;
-            this.lblToTalTax.Text = "0 ₫";
-            this.lblToTalTax.Value = ((long)(0));
-            this.lblToTalTax.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.lblToTalTax.Text = "0,0000 ₫";
+            this.lblToTalTax.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.lblToTalTax.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // lblTax
             // 
             this.lblTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTax.DecimalDigits = 4;
             this.lblTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.lblTax.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
-            this.lblTax.Location = new System.Drawing.Point(624, 45);
+            this.lblTax.Location = new System.Drawing.Point(530, 45);
             this.lblTax.Margin = new System.Windows.Forms.Padding(2);
             this.lblTax.Name = "lblTax";
             this.lblTax.ReadOnly = true;
-            this.lblTax.Size = new System.Drawing.Size(141, 27);
+            this.lblTax.Size = new System.Drawing.Size(235, 27);
             this.lblTax.TabIndex = 50;
-            this.lblTax.Text = "0 ₫";
-            this.lblTax.Value = ((long)(0));
-            this.lblTax.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.lblTax.Text = "0,0000 ₫";
+            this.lblTax.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.lblTax.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label2
@@ -167,7 +187,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(508, 78);
+            this.label2.Location = new System.Drawing.Point(414, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 20);
@@ -179,7 +199,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(523, 108);
+            this.label6.Location = new System.Drawing.Point(429, 108);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 20);
@@ -191,7 +211,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(497, 18);
+            this.label4.Location = new System.Drawing.Point(403, 18);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 20);
@@ -203,7 +223,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(533, 48);
+            this.label8.Location = new System.Drawing.Point(439, 48);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 20);
@@ -215,7 +235,7 @@
             this.lblDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaChi.Location = new System.Drawing.Point(486, 138);
+            this.lblDiaChi.Location = new System.Drawing.Point(392, 138);
             this.lblDiaChi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(134, 20);
@@ -334,6 +354,19 @@
             this.uiGroupBox3.TabIndex = 13;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
+            // btnExport
+            // 
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(15, 188);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 30;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -362,19 +395,6 @@
             this.btnPrint.Text = "In hoá đơn";
             this.btnPrint.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(15, 188);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(113, 31);
-            this.btnExport.TabIndex = 30;
-            this.btnExport.Text = "Xuất Excel";
-            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // InvoicesForm
             // 

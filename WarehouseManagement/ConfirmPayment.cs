@@ -56,14 +56,14 @@ namespace WarehouseManagement
                     {
                         ToTalMoney += item.ThanhTienBan;
                     }
-                    lblTongTien.Text = decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    lblTongTien.Text = decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     if (ThueGTGT > 0)
                     {
                         taxMoney = ToTalMoney * ThueGTGT / 100;
                         ToTalMoney = ToTalMoney + taxMoney;
                     }
-                    string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    string TaxMoney = taxMoney == 0 ? "0" : decimal.Parse(taxMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    string TaxMoney = taxMoney == 0 ? "0" : decimal.Parse(taxMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     txtKhachCanTra.Text = TongTien;
                     txtKhachThanhToan.Text = TongTien;
                     txtTienThue.Text = TaxMoney;
@@ -191,8 +191,8 @@ namespace WarehouseManagement
                         BanHang.HangHoaCollection = new List<BanHang_HangHoa>();
                         SetProducts();
                         ShowMessage("Thanh toán thành công. ", false, false);
-                        Helpers helper = new Helpers();
-                        helper.SendEmmail(HoaDon);
+                        //Helpers helper = new Helpers();
+                        //helper.SendEmmail(HoaDon);
                         this.Close();
                     }
                 }
@@ -322,7 +322,7 @@ namespace WarehouseManagement
                         totalPercent = ToTalMoney * percent / 100;
                         ToTalMoney = ToTalMoney - totalPercent;
                     }
-                    string TotalPercent = totalPercent == 0 ? "0" : decimal.Parse(totalPercent.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    string TotalPercent = totalPercent == 0 ? "0" : decimal.Parse(totalPercent.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     txtTriGia.Text = TotalPercent;
                 }
                 else
@@ -332,10 +332,10 @@ namespace WarehouseManagement
                     {
                         ToTalMoney = ToTalMoney - discountMoney;
                     }
-                    string DiscountMoney = discountMoney == 0 ? "0" : decimal.Parse(discountMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    string DiscountMoney = discountMoney == 0 ? "0" : decimal.Parse(discountMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     txtTriGia.Text = DiscountMoney;
                 }
-                string TongTien = ToTalMoney == 0 ? "0" : decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongTien = ToTalMoney == 0 ? "0" : decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                 txtKhachCanTra.Text = TongTien;
                 txtKhachThanhToan.Text = TongTien;
             }
@@ -398,7 +398,7 @@ namespace WarehouseManagement
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
                 decimal castMoney = Convert.ToDecimal(txtKhachThanhToan.Text.Replace(" ₫", ""));
                 decimal returnMoney = castMoney - Convert.ToDecimal(txtKhachCanTra.Text);
-                string ReturnMoney = returnMoney == 0 ? "0" : decimal.Parse(returnMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string ReturnMoney = returnMoney == 0 ? "0" : decimal.Parse(returnMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                 if (returnMoney >= 0)
                 {
                     lblDeptOrReturn.Text = "Tiền thừa trả khách  : ";
@@ -425,8 +425,8 @@ namespace WarehouseManagement
                     decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
                     decimal ThanhTienBan = (decimal)e.Row.Cells["ThanhTienBan"].Value;
                     e.Row.Cells["SoLuong"].Text = ToTrimmedString(SoLuong);
-                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,##0");
-                    e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan.ToString("#,##0");
+                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,#.0000#");
+                    e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan.ToString("#,#.0000#");
                 }
             }
             catch (Exception ex)

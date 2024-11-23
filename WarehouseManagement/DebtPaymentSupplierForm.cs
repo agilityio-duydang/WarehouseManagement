@@ -27,19 +27,19 @@ namespace WarehouseManagement
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
 
                     decimal TongDaThanhToan = (decimal)e.Row.Cells["TongDaThanhToan"].Value;
-                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,##0");
+                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,#.0000#");
 
                     decimal TongConNo = (decimal)e.Row.Cells["TongConNo"].Value;
-                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,##0");
+                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,#.0000#");
 
                     decimal ChiPhiNhap = (decimal)e.Row.Cells["ChiPhiNhap"].Value;
-                    e.Row.Cells["ChiPhiNhap"].Text = ChiPhiNhap.ToString("#,##0");
+                    e.Row.Cells["ChiPhiNhap"].Text = ChiPhiNhap.ToString("#,#.0000#");
 
                     decimal GiamGia = (decimal)e.Row.Cells["GiamGia"].Value;
-                    e.Row.Cells["GiamGia"].Text = GiamGia.ToString("#,##0");
+                    e.Row.Cells["GiamGia"].Text = GiamGia.ToString("#,#.0000#");
 
                     long PhieuNhapKhoId = Convert.ToInt64(e.Row.Cells["PhieuNhapKhoId"].Value);
                     e.Row.Cells["PhieuNhapKhoId"].Text = PhieuNhapKho.Load(PhieuNhapKhoId).MaPhieu;
@@ -156,8 +156,8 @@ namespace WarehouseManagement
                 Payment.GhiChu = txtGhiChu.Text;
                 Payment.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
-                Helpers Helpers = new Helpers();
-                Helpers.SendEmmailPayment(Payment);
+                //Helpers Helpers = new Helpers();
+                //Helpers.SendEmmailPayment(Payment);
                 btnSave.Enabled = false;
             }
             catch (Exception ex)
@@ -276,13 +276,13 @@ namespace WarehouseManagement
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
 
                     decimal TongDaThanhToan = (decimal)e.Row.Cells["TongDaThanhToan"].Value;
-                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,##0");
+                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,#.0000#");
 
                     decimal TongConNo = (decimal)e.Row.Cells["TongConNo"].Value;
-                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,##0");
+                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,#.0000#");
 
                     long HoaDonId = Convert.ToInt64(e.Row.Cells["HoaDonId"].Value);
                     e.Row.Cells["HoaDonId"].Text = HoaDon.Load(HoaDonId).MaHoaDon;

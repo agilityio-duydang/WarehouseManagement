@@ -74,8 +74,8 @@ namespace WarehouseManagement
                     {
                         PhieuThu PhieuThu = PhieuThu.Load(id);
                         PhieuThu.Delete();
-                        Helpers Helpers = new Helpers();
-                        Helpers.SendEmmailDeleteReceipts(PhieuThu);
+                        //Helpers Helpers = new Helpers();
+                        //Helpers.SendEmmailDeleteReceipts(PhieuThu);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else
@@ -105,7 +105,9 @@ namespace WarehouseManagement
                 }
 
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                if (TongThu == ",0000")
+                    TongThu = "0,0000";
                 lbltongThu.Text = TongThu;
 
                 dgList.Refetch();
@@ -174,7 +176,7 @@ namespace WarehouseManagement
                 {
                     decimal GiaTri = (decimal)e.Row.Cells["GiaTri"].Value;
                     long LoaiThuId = (long)e.Row.Cells["LoaiThuId"].Value;
-                    e.Row.Cells["GiaTri"].Text = GiaTri.ToString("#,##0");
+                    e.Row.Cells["GiaTri"].Text = GiaTri.ToString("#,#.0000#");
                     e.Row.Cells["LoaiThuId"].Text = LoaiThu.Load(LoaiThuId).Ten;
                 }
             }
@@ -249,9 +251,9 @@ namespace WarehouseManagement
             {
                 if (ShowMessage("Bạn có chắc chắn muốn gửi Email báo cáo này không?", true, false) == "Yes")
                 {
-                    Helpers help = new Helpers();
-                    help.SendEmmailReceiptsTotal(dateTuNgay.Value, dateDenNgay.Value);
-                    ShowMessage("Gửi báo cáo thành công. ", false, false);
+                    //Helpers help = new Helpers();
+                    //help.SendEmmailReceiptsTotal(dateTuNgay.Value, dateDenNgay.Value);
+                    //ShowMessage("Gửi báo cáo thành công. ", false, false);
                 }
             }
             catch (Exception ex)

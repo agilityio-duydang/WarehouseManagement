@@ -240,6 +240,7 @@
             this.linkFileExcel.TabIndex = 17;
             this.linkFileExcel.TabStop = true;
             this.linkFileExcel.Text = "File Excel mẫu";
+            this.linkFileExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkFileExcel_LinkClicked);
             // 
             // uiGroupBox1
             // 

@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Janus.Windows.GridEX.GridEXLayout dgListProducts_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
-            Janus.Windows.GridEX.GridEXLayout dgList_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
+            Janus.Windows.GridEX.GridEXLayout dgList_DesignTimeLayout = new Janus.Windows.GridEX.GridEXLayout();
             this.uiGroupBox1 = new Janus.Windows.EditControls.UIGroupBox();
             this.uiTab1 = new Janus.Windows.UI.Tab.UITab();
             this.uiTabPage2 = new Janus.Windows.UI.Tab.UITabPage();
             this.dgListProducts = new Janus.Windows.GridEX.GridEX();
             this.uiGroupBox4 = new Janus.Windows.EditControls.UIGroupBox();
+            this.btnAdd = new Janus.Windows.EditControls.UIButton();
             this.cbbCategory = new Janus.Windows.EditControls.UIComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.btnPrint = new Janus.Windows.EditControls.UIButton();
             this.btnCash = new Janus.Windows.EditControls.UIButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAdd = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiTab1)).BeginInit();
@@ -162,6 +162,20 @@
             this.uiGroupBox4.TabIndex = 2;
             this.uiGroupBox4.Text = "Tìm hàng hoá";
             this.uiGroupBox4.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAdd.Location = new System.Drawing.Point(328, 19);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(115, 28);
+            this.btnAdd.TabIndex = 40;
+            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbbCategory
             // 
@@ -262,7 +276,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdate.Location = new System.Drawing.Point(475, 13);
+            this.btnUpdate.Location = new System.Drawing.Point(551, 13);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(137, 28);
@@ -273,15 +287,19 @@
             // 
             // txtDonGia
             // 
+            this.txtDonGia.DecimalDigits = 4;
             this.txtDonGia.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtDonGia.Location = new System.Drawing.Point(350, 14);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(5);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(115, 27);
+            this.txtDonGia.Size = new System.Drawing.Size(191, 27);
             this.txtDonGia.TabIndex = 2;
-            this.txtDonGia.Text = "0 ₫";
-            this.txtDonGia.Value = ((long)(0));
-            this.txtDonGia.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtDonGia.Text = "0,0000 ₫";
+            this.txtDonGia.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtDonGia.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // txtSoLuong
@@ -564,20 +582,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.Location = new System.Drawing.Point(328, 19);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 28);
-            this.btnAdd.TabIndex = 40;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // CashierForm
             // 

@@ -41,8 +41,9 @@ namespace WarehouseManagement
                     btnAddMore.Enabled = false;
                 }
                 LoadCategoty();
+                chkAuto.Checked = true;
                 if (hanghoa == null)
-                {
+                {                    
                     hanghoa = new HangHoa();
                     txtMaHangHoa.Text = GetMaHangHoa();
                 }
@@ -124,6 +125,13 @@ namespace WarehouseManagement
                         txtTenHangHoa.BackColor = System.Drawing.SystemColors.Info;
                         return;
                     }
+                    if (HangHoaCollection.Any(x => x.MaHangHoa.ToLower().Trim() == txtMaHangHoa.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenHangHoa, "Mã hàng hoá đã tồn tại");
+                        txtMaHangHoa.Focus();
+                        txtMaHangHoa.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
                 }
                 hanghoa.InsertUpdate();
                 XuatNhapTon XuatNhapTon = XuatNhapTon.SelectCollectionDynamic("MaHangHoa =N'" + hanghoa.MaHangHoa + "'","").FirstOrDefault();
@@ -171,6 +179,13 @@ namespace WarehouseManagement
                         errorProvider.SetError(txtTenHangHoa, "Tên hàng hoá đã tồn tại");
                         txtTenHangHoa.Focus();
                         txtTenHangHoa.BackColor = System.Drawing.SystemColors.Info;
+                        return;
+                    }
+                    if (HangHoaCollection.Any(x => x.MaHangHoa.ToLower().Trim() == txtMaHangHoa.Text.ToLower().Trim()))
+                    {
+                        errorProvider.SetError(txtTenHangHoa, "Mã hàng hoá đã tồn tại");
+                        txtMaHangHoa.Focus();
+                        txtMaHangHoa.BackColor = System.Drawing.SystemColors.Info;
                         return;
                     }
                 }
@@ -255,6 +270,40 @@ namespace WarehouseManagement
             CategoryForm f = new CategoryForm();
             f.ShowDialog(this);
             LoadCategoty();
+        }
+
+        private void txtDonGiaBan_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal DonGiaBan = Convert.ToDecimal(txtDonGiaBan.Text.Replace(" ₫", ""));
+                txtDonGiaBan.Text = DonGiaBan.ToString("#,#.0000#");
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
+
+        private void chkAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chkAuto.CheckState == CheckState.Checked)
+                {
+                    txtMaHangHoa.Text = GetMaHangHoa();
+                    txtMaHangHoa.Enabled = false;
+                }
+                else
+                {
+                    txtMaHangHoa.Text = string.Empty;
+                    txtMaHangHoa.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
         }
     }
 }

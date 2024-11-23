@@ -202,6 +202,7 @@
             // 
             // txtTongConNo
             // 
+            this.txtTongConNo.DecimalDigits = 4;
             this.txtTongConNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
             this.txtTongConNo.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongConNo.Location = new System.Drawing.Point(179, 77);
@@ -210,13 +211,17 @@
             this.txtTongConNo.ReadOnly = true;
             this.txtTongConNo.Size = new System.Drawing.Size(216, 27);
             this.txtTongConNo.TabIndex = 72;
-            this.txtTongConNo.Text = "0 ₫";
-            this.txtTongConNo.Value = ((long)(0));
-            this.txtTongConNo.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongConNo.Text = "0,0000 ₫";
+            this.txtTongConNo.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongConNo.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // txtTongThanhToan
             // 
+            this.txtTongThanhToan.DecimalDigits = 4;
             this.txtTongThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.txtTongThanhToan.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongThanhToan.Location = new System.Drawing.Point(179, 46);
@@ -225,13 +230,17 @@
             this.txtTongThanhToan.ReadOnly = true;
             this.txtTongThanhToan.Size = new System.Drawing.Size(216, 27);
             this.txtTongThanhToan.TabIndex = 71;
-            this.txtTongThanhToan.Text = "0 ₫";
-            this.txtTongThanhToan.Value = ((long)(0));
-            this.txtTongThanhToan.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongThanhToan.Text = "0,0000 ₫";
+            this.txtTongThanhToan.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongThanhToan.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // txtTongTien
             // 
+            this.txtTongTien.DecimalDigits = 4;
             this.txtTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.txtTongTien.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongTien.Location = new System.Drawing.Point(179, 15);
@@ -240,9 +249,12 @@
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(216, 27);
             this.txtTongTien.TabIndex = 70;
-            this.txtTongTien.Text = "0 ₫";
-            this.txtTongTien.Value = ((long)(0));
-            this.txtTongTien.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongTien.Text = "0,0000 ₫";
+            this.txtTongTien.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongTien.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label3

@@ -175,8 +175,8 @@ namespace WarehouseManagement
                     decimal DonGiaNhap = (decimal)e.Row.Cells["DonGiaNhap"].Value;
                     decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
                     long NhomHangHoaId = (long)e.Row.Cells["NhomHangHoaId"].Value;
-                    e.Row.Cells["DonGiaNhap"].Text = DonGiaNhap.ToString("#,##0");
-                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,##0");
+                    e.Row.Cells["DonGiaNhap"].Text = DonGiaNhap.ToString("#,#.0000#");
+                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,#.0000#");
                     e.Row.Cells["NhomHangHoaId"].Text = NhomHangHoa.Load(NhomHangHoaId).TenNhom;
                 }
             }

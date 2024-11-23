@@ -33,6 +33,7 @@
             this.uiGroupBox2 = new Janus.Windows.EditControls.UIGroupBox();
             this.dgList = new Janus.Windows.GridEX.GridEX();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
             this.txtThanhTienTon = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.txtThanhTienBan = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.txtThanhTienNhap = new Janus.Windows.GridEX.EditControls.NumericEditBox();
@@ -54,7 +55,6 @@
             this.txtMaHangHoa = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnExport = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
@@ -117,8 +117,23 @@
             this.uiGroupBox3.TabIndex = 8;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(1100, 100);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 76;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // txtThanhTienTon
             // 
+            this.txtThanhTienTon.DecimalDigits = 4;
             this.txtThanhTienTon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
             this.txtThanhTienTon.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtThanhTienTon.Location = new System.Drawing.Point(475, 90);
@@ -127,13 +142,17 @@
             this.txtThanhTienTon.ReadOnly = true;
             this.txtThanhTienTon.Size = new System.Drawing.Size(216, 27);
             this.txtThanhTienTon.TabIndex = 66;
-            this.txtThanhTienTon.Text = "0 ₫";
-            this.txtThanhTienTon.Value = ((long)(0));
-            this.txtThanhTienTon.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtThanhTienTon.Text = "0,0000 ₫";
+            this.txtThanhTienTon.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtThanhTienTon.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // txtThanhTienBan
             // 
+            this.txtThanhTienBan.DecimalDigits = 4;
             this.txtThanhTienBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.txtThanhTienBan.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtThanhTienBan.Location = new System.Drawing.Point(475, 59);
@@ -142,13 +161,17 @@
             this.txtThanhTienBan.ReadOnly = true;
             this.txtThanhTienBan.Size = new System.Drawing.Size(216, 27);
             this.txtThanhTienBan.TabIndex = 65;
-            this.txtThanhTienBan.Text = "0 ₫";
-            this.txtThanhTienBan.Value = ((long)(0));
-            this.txtThanhTienBan.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtThanhTienBan.Text = "0,0000 ₫";
+            this.txtThanhTienBan.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtThanhTienBan.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // txtThanhTienNhap
             // 
+            this.txtThanhTienNhap.DecimalDigits = 4;
             this.txtThanhTienNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.txtThanhTienNhap.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtThanhTienNhap.Location = new System.Drawing.Point(475, 28);
@@ -157,9 +180,12 @@
             this.txtThanhTienNhap.ReadOnly = true;
             this.txtThanhTienNhap.Size = new System.Drawing.Size(216, 27);
             this.txtThanhTienNhap.TabIndex = 64;
-            this.txtThanhTienNhap.Text = "0 ₫";
-            this.txtThanhTienNhap.Value = ((long)(0));
-            this.txtThanhTienNhap.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtThanhTienNhap.Text = "0,0000 ₫";
+            this.txtThanhTienNhap.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtThanhTienNhap.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label3
@@ -383,20 +409,6 @@
             this.label1.Size = new System.Drawing.Size(111, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hàng hoá :";
-            // 
-            // btnExport
-            // 
-            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(1100, 100);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(113, 31);
-            this.btnExport.TabIndex = 76;
-            this.btnExport.Text = "Xuất Excel";
-            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // InventoryManagementForm
             // 

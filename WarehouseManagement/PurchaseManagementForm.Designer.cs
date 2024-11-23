@@ -42,6 +42,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSearch = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox3 = new Janus.Windows.EditControls.UIGroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnExport = new Janus.Windows.EditControls.UIButton();
             this.txtTongGiamGia = new Janus.Windows.GridEX.EditControls.NumericEditBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTongChiPhiNhap = new Janus.Windows.GridEX.EditControls.NumericEditBox();
@@ -53,8 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnClose = new Janus.Windows.EditControls.UIButton();
-            this.btnExport = new Janus.Windows.EditControls.UIButton();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
             this.uiGroupBox1.SuspendLayout();
@@ -69,7 +69,7 @@
             dgList_DesignTimeLayout.LayoutString = resources.GetString("dgList_DesignTimeLayout.LayoutString");
             this.dgList.DesignTimeLayout = dgList_DesignTimeLayout;
             this.dgList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgList.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgList.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dgList.GroupByBoxVisible = false;
             this.dgList.Location = new System.Drawing.Point(0, 115);
             this.dgList.Margin = new System.Windows.Forms.Padding(5);
@@ -226,8 +226,35 @@
             this.uiGroupBox3.TabIndex = 17;
             this.uiGroupBox3.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Blue;
+            this.label10.Location = new System.Drawing.Point(413, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(264, 19);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExport.Location = new System.Drawing.Point(1104, 127);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(113, 31);
+            this.btnExport.TabIndex = 81;
+            this.btnExport.Text = "Xuất Excel";
+            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // txtTongGiamGia
             // 
+            this.txtTongGiamGia.DecimalDigits = 4;
             this.txtTongGiamGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.txtTongGiamGia.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongGiamGia.Location = new System.Drawing.Point(179, 46);
@@ -236,9 +263,12 @@
             this.txtTongGiamGia.ReadOnly = true;
             this.txtTongGiamGia.Size = new System.Drawing.Size(216, 27);
             this.txtTongGiamGia.TabIndex = 80;
-            this.txtTongGiamGia.Text = "0 ₫";
-            this.txtTongGiamGia.Value = ((long)(0));
-            this.txtTongGiamGia.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongGiamGia.Text = "0,0000 ₫";
+            this.txtTongGiamGia.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongGiamGia.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label9
@@ -254,6 +284,7 @@
             // 
             // txtTongChiPhiNhap
             // 
+            this.txtTongChiPhiNhap.DecimalDigits = 4;
             this.txtTongChiPhiNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.txtTongChiPhiNhap.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongChiPhiNhap.Location = new System.Drawing.Point(179, 76);
@@ -262,9 +293,12 @@
             this.txtTongChiPhiNhap.ReadOnly = true;
             this.txtTongChiPhiNhap.Size = new System.Drawing.Size(216, 27);
             this.txtTongChiPhiNhap.TabIndex = 78;
-            this.txtTongChiPhiNhap.Text = "0 ₫";
-            this.txtTongChiPhiNhap.Value = ((long)(0));
-            this.txtTongChiPhiNhap.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongChiPhiNhap.Text = "0,0000 ₫";
+            this.txtTongChiPhiNhap.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongChiPhiNhap.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label8
@@ -280,6 +314,7 @@
             // 
             // txtTongConNo
             // 
+            this.txtTongConNo.DecimalDigits = 4;
             this.txtTongConNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(0)))));
             this.txtTongConNo.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongConNo.Location = new System.Drawing.Point(179, 138);
@@ -288,13 +323,18 @@
             this.txtTongConNo.ReadOnly = true;
             this.txtTongConNo.Size = new System.Drawing.Size(216, 27);
             this.txtTongConNo.TabIndex = 72;
-            this.txtTongConNo.Text = "0 ₫";
-            this.txtTongConNo.Value = ((long)(0));
-            this.txtTongConNo.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongConNo.Text = "0,0000 ₫";
+            this.txtTongConNo.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongConNo.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
+            this.txtTongConNo.Click += new System.EventHandler(this.txtTongConNo_Click);
             // 
             // txtTongThanhToan
             // 
+            this.txtTongThanhToan.DecimalDigits = 4;
             this.txtTongThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.txtTongThanhToan.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongThanhToan.Location = new System.Drawing.Point(179, 107);
@@ -303,13 +343,17 @@
             this.txtTongThanhToan.ReadOnly = true;
             this.txtTongThanhToan.Size = new System.Drawing.Size(216, 27);
             this.txtTongThanhToan.TabIndex = 71;
-            this.txtTongThanhToan.Text = "0 ₫";
-            this.txtTongThanhToan.Value = ((long)(0));
-            this.txtTongThanhToan.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongThanhToan.Text = "0,0000 ₫";
+            this.txtTongThanhToan.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongThanhToan.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // txtTongTien
             // 
+            this.txtTongTien.DecimalDigits = 4;
             this.txtTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.txtTongTien.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtTongTien.Location = new System.Drawing.Point(179, 15);
@@ -318,9 +362,12 @@
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(216, 27);
             this.txtTongTien.TabIndex = 70;
-            this.txtTongTien.Text = "0 ₫";
-            this.txtTongTien.Value = ((long)(0));
-            this.txtTongTien.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtTongTien.Text = "0,0000 ₫";
+            this.txtTongTien.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtTongTien.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label3
@@ -369,32 +416,6 @@
             this.btnClose.Text = "Đóng";
             this.btnClose.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExport.Location = new System.Drawing.Point(1104, 127);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(5);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(113, 31);
-            this.btnExport.TabIndex = 81;
-            this.btnExport.Text = "Xuất Excel";
-            this.btnExport.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Blue;
-            this.label10.Location = new System.Drawing.Point(413, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(264, 19);
-            this.label10.TabIndex = 82;
-            this.label10.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // PurchaseManagementForm
             // 

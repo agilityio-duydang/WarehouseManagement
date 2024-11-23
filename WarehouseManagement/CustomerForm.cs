@@ -42,7 +42,7 @@ namespace WarehouseManagement
                     {
                         TongTien += item.TongTien;
                     }
-                    lblToTal.Text = decimal.Parse(TongTien.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    lblToTal.Text = decimal.Parse(TongTien.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     CongNoKhachHangCollection = CongNoKhachHang.SelectCollectionBy_KhachHangId(KhachHang.Id);
                     decimal TongConNo = 0;
                     foreach (CongNoKhachHang item in CongNoKhachHangCollection)
@@ -55,8 +55,8 @@ namespace WarehouseManagement
                     {
                         TongThu += item.GiaTri;
                     }
-                    txtTongConNo.Text = decimal.Parse(TongConNo.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    txtTongThu.Text = decimal.Parse(TongThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    txtTongConNo.Text = decimal.Parse(TongConNo.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    txtTongThu.Text = decimal.Parse(TongThu.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     LoadHistory();
                     LoadDebt();
                     LoadReceipts();
@@ -252,7 +252,7 @@ namespace WarehouseManagement
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
 
                     long NhanVienId = Convert.ToInt64(e.Row.Cells["NhanVienId"].Value);
                     e.Row.Cells["NhanVienId"].Text = User.Load(NhanVienId).FullName;
@@ -271,13 +271,13 @@ namespace WarehouseManagement
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
 
                     decimal TongDaThanhToan = (decimal)e.Row.Cells["TongDaThanhToan"].Value;
-                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,##0");
+                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,#.0000#");
 
                     decimal TongConNo = (decimal)e.Row.Cells["TongConNo"].Value;
-                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,##0");
+                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,#.0000#");
 
                     long HoaDonId = Convert.ToInt64(e.Row.Cells["HoaDonId"].Value);
                     e.Row.Cells["HoaDonId"].Text = HoaDon.Load(HoaDonId).MaHoaDon;
@@ -337,7 +337,7 @@ namespace WarehouseManagement
                 {
                     decimal GiaTri = (decimal)e.Row.Cells["GiaTri"].Value;
                     long LoaiThuId = (long)e.Row.Cells["LoaiThuId"].Value;
-                    e.Row.Cells["GiaTri"].Text = GiaTri.ToString("#,##0");
+                    e.Row.Cells["GiaTri"].Text = GiaTri.ToString("#,#.0000#");
                     e.Row.Cells["LoaiThuId"].Text = LoaiThu.Load(LoaiThuId).Ten;
                 }
             }

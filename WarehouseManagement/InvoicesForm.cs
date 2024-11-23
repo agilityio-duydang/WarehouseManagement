@@ -33,8 +33,8 @@ namespace WarehouseManagement
                     decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
 
                     e.Row.Cells["SoLuong"].Text = ToTrimmedString(SoLuong);
-                    e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan.ToString("#,##0");
-                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,##0");
+                    e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan.ToString("#,#.0000#");
+                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,#.0000#");
                 }
             }
             catch (Exception ex)
@@ -88,11 +88,11 @@ namespace WarehouseManagement
                     lblTenKhachHang.Text = KhachHang.Load(HoaDon.KhachHangId).TenKhachHang;
                     lblThoiGianTao.Text = HoaDon.ThoiGianThanhToan.ToString("dd-MM-yyyy HH:mm");
                     CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                    lblToTalTax.Text = decimal.Parse(HoaDon.TongTienHang.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    lblTax.Text = decimal.Parse(HoaDon.TienThue.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    lblToTalTax.Text = decimal.Parse(HoaDon.TongTienHang.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    lblTax.Text = decimal.Parse(HoaDon.TienThue.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     lblGiamGia.Text = HoaDon.GiamGia == 0 ? "" : HoaDon.GiamGia.ToString("N0");
-                    lblTriGiaGiam.Text = decimal.Parse(HoaDon.TriGiaGiam.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    lblTongTien.Text = decimal.Parse(HoaDon.TongTien.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    lblTriGiaGiam.Text = decimal.Parse(HoaDon.TriGiaGiam.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    lblTongTien.Text = decimal.Parse(HoaDon.TongTien.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     dgList.Refetch();
                     dgList.DataSource = HoaDon.HangHoaCollection;
                     dgList.Refresh();

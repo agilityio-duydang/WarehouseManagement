@@ -38,6 +38,7 @@
             this.btnClose = new Janus.Windows.EditControls.UIButton();
             this.btnDelete = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox1 = new Janus.Windows.EditControls.UIGroupBox();
+            this.btnImportExcel = new Janus.Windows.EditControls.UIButton();
             this.cbbCategory = new Janus.Windows.EditControls.UIComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new Janus.Windows.EditControls.UIButton();
@@ -45,7 +46,6 @@
             this.txtMaHangHoa = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnImportExcel = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
@@ -172,6 +172,18 @@
             this.uiGroupBox1.Text = "Tìm kiếm hàng hoá";
             this.uiGroupBox1.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
             // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnImportExcel.Image")));
+            this.btnImportExcel.Location = new System.Drawing.Point(659, 75);
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.Size = new System.Drawing.Size(240, 27);
+            this.btnImportExcel.TabIndex = 15;
+            this.btnImportExcel.Text = "Nhập hàng hóa từ Excel";
+            this.btnImportExcel.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
+            // 
             // cbbCategory
             // 
             this.cbbCategory.Location = new System.Drawing.Point(657, 29);
@@ -243,18 +255,6 @@
             this.label1.Size = new System.Drawing.Size(111, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hàng hoá :";
-            // 
-            // btnImportExcel
-            // 
-            this.btnImportExcel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnImportExcel.Image")));
-            this.btnImportExcel.Location = new System.Drawing.Point(659, 75);
-            this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(240, 27);
-            this.btnImportExcel.TabIndex = 15;
-            this.btnImportExcel.Text = "Nhập hàng hóa từ Excel";
-            this.btnImportExcel.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnImportExcel.Click += new System.EventHandler(this.btnImportExcel_Click);
             // 
             // ProductManagementForm
             // 

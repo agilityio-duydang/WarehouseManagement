@@ -137,9 +137,21 @@ namespace WarehouseManagement
         {
             try
             {
-                dgList.Refresh();
-                dgList.DataSource = BanHang.HangHoaCollection;
+                CaculateProducts();
                 dgList.Refetch();
+                dgList.DataSource = BanHang.HangHoaCollection;
+                dgList.Refresh();
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
+
+        private void CaculateProducts()
+        {
+            try
+            {
                 if (BanHang.HangHoaCollection.Count > 0)
                 {
                     decimal ToTalMoney = 0;
@@ -148,7 +160,7 @@ namespace WarehouseManagement
                         ToTalMoney += item.ThanhTienBan;
                     }
                     CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                    string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     lblTongTien.Text = TongTien;
                 }
                 else
@@ -168,7 +180,6 @@ namespace WarehouseManagement
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
         }
-
         private bool ValidateFormSales(bool isOnlyWarning)
         {
             bool isValid = true;
@@ -381,12 +392,16 @@ namespace WarehouseManagement
             {
                 if (e.Row.RowType == RowType.Record)
                 {
-                    decimal SoLuong = (decimal)e.Row.Cells["SoLuong"].Value;
-                    decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
-                    decimal ThanhTienBan = (decimal)e.Row.Cells["ThanhTienBan"].Value;
-                    e.Row.Cells["SoLuong"].Text = ToTrimmedString(SoLuong);
-                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,##0");
-                    e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan.ToString("#,##0");
+                    if(e.Row.Cells["SoLuong"].Value != null)
+                    {
+                        decimal SoLuong = (decimal)e.Row.Cells["SoLuong"].Value;
+                        decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
+                        decimal ThanhTienBan = (decimal)e.Row.Cells["ThanhTienBan"].Value;
+                        e.Row.Cells["SoLuong"].Text = ToTrimmedString(SoLuong);
+                        e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,#.0000#");
+                        e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan.ToString("#,#.0000#");
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -439,7 +454,7 @@ namespace WarehouseManagement
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
-                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,##0");
+                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,#.0000#");
                 }
             }
             catch (Exception ex)
@@ -521,13 +536,13 @@ namespace WarehouseManagement
                         Tax = ToTalMoney * Convert.ToInt32(txtThueGTGT.Text) / 100;
                         ToTalMoney = ToTalMoney + Tax;
                         CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                        string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                        string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                         lblTongTien.Text = TongTien;
                     }
                     else
                     {
                         CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                        string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                        string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                         lblTongTien.Text = TongTien;
 
                     }
@@ -535,7 +550,7 @@ namespace WarehouseManagement
                 else
                 {
                     CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                    string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    string TongTien = decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     lblTongTien.Text = TongTien;
                 }
             }

@@ -137,13 +137,13 @@ namespace WarehouseManagement
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
 
                     decimal TongDaThanhToan = (decimal)e.Row.Cells["TongDaThanhToan"].Value;
-                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,##0");
+                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,#.0000#");
 
                     decimal TongConNo = (decimal)e.Row.Cells["TongConNo"].Value;
-                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,##0");
+                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,#.0000#");
 
                     long HoaDonId = Convert.ToInt64(e.Row.Cells["HoaDonId"].Value);
                     e.Row.Cells["HoaDonId"].Text = HoaDon.Load(HoaDonId).MaHoaDon;

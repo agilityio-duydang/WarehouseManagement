@@ -140,16 +140,16 @@ namespace WarehouseManagement
                     decimal ThanhTienTon = (decimal)e.Row.Cells["ThanhTienTon"].Value;
                     CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
                     long NhomHangHoaId = (long)e.Row.Cells["NhomHangHoaId"].Value;
-                    e.Row.Cells["DonGiaNhap"].Text = decimal.Parse(DonGiaNhap.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    e.Row.Cells["DonGiaBan"].Text = decimal.Parse(DonGiaBan.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    e.Row.Cells["DonGiaNhap"].Text = decimal.Parse(DonGiaNhap.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    e.Row.Cells["DonGiaBan"].Text = decimal.Parse(DonGiaBan.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     e.Row.Cells["NhomHangHoaId"].Text = NhomHangHoa.Load(NhomHangHoaId).TenNhom;
 
                     e.Row.Cells["LuongNhap"].Text = ToTrimmedString(LuongNhap);
                     e.Row.Cells["LuongBan"].Text = ToTrimmedString(LuongBan);
                     e.Row.Cells["LuongTon"].Text = ToTrimmedString(LuongTon);
-                    e.Row.Cells["ThanhTienNhap"].Text = ThanhTienNhap == 0 ? "0" : decimal.Parse(ThanhTienNhap.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan == 0 ? "0" : decimal.Parse(ThanhTienBan.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    e.Row.Cells["ThanhTienTon"].Text = ThanhTienTon == 0 ? "0" : decimal.Parse(ThanhTienTon.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    e.Row.Cells["ThanhTienNhap"].Text = ThanhTienNhap == 0 ? "0" : decimal.Parse(ThanhTienNhap.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    e.Row.Cells["ThanhTienBan"].Text = ThanhTienBan == 0 ? "0" : decimal.Parse(ThanhTienBan.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    e.Row.Cells["ThanhTienTon"].Text = ThanhTienTon == 0 ? "0" : decimal.Parse(ThanhTienTon.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                 }
             }
             catch (Exception ex)

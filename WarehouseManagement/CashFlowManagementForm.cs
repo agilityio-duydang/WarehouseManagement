@@ -138,13 +138,19 @@ namespace WarehouseManagement
                 }
 
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
-                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongThu = decimal.Parse(tongThu.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                if (TongThu == ",0000")
+                    TongThu = "0,0000";
                 lblTongThu.Text = TongThu;
 
-                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongChi = decimal.Parse(tongChi.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                if (TongChi == ",0000")
+                    TongChi = "0,0000";
                 lblTongChi.Text = TongChi;
 
-                string TonQuy = decimal.Parse((tongThu - tongChi).ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TonQuy = decimal.Parse((tongThu - tongChi).ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                if (TonQuy == ",0000")
+                    TonQuy = "0,0000";
                 lblTonQuy.Text = TonQuy;
 
                 dgList.Refetch();
@@ -195,7 +201,7 @@ namespace WarehouseManagement
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
                     long KhachHangId = (long)e.Row.Cells["KhachHangId"].Value;
                     long NhanVienId = (long)e.Row.Cells["NhanVienId"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
                     e.Row.Cells["KhachHangId"].Text = KhachHang.Load(KhachHangId).TenKhachHang;
                     e.Row.Cells["NhanVienId"].Text = User.Load(NhanVienId).FullName;
                 }
@@ -238,8 +244,8 @@ namespace WarehouseManagement
                         HoaDon HoaDon = HoaDon.Load(id);
                         HoaDon.HangHoaCollection = HoaDon_HangHoa.SelectCollectionBy_HoaDonId(HoaDon.Id);
                         HoaDon.DeleteFull();
-                        Helpers Helpers = new Helpers();
-                        Helpers.SendDeleteEmmail(HoaDon);
+                        //Helpers Helpers = new Helpers();
+                        //Helpers.SendDeleteEmmail(HoaDon);
                         ShowMessage("Xóa thành công. ", false, false);
                     }
                     else
@@ -260,9 +266,9 @@ namespace WarehouseManagement
             {
                 if (ShowMessage("Bạn có chắc chắn muốn gửi Email báo cáo này không?", true, false) == "Yes")
                 {
-                    Helpers help = new Helpers();
-                    help.SendEmmailReportTotal(dateTuNgay.Value, dateDenNgay.Value);
-                    ShowMessage("Gửi báo cáo thành công. ", false, false);
+                    //Helpers help = new Helpers();
+                    //help.SendEmmailReportTotal(dateTuNgay.Value, dateDenNgay.Value);
+                    //ShowMessage("Gửi báo cáo thành công. ", false, false);
                 }
             }
             catch (Exception ex)

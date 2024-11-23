@@ -60,9 +60,9 @@ namespace WarehouseManagement
                 cbbNhaCungCap.SelectedValue = PhieuNhapKho.NhaCungCapId;
                 txtTriGia.Text = PhieuNhapKho.GiamGia.ToString();
                 txtChiPhiNhapHang.Text = PhieuNhapKho.ChiPhiNhap.ToString();
-                txtTongTien.Text = decimal.Parse(PhieuNhapKho.TongTien.ToString()).ToString("#,###", cultureInfo.NumberFormat); //PhieuNhapKho.TongTien.ToString();
-                txtThanhToan.Text = decimal.Parse(PhieuNhapKho.TongDaThanhToan.ToString()).ToString("#,###", cultureInfo.NumberFormat); //PhieuNhapKho.TongDaThanhToan.ToString();
-                txtTienNo.Text = decimal.Parse(PhieuNhapKho.TongConNo.ToString()).ToString("#,###", cultureInfo.NumberFormat); //PhieuNhapKho.TongConNo.ToString();
+                txtTongTien.Text = decimal.Parse(PhieuNhapKho.TongTien.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat); //PhieuNhapKho.TongTien.ToString();
+                txtThanhToan.Text = decimal.Parse(PhieuNhapKho.TongDaThanhToan.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat); //PhieuNhapKho.TongDaThanhToan.ToString();
+                txtTienNo.Text = decimal.Parse(PhieuNhapKho.TongConNo.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat); //PhieuNhapKho.TongConNo.ToString();
                 txtGhiChu.Text = PhieuNhapKho.GhiChu;
             }
             catch (Exception ex)
@@ -206,7 +206,6 @@ namespace WarehouseManagement
                 LoadProducts();
                 LoadSupplier();
                 LoadWareHouse();
-                cbbGiamGia.SelectedIndex = 0;
                 if (PhieuNhapKho != null)
                 {
                     PhieuNhapKho.HangHoaCollection = PhieuNhapKho_HangHoa.SelectCollectionBy_PhieuNhapKhoId(PhieuNhapKho.Id);
@@ -230,6 +229,7 @@ namespace WarehouseManagement
                     HangHoa = new HangHoa();
                     SetPhieuNhapKho();
                 }
+                cbbGiamGia.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -368,7 +368,7 @@ namespace WarehouseManagement
                     PhieuNhapKho.HangHoaCollection = PhieuNhapKho_HangHoa.SelectCollectionBy_PhieuNhapKhoId(PhieuNhapKho.Id);
                     SetPhieuNhapKho();
                     BindProducts();
-                    if (Convert.ToDecimal(txtTienNo.Text) < 0)
+                    if (!String.IsNullOrEmpty(txtTienNo.Text) && Convert.ToDecimal(txtTienNo.Text) < 0)
                     {
                         CongNoNhaCungCap CongNoNhaCungCap = new CongNoNhaCungCap();
                         CongNoNhaCungCap.ThoiGian = PhieuNhapKho.ThoiGian;
@@ -382,8 +382,8 @@ namespace WarehouseManagement
                         CongNoNhaCungCap.GiamGia = PhieuNhapKho.GiamGia;
                         CongNoNhaCungCap.GhiChu = PhieuNhapKho.GhiChu;
                         CongNoNhaCungCap.InsertUpdate();
-                        UpdateInventory();
                     }
+                    UpdateInventory();
                     btnAdd.Enabled = false;
                     btnDelete.Enabled = false;
                     btnSave.Enabled = false;
@@ -475,8 +475,10 @@ namespace WarehouseManagement
                     decimal ThanhTien = (decimal)e.Row.Cells["ThanhTien"].Value;
 
                     e.Row.Cells["SoLuong"].Text = SoLuong.ToString("#.##");
-                    e.Row.Cells["DonGia"].Text = DonGia.ToString("#,##0");
-                    e.Row.Cells["ThanhTien"].Text = ThanhTien.ToString("#,##0");
+                    e.Row.Cells["DonGia"].Text = DonGia.ToString("#,#.#");
+                    e.Row.Cells["ThanhTien"].Text = ThanhTien.ToString("#,#.#");
+                    //e.Row.Cells["DonGia"].Text = DonGia.ToString("#,#.0000#");
+                    //e.Row.Cells["ThanhTien"].Text = ThanhTien.ToString("#,#.0000#");
                 }
             }
             catch (Exception ex)
@@ -556,7 +558,7 @@ namespace WarehouseManagement
                         ToTalMoney += item.ThanhTien;
                     }
                 }
-                txtTongTien.Text = decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                txtTongTien.Text = ToTalMoney == 0 ? "0,0000" : decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                 if (Convert.ToDecimal(txtChiPhiNhapHang.Text.Replace(" ₫", "")) > 0)
                 {
                     ToTalMoney = ToTalMoney + Convert.ToDecimal(txtChiPhiNhapHang.Text.Replace(" ₫", ""));
@@ -569,7 +571,7 @@ namespace WarehouseManagement
                         totalPercent = ToTalMoney * percent / 100;
                         ToTalMoney = ToTalMoney - totalPercent;
                     }
-                    string TotalPercent = totalPercent == 0 ? "0" : decimal.Parse(totalPercent.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                    string TotalPercent = totalPercent == 0 ? "0" : decimal.Parse(totalPercent.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                     txtTriGia.Text = TotalPercent;
                 }
                 else
@@ -579,12 +581,13 @@ namespace WarehouseManagement
                     {
                         ToTalMoney = ToTalMoney - discountMoney;
                     }
-                    string DiscountMoney = discountMoney == 0 ? "0" : decimal.Parse(discountMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
-                    txtTriGia.Text = DiscountMoney;
+                    //string DiscountMoney = discountMoney == 0 ? "0" : decimal.Parse(discountMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
+                    //txtTriGia.Text = DiscountMoney;
                 }
-                string TongTien = ToTalMoney == 0 ? "0" : decimal.Parse(ToTalMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string TongTien = ToTalMoney == 0 ? "0,0000" : decimal.Parse(ToTalMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                 txtCanTra.Text = TongTien;
                 txtThanhToan.Text = TongTien;
+                txtTienNo.Text = "0,0000";
             }
             catch (Exception ex)
             {
@@ -653,7 +656,7 @@ namespace WarehouseManagement
                 CultureInfo cultureInfo = CultureInfo.GetCultureInfo("vi-VN");
                 decimal castMoney = Convert.ToDecimal(txtThanhToan.Text.Replace(" ₫", ""));
                 decimal returnMoney = castMoney - Convert.ToDecimal(txtCanTra.Text);
-                string ReturnMoney = returnMoney == 0 ? "0" : decimal.Parse(returnMoney.ToString()).ToString("#,###", cultureInfo.NumberFormat);
+                string ReturnMoney = returnMoney == 0 ? "0" : decimal.Parse(returnMoney.ToString()).ToString("#,#.0000#", cultureInfo.NumberFormat);
                 txtTienNo.Text = ReturnMoney;
             }
             catch (Exception ex)
@@ -709,6 +712,15 @@ namespace WarehouseManagement
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
+        }
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            ReadExcelPurchaseForm f = new ReadExcelPurchaseForm();
+            f.PhieuNhapKho = PhieuNhapKho;
+            f.ShowDialog(this);
+            BindProducts();
+            CaculatorInvoice();
         }
     }
 }

@@ -130,19 +130,19 @@ namespace WarehouseManagement
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
 
                     decimal TongDaThanhToan = (decimal)e.Row.Cells["TongDaThanhToan"].Value;
-                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,##0");
+                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,#.0000#");
 
                     decimal TongConNo = (decimal)e.Row.Cells["TongConNo"].Value;
-                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,##0");
+                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,#.0000#");
 
                     decimal ChiPhiNhap = (decimal)e.Row.Cells["ChiPhiNhap"].Value;
-                    e.Row.Cells["ChiPhiNhap"].Text = ChiPhiNhap.ToString("#,##0");
+                    e.Row.Cells["ChiPhiNhap"].Text = ChiPhiNhap.ToString("#,#.0000#");
 
                     decimal GiamGia = (decimal)e.Row.Cells["GiamGia"].Value;
-                    e.Row.Cells["GiamGia"].Text = GiamGia.ToString("#,##0");
+                    e.Row.Cells["GiamGia"].Text = GiamGia.ToString("#,#.0000#");
 
                     long NhaCungCapId = Convert.ToInt64(e.Row.Cells["NhaCungCapId"].Value);
                     e.Row.Cells["NhaCungCapId"].Text = NhaCungCap.Load(NhaCungCapId).TenNhaCungCap;
@@ -214,6 +214,11 @@ namespace WarehouseManagement
             {
                 Logger.LocalLogger.Instance().WriteMessage(ex);
             }
+        }
+
+        private void txtTongConNo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -24,7 +24,7 @@ namespace WarehouseManagement
         {
             GlobalSettings.Refreskey();
             txtUserName.Text = "Administrator";
-            txtPassword.Text = "300588";
+            txtPassword.Text = "12345678";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

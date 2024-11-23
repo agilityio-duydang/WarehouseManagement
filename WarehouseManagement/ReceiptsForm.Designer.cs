@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptsForm));
             this.uiGroupBox2 = new Janus.Windows.EditControls.UIGroupBox();
+            this.btnAddMore = new Janus.Windows.EditControls.UIButton();
             this.txtMaPhieu = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtThoiGian = new Janus.Windows.CalendarCombo.CalendarCombo();
@@ -48,7 +49,6 @@
             this.btnCancel = new Janus.Windows.EditControls.UIButton();
             this.btnSaveAndNew = new Janus.Windows.EditControls.UIButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAddMore = new Janus.Windows.EditControls.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
@@ -79,6 +79,20 @@
             this.uiGroupBox2.Size = new System.Drawing.Size(847, 342);
             this.uiGroupBox2.TabIndex = 8;
             this.uiGroupBox2.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // btnAddMore
+            // 
+            this.btnAddMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMore.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMore.Image")));
+            this.btnAddMore.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddMore.Location = new System.Drawing.Point(447, 100);
+            this.btnAddMore.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAddMore.Name = "btnAddMore";
+            this.btnAddMore.Size = new System.Drawing.Size(198, 27);
+            this.btnAddMore.TabIndex = 24;
+            this.btnAddMore.Text = "Thêm mới loại thu";
+            this.btnAddMore.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
+            this.btnAddMore.Click += new System.EventHandler(this.btnAddMore_Click);
             // 
             // txtMaPhieu
             // 
@@ -149,15 +163,19 @@
             this.txtGiaTri.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGiaTri.DecimalDigits = 4;
             this.txtGiaTri.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtGiaTri.Location = new System.Drawing.Point(165, 176);
             this.txtGiaTri.Margin = new System.Windows.Forms.Padding(6);
             this.txtGiaTri.Name = "txtGiaTri";
             this.txtGiaTri.Size = new System.Drawing.Size(270, 27);
             this.txtGiaTri.TabIndex = 5;
-            this.txtGiaTri.Text = "0 ₫";
-            this.txtGiaTri.Value = ((long)(0));
-            this.txtGiaTri.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtGiaTri.Text = "0,0000 ₫";
+            this.txtGiaTri.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtGiaTri.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // cbbLoaiThu
@@ -287,20 +305,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
-            // 
-            // btnAddMore
-            // 
-            this.btnAddMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMore.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMore.Image")));
-            this.btnAddMore.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddMore.Location = new System.Drawing.Point(447, 100);
-            this.btnAddMore.Margin = new System.Windows.Forms.Padding(6);
-            this.btnAddMore.Name = "btnAddMore";
-            this.btnAddMore.Size = new System.Drawing.Size(198, 27);
-            this.btnAddMore.TabIndex = 24;
-            this.btnAddMore.Text = "Thêm mới loại thu";
-            this.btnAddMore.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;
-            this.btnAddMore.Click += new System.EventHandler(this.btnAddMore_Click);
             // 
             // ReceiptsForm
             // 

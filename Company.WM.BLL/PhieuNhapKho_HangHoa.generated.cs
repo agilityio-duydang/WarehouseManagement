@@ -20,7 +20,8 @@ namespace Company.WM.BLL
 		public long NhomHangHoaId { set; get; }
 		public decimal DonGia { set; get; }
 		public string DonViTinh { set; get; }
-		public decimal ThanhTien { set; get; }
+        public decimal ThanhTien { set; get; }
+        public string GhiChu { set; get; }
 		
 		#endregion
 		

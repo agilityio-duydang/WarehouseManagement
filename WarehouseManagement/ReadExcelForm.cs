@@ -79,7 +79,7 @@ namespace WarehouseManagement
                 NhomHangHoaCollection = NhomHangHoa.SelectCollectionAll();
                 foreach (WorksheetRow wsr in wsrc)
                 {
-                    if (wsr.Index >= 2)
+                    if (wsr.Index >= 1)
                     {
                         try
                         {
@@ -278,7 +278,7 @@ namespace WarehouseManagement
                 Infragistics.Excel.Workbook workBook = new Infragistics.Excel.Workbook(Infragistics.Excel.WorkbookFormat.Excel97To2003);
                 Infragistics.Excel.Worksheet workSheet = workBook.Worksheets.Add("Sheet1");
 
-                workSheet.GetCell("C1").Value = "Nhóm hàng)";
+                workSheet.GetCell("C1").Value = "Nhóm hàng";
                 workSheet.GetCell("D1").Value = "Mã hàng";
                 workSheet.GetCell("E1").Value = "Tên hàng hóa";
                 workSheet.GetCell("F1").Value = "Giá bán";
@@ -306,8 +306,8 @@ namespace WarehouseManagement
                     decimal DonGiaNhap = (decimal)e.Row.Cells["DonGiaNhap"].Value;
                     decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
                     long NhomHangHoaId = (long)e.Row.Cells["NhomHangHoaId"].Value;
-                    e.Row.Cells["DonGiaNhap"].Text = DonGiaNhap.ToString("#,##0");
-                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,##0");
+                    e.Row.Cells["DonGiaNhap"].Text = DonGiaNhap.ToString("#,#.0000#");
+                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,#.0000#");
                     e.Row.Cells["NhomHangHoaId"].Text = NhomHangHoa.Load(NhomHangHoaId).TenNhom;
                 }
             }
@@ -370,6 +370,10 @@ namespace WarehouseManagement
                 {
                     long NhomHangHoaId = (long)e.Row.Cells["NhomHangHoaId"].Value;
                     e.Row.Cells["NhomHangHoaId"].Text = NhomHangHoa.Load(NhomHangHoaId).TenNhom;
+                    decimal DonGiaNhap = (decimal)e.Row.Cells["DonGiaNhap"].Value;
+                    decimal DonGiaBan = (decimal)e.Row.Cells["DonGiaBan"].Value;
+                    e.Row.Cells["DonGiaNhap"].Text = DonGiaNhap.ToString("#,#.0000#");
+                    e.Row.Cells["DonGiaBan"].Text = DonGiaBan.ToString("#,#.0000#");
                 }
             }
             catch (Exception ex)

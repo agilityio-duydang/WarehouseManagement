@@ -164,8 +164,8 @@ namespace WarehouseManagement
                 GetData();
                 Payment.InsertUpdate();
                 ShowMessage("Lưu thông tin thành công", false, false);
-                Helpers Helpers = new Helpers();
-                Helpers.SendEmmailPayment(Payment);
+                //Helpers Helpers = new Helpers();
+                //Helpers.SendEmmailPayment(Payment);
                 this.Close();
             }
             catch (Exception ex)
@@ -188,8 +188,8 @@ namespace WarehouseManagement
                 txtNguoiNhan.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
                 txtGiaTri.Text = String.Empty;
-                Helpers Helpers = new Helpers();
-                Helpers.SendEmmailPayment(Payment);
+                //Helpers Helpers = new Helpers();
+                //Helpers.SendEmmailPayment(Payment);
             }
             catch (Exception ex)
             {

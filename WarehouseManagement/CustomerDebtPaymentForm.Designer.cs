@@ -45,11 +45,11 @@
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.uiGroupBox1 = new Janus.Windows.EditControls.UIGroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new Janus.Windows.EditControls.UIButton();
             this.btnCancel = new Janus.Windows.EditControls.UIButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgList = new Janus.Windows.GridEX.GridEX();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox2)).BeginInit();
             this.uiGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiGroupBox1)).BeginInit();
@@ -105,6 +105,7 @@
             this.txtNoHienTai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNoHienTai.DecimalDigits = 4;
             this.txtNoHienTai.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtNoHienTai.Location = new System.Drawing.Point(165, 91);
             this.txtNoHienTai.Margin = new System.Windows.Forms.Padding(6);
@@ -112,9 +113,12 @@
             this.txtNoHienTai.ReadOnly = true;
             this.txtNoHienTai.Size = new System.Drawing.Size(675, 27);
             this.txtNoHienTai.TabIndex = 20;
-            this.txtNoHienTai.Text = "0 ₫";
-            this.txtNoHienTai.Value = ((long)(0));
-            this.txtNoHienTai.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtNoHienTai.Text = "0,0000 ₫";
+            this.txtNoHienTai.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtNoHienTai.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label2
@@ -133,15 +137,19 @@
             this.txtThuTuKhach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtThuTuKhach.DecimalDigits = 4;
             this.txtThuTuKhach.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtThuTuKhach.Location = new System.Drawing.Point(165, 130);
             this.txtThuTuKhach.Margin = new System.Windows.Forms.Padding(6);
             this.txtThuTuKhach.Name = "txtThuTuKhach";
             this.txtThuTuKhach.Size = new System.Drawing.Size(675, 27);
             this.txtThuTuKhach.TabIndex = 18;
-            this.txtThuTuKhach.Text = "0 ₫";
-            this.txtThuTuKhach.Value = ((long)(0));
-            this.txtThuTuKhach.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtThuTuKhach.Text = "0,0000 ₫";
+            this.txtThuTuKhach.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtThuTuKhach.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.txtThuTuKhach.TextChanged += new System.EventHandler(this.txtThuTuKhach_TextChanged);
             // 
@@ -189,6 +197,7 @@
             this.txtNoSau.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNoSau.DecimalDigits = 4;
             this.txtNoSau.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtNoSau.Location = new System.Drawing.Point(165, 169);
             this.txtNoSau.Margin = new System.Windows.Forms.Padding(6);
@@ -196,9 +205,12 @@
             this.txtNoSau.ReadOnly = true;
             this.txtNoSau.Size = new System.Drawing.Size(675, 27);
             this.txtNoSau.TabIndex = 5;
-            this.txtNoSau.Text = "0 ₫";
-            this.txtNoSau.Value = ((long)(0));
-            this.txtNoSau.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtNoSau.Text = "0,0000 ₫";
+            this.txtNoSau.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtNoSau.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label54
@@ -247,6 +259,18 @@
             this.uiGroupBox1.Size = new System.Drawing.Size(857, 50);
             this.uiGroupBox1.TabIndex = 7;
             this.uiGroupBox1.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(12, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(264, 19);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // btnSave
             // 
@@ -302,18 +326,6 @@
             this.dgList.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             this.dgList.RowDoubleClick += new Janus.Windows.GridEX.RowActionEventHandler(this.dgList_RowDoubleClick);
             this.dgList.LoadingRow += new Janus.Windows.GridEX.RowLoadEventHandler(this.dgList_LoadingRow);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(12, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(264, 19);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Hướng dẫn: Kích đôi để xem chi tiết";
             // 
             // CustomerDebtPaymentForm
             // 

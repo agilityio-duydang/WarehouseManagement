@@ -35,6 +35,7 @@
             this.btnCancel = new Janus.Windows.EditControls.UIButton();
             this.btnSaveAndNew = new Janus.Windows.EditControls.UIButton();
             this.uiGroupBox2 = new Janus.Windows.EditControls.UIGroupBox();
+            this.chkAuto = new Janus.Windows.EditControls.UICheckBox();
             this.btnAddMore = new Janus.Windows.EditControls.UIButton();
             this.txtGhiChu = new Janus.Windows.GridEX.EditControls.EditBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -123,6 +124,7 @@
             // uiGroupBox2
             // 
             this.uiGroupBox2.AutoScroll = true;
+            this.uiGroupBox2.Controls.Add(this.chkAuto);
             this.uiGroupBox2.Controls.Add(this.btnAddMore);
             this.uiGroupBox2.Controls.Add(this.txtGhiChu);
             this.uiGroupBox2.Controls.Add(this.label2);
@@ -145,6 +147,18 @@
             this.uiGroupBox2.Size = new System.Drawing.Size(901, 334);
             this.uiGroupBox2.TabIndex = 2;
             this.uiGroupBox2.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007;
+            // 
+            // chkAuto
+            // 
+            this.chkAuto.AutoSize = true;
+            this.chkAuto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAuto.Location = new System.Drawing.Point(455, 21);
+            this.chkAuto.Margin = new System.Windows.Forms.Padding(2);
+            this.chkAuto.Name = "chkAuto";
+            this.chkAuto.Size = new System.Drawing.Size(169, 24);
+            this.chkAuto.TabIndex = 49;
+            this.chkAuto.Text = "Mã hàng hoá tự động";
+            this.chkAuto.CheckedChanged += new System.EventHandler(this.chkAuto_CheckedChanged);
             // 
             // btnAddMore
             // 
@@ -188,15 +202,19 @@
             // 
             this.txtDonGiaBan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtDonGiaBan.DecimalDigits = 4;
             this.txtDonGiaBan.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtDonGiaBan.Location = new System.Drawing.Point(572, 138);
             this.txtDonGiaBan.Margin = new System.Windows.Forms.Padding(6);
             this.txtDonGiaBan.Name = "txtDonGiaBan";
             this.txtDonGiaBan.Size = new System.Drawing.Size(290, 27);
             this.txtDonGiaBan.TabIndex = 5;
-            this.txtDonGiaBan.Text = "0 ₫";
-            this.txtDonGiaBan.Value = ((long)(0));
-            this.txtDonGiaBan.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtDonGiaBan.Text = "0,0000 ₫";
+            this.txtDonGiaBan.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtDonGiaBan.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // label1
@@ -214,15 +232,19 @@
             // 
             this.txtDonGiaNhap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtDonGiaNhap.DecimalDigits = 4;
             this.txtDonGiaNhap.FormatMask = Janus.Windows.GridEX.NumericEditFormatMask.Currency;
             this.txtDonGiaNhap.Location = new System.Drawing.Point(146, 138);
             this.txtDonGiaNhap.Margin = new System.Windows.Forms.Padding(6);
             this.txtDonGiaNhap.Name = "txtDonGiaNhap";
             this.txtDonGiaNhap.Size = new System.Drawing.Size(290, 27);
             this.txtDonGiaNhap.TabIndex = 4;
-            this.txtDonGiaNhap.Text = "0 ₫";
-            this.txtDonGiaNhap.Value = ((long)(0));
-            this.txtDonGiaNhap.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int64;
+            this.txtDonGiaNhap.Text = "0,0000 ₫";
+            this.txtDonGiaNhap.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            262144});
             this.txtDonGiaNhap.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007;
             // 
             // cbbCategory
@@ -260,10 +282,6 @@
             // 
             // txtMaHangHoa
             // 
-            this.txtMaHangHoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaHangHoa.Enabled = false;
             this.txtMaHangHoa.Location = new System.Drawing.Point(146, 18);
             this.txtMaHangHoa.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtMaHangHoa.Name = "txtMaHangHoa";
@@ -377,5 +395,6 @@
         private Janus.Windows.GridEX.EditControls.EditBox txtGhiChu;
         private System.Windows.Forms.Label label2;
         private Janus.Windows.EditControls.UIButton btnAddMore;
+        private Janus.Windows.EditControls.UICheckBox chkAuto;
     }
 }

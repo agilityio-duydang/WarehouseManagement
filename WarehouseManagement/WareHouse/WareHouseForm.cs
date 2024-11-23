@@ -37,6 +37,7 @@ namespace WarehouseManagement.WareHouse
                 }
                 else
                 {
+                    chkAuto.Checked = true;
                     Kho = new Kho();
                     tabHistory.Enabled = false;
                     txtMaKho.Text = GetMaKho();
@@ -232,19 +233,19 @@ namespace WarehouseManagement.WareHouse
                 if (e.Row.RowType == RowType.Record)
                 {
                     decimal TongTien = (decimal)e.Row.Cells["TongTien"].Value;
-                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,##0");
+                    e.Row.Cells["TongTien"].Text = TongTien.ToString("#,#.0000#");
 
                     decimal TongDaThanhToan = (decimal)e.Row.Cells["TongDaThanhToan"].Value;
-                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,##0");
+                    e.Row.Cells["TongDaThanhToan"].Text = TongDaThanhToan.ToString("#,#.0000#");
 
                     decimal TongConNo = (decimal)e.Row.Cells["TongConNo"].Value;
-                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,##0");
+                    e.Row.Cells["TongConNo"].Text = TongConNo.ToString("#,#.0000#");
 
                     decimal ChiPhiNhap = (decimal)e.Row.Cells["ChiPhiNhap"].Value;
-                    e.Row.Cells["ChiPhiNhap"].Text = ChiPhiNhap.ToString("#,##0");
+                    e.Row.Cells["ChiPhiNhap"].Text = ChiPhiNhap.ToString("#,#.0000#");
 
                     decimal GiamGia = (decimal)e.Row.Cells["GiamGia"].Value;
-                    e.Row.Cells["GiamGia"].Text = GiamGia.ToString("#,##0");
+                    e.Row.Cells["GiamGia"].Text = GiamGia.ToString("#,#.0000#");
                 }
             }
             catch (Exception ex)
@@ -302,6 +303,27 @@ namespace WarehouseManagement.WareHouse
                             Logger.LocalLogger.Instance().WriteMessage(ex);
                         }
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LocalLogger.Instance().WriteMessage(ex);
+            }
+        }
+
+        private void chkAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chkAuto.CheckState == CheckState.Checked)
+                {
+                    txtMaKho.Text = GetMaKho();
+                    txtMaKho.Enabled = false;
+                }
+                else
+                {
+                    txtMaKho.Text = string.Empty;
+                    txtMaKho.Enabled = true;
                 }
             }
             catch (Exception ex)
